@@ -3,8 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import {lightTheme, darkTheme, GlobalStyles } from './styled/Global.style.js';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import NightlightIcon from '@mui/icons-material/Nightlight';
-import NavDrawer from './Drawer.js';
-
+import Navigation from './Navigation'
 
 const App = () => {
   const [theme, setTheme] = useState('light')
@@ -24,7 +23,7 @@ const App = () => {
     <>
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
         <GlobalStyles />
-        <NavDrawer toggle={themeToggle} icon={iconToggle}/>
+        <Navigation toggle={themeToggle} icon={iconToggle}/>
         <h1>hello there.... ʘ‿ʘ</h1>
         <h4>Website is still under construction 🛠</h4>
       </ThemeProvider>

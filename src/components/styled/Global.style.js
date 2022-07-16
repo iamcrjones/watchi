@@ -31,4 +31,9 @@ export const GlobalStyles = createGlobalStyle`
     h1 {
         color: ${pallet.pallet1};
     }
+
+    .navLogo {
+        width: 250px;
+        height: 100px;
+    }
 `
