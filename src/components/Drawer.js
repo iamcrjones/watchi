@@ -2,8 +2,9 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
-
+import MenuIcon from '@mui/icons-material/Menu';
 import Divider from '@mui/material/Divider';
+
 export default function NavDrawer({toggle, icon}) {
   const [state, setState] = React.useState({
     right: false
@@ -27,7 +28,7 @@ export default function NavDrawer({toggle, icon}) {
       <div className='menu'>
         {['right'].map((anchor) => (
           <React.Fragment key={anchor}>
-            <Button className="menubutton"onClick={toggleDrawer(anchor, true)}variant='contained'>Menu</Button>
+            <MenuIcon className="menubutton"onClick={toggleDrawer(anchor, true)}variant='contained'></MenuIcon>
             <Drawer
               anchor={anchor}
               open={state[anchor]}
