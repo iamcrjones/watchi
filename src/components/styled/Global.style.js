@@ -32,8 +32,42 @@ export const GlobalStyles = createGlobalStyle`
         color: ${pallet.pallet1};
     }
 
+    // Navigation Styling Starts here
+
+    .MuiAppBar-root {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 100%;
+    }
     .navLogo {
-        width: 250px;
-        height: 100px;
+        width: 150px;
+        height: 75px;
+        align-self: center;
+    }
+    .navList {
+        font-family: ${fonts.bangers}
+        display: flex;
+        padding-right: 20px;
+        position: absolute;
+        align-items: center;
+        height: 83px;
+    }
+    .navList a {
+        padding: 2px;
+    }
+    // Set this up once better colours of app sorted :)
+    // .MuiSvgIcon-root {
+    //     color: ${(props) => props.theme.color};
+    // }
+    .menu {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        position: fixed;
+        width: 24px;
+        height: 24px;
+        margin: 0;
+        padding-right: 20px;
     }
 `

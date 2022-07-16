@@ -28,7 +28,7 @@ export default function NavDrawer({toggle, icon}) {
       <div className='menu'>
         {['right'].map((anchor) => (
           <React.Fragment key={anchor}>
-            <MenuIcon className="menubutton"onClick={toggleDrawer(anchor, true)}variant='contained'></MenuIcon>
+            <MenuIcon className="menuButton"onClick={toggleDrawer(anchor, true)}variant='contained'></MenuIcon>
             <Drawer
               anchor={anchor}
               open={state[anchor]}
