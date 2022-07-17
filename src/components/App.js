@@ -4,6 +4,7 @@ import {lightTheme, darkTheme, GlobalStyles } from './styled/Global.style.js';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import NightlightIcon from '@mui/icons-material/Nightlight';
 import Navigation from './Navigation'
+import Calendar from './Calendar.js';
 
 const App = () => {
   const [theme, setTheme] = useState('light')
@@ -25,6 +26,7 @@ const App = () => {
         <GlobalStyles />
         <Navigation toggle={themeToggle} icon={iconToggle}/>
         <h1>hello there.... ʘ‿ʘ</h1>
+        <Calendar/>
         <h4>Website is still under construction 🛠</h4>
       </ThemeProvider>
     </>

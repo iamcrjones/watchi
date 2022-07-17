@@ -18,7 +18,8 @@ export const darkTheme = {
 
 const fonts = {
     exo: "'Exo', sans-serif;",
-    bangers: "'Bangers', cursive;"
+    bangers: "'Bangers', cursive;",
+    test: "'Cormorant SC', serif;"
 
 }
 export const GlobalStyles = createGlobalStyle`
@@ -30,6 +31,10 @@ export const GlobalStyles = createGlobalStyle`
     }
     h1 {
         color: ${pallet.pallet1};
+    }
+
+    h4 {
+        font-family: ${fonts.bangers};
     }
 
     // Navigation Styling Starts here
@@ -46,7 +51,8 @@ export const GlobalStyles = createGlobalStyle`
         align-self: center;
     }
     .navList {
-        font-family: ${fonts.bangers}
+        font-family: ${fonts.bangers};
+        font-size: 20px;
         display: flex;
         padding-right: 20px;
         position: absolute;
@@ -69,5 +75,31 @@ export const GlobalStyles = createGlobalStyle`
         height: 24px;
         margin: 0;
         padding-right: 20px;
+    }
+
+    // Calendar styling starts here
+
+    .calendar {
+        justify-content: center;
+        margin: 0 auto 0 auto;
+        text-align: center;
+    }
+
+    .calendarTitle {
+        font-size: 20px;
+    }
+
+    .dayBox {
+        width: 24px;
+        height: 24px;
+        background-color: ${(props) => props.theme.body};
+        border: 2px solid ${pallet.pallet2};
+        margin: 0 auto 0 auto;
+    }
+    .weekBoxes {
+        display: flex;
+        justify-content: space-between;
+        padding: 24px;
+
     }
 `
