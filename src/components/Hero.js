@@ -1,10 +1,8 @@
 import * as React from 'react';
-import abouthero from '../images/Hero-image.png'
+import starthero from '../images/Hero-image.png'
 
 
-
-
-const About = () => {
+const Hero = () => {
     return( 
      <>
 <div className="aboutContainer">
@@ -12,11 +10,11 @@ const About = () => {
                     <p>
                         Some stuff about this page and why it's super Awesome
                     </p>
-                    <img className="AboutPic" src={abouthero} alt="lots of different Anime characters merged in one"></img>
+                    <img className="AboutPic" src={starthero} alt="lots of different Anime characters merged in one"></img>
                    
                 </div>
         </>
     );
 }
                     
-export default About;
+export default Hero;

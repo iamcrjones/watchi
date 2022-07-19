@@ -12,6 +12,7 @@ import SignIn from './SignIn';
 import SignUp from './SignUp';
 import AddShow from './AddShow';
 import About from './About';
+import Hero from './Hero';
 // import MyWatchlist from './MyWatchlist';
 // import AddReview from './AddReview';
 // import EditUsers from './EditUsers';
@@ -39,15 +40,12 @@ const App = () => {
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
         <GlobalStyles />
         <Navigation toggle={themeToggle} icon={iconToggle}/>
-        <h1>hello there.... ʘ‿ʘ</h1>
-        <Calendar/>
-        <h4>Website is still under construction 🛠</h4>
-      </ThemeProvider>
-
-      
-
+     
       <Router>
         <Routes>
+     {/* Route multiple compponents to the same path */}
+        <Route path="/" element={<Hero />} />
+        <Route path="/" element={<Calendar />} />
         <Route path="*" element={<NotFound/>} />
         <Route path="SignIn" element={<SignIn/>} />
         <Route path="SignUp" element={<SignUp/>} />
@@ -57,10 +55,10 @@ const App = () => {
         {/* <Route path="AddReview" element={<AddReview/>} /> */}
         {/* <Route path="EditUsers" element={<EditUsers/>} /> */}
         {/* <Route path="Profile" element={<Profile/>} /> */}
-        {/* <Route path="Top10" element={<Top10/>} /> */}
         
         </Routes>
       </Router>
+      </ThemeProvider>
     </>
   )
   }

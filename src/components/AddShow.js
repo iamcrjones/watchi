@@ -21,8 +21,6 @@ const AddShow = () => {
 
                 <label>End Date:</label>
                 <input type="date" name="End Date" />
-
-                {/* Bolean selector */}
                 <label>Crunchyroll:</label>
                 <input type="checkbox" name="Crunchyroll" />
                 <label>Funimation:</label>
