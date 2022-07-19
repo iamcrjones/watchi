@@ -1,7 +1,7 @@
 const Top10 = () => {
     return(
         <>
-            <p> hello </p>
+            <h1>Top10</h1>
         </>
     )
 }
