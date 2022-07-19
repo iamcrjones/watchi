@@ -18,7 +18,7 @@ import Hero from './Hero';
 // import EditUsers from './EditUsers';
 // import Footer from './Footer';
 // import Profile from './Profile';
-// import Top10 from './Top10';
+import Top10 from './Top10';
 
 
 const App = () => {
@@ -44,7 +44,7 @@ const App = () => {
       <Router>
         <Routes>
      {/* Route multiple compponents to the same path */}
-        <Route path='/' element={<><Hero /> <Top10 /> <Calendar /></>} />>
+        <Route path='/' element={<><Hero /> <Top10 /> <Calendar /></>} />
         <Route path="*" element={<NotFound/>} />
         <Route path="SignIn" element={<SignIn/>} />
         <Route path="SignUp" element={<SignUp/>} />
