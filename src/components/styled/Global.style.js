@@ -31,10 +31,11 @@ export const GlobalStyles = createGlobalStyle`
     }
     h1 {
         color: ${pallet.pallet1};
+        font-family: ${fonts.bangers};
     }
 
     h4 {
-        font-family: ${fonts.bangers};
+        font-family: ${fonts.Exo};
     }
 
     // Navigation Styling Starts here
