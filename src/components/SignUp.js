@@ -9,7 +9,7 @@ const SignUp = () => {
         <Box>
             <Card>
                 <CardContent>
-                    <h1>Sign In</h1>
+                    <h1>Sign Up</h1>
                     <form>
                         <label>Email:</label>
                         <input type="text" name="Email" />
@@ -25,6 +25,7 @@ const SignUp = () => {
                     </form>
                 </CardContent>
             </Card>
+            <image src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="google logo"></image>
         </Box>
     );
 }
