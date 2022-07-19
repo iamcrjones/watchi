@@ -2,6 +2,8 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { Box } from '@mui/material';
+import pikachu from '../images/Pikachu-dance.gif'
+
 
 
 const SignUp = () => {
@@ -23,9 +25,10 @@ const SignUp = () => {
                         <input type="User Name" name="User Name" />
                         <input type="submit" value="Sign In" />
                     </form>
+                    <img className="SignUpPic" src={pikachu} alt="dancing Pikachu"></img>
                 </CardContent>
             </Card>
-            <image src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="google logo"></image>
+            
         </Box>
     );
 }

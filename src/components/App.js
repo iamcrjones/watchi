@@ -7,9 +7,18 @@ import {  BrowserRouter as Router,  Routes,  Route} from "react-router-dom";
 import Navigation from './Navigation'
 import Calendar from './Calendar.js';
 // import { Route } from '@mui/icons-material'; - This was conflicting with Routes
+import NotFound from './NotFound';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
-import NotFound from './NotFound';
+import AddShow from './AddShow';
+import About from './About';
+// import MyWatchlist from './MyWatchlist';
+// import AddReview from './AddReview';
+// import EditUsers from './EditUsers';
+// import Footer from './Footer';
+// import Profile from './Profile';
+// import Top10 from './Top10';
+
 
 const App = () => {
   const [theme, setTheme] = useState('light')
@@ -39,9 +48,17 @@ const App = () => {
 
       <Router>
         <Routes>
+        <Route path="*" element={<NotFound/>} />
         <Route path="SignIn" element={<SignIn/>} />
         <Route path="SignUp" element={<SignUp/>} />
-        <Route path="*" element={<NotFound/>} />
+        <Route path="AddShow" element={<AddShow/>} />
+        <Route path="About" element={<About/>} />
+        {/* <Route path="MyWatchlist" element={<MyWatchlist/>} /> */}
+        {/* <Route path="AddReview" element={<AddReview/>} /> */}
+        {/* <Route path="EditUsers" element={<EditUsers/>} /> */}
+        {/* <Route path="Profile" element={<Profile/>} /> */}
+        {/* <Route path="Top10" element={<Top10/>} /> */}
+        
         </Routes>
       </Router>
     </>
