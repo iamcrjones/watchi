@@ -44,8 +44,7 @@ const App = () => {
       <Router>
         <Routes>
      {/* Route multiple compponents to the same path */}
-        <Route path="/" element={<Hero />} />
-        <Route path="/" element={<Calendar />} />
+        <Route path='/' element={<><Hero /> <Top10 /> <Calendar /></>} />>
         <Route path="*" element={<NotFound/>} />
         <Route path="SignIn" element={<SignIn/>} />
         <Route path="SignUp" element={<SignUp/>} />
