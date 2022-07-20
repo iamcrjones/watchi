@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ThemeProvider } from 'styled-components';
 import {lightTheme, darkTheme, GlobalStyles } from './styled/Global.style.js';
 import LightModeIcon from '@mui/icons-material/LightMode';
@@ -19,9 +19,20 @@ import Hero from './Hero';
 // import Footer from './Footer';
 // import Profile from './Profile';
 import Top10 from './Top10';
+import { CircularProgress } from '@mui/material';
 
 
 const App = () => {
+  // Loading animation
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 800);
+  }, []);
+  // Dark mode toggle
   const [theme, setTheme] = useState('light')
 
   const themeToggle = () => {
@@ -41,21 +52,28 @@ const App = () => {
         <GlobalStyles />
 
       <Router>
-        <Navigation toggle={themeToggle} icon={iconToggle}/>
-        <Routes>
-     {/* Route multiple compponents to the same path */}
-          <Route path='/' element={<><Hero /> <Top10 /> <Calendar /></>} />
-          <Route path="*" element={<NotFound/>} />
-          <Route path="SignIn" element={<SignIn/>} />
-          <Route path="SignUp" element={<SignUp/>} />
-          <Route path="AddShow" element={<AddShow/>} />
-          <Route path="About" element={<About/>} />
-          {/* <Route path="MyWatchlist" element={<MyWatchlist/>} /> */}
-          {/* <Route path="AddReview" element={<AddReview/>} /> */}
-          {/* <Route path="EditUsers" element={<EditUsers/>} /> */}
-          {/* <Route path="Profile" element={<Profile/>} /> */}
+        <Navigation toggle={themeToggle} icon={iconToggle} loading={loading}/>
 
-        </Routes>
+        {loading ? (
+          <CircularProgress />
+        )
+        : (
+          <Routes>
+     {/* Route multiple compponents to the same path */}
+            <Route path='/' element={<><Hero /> <Top10 /> <Calendar /></>} />
+            <Route path="*" element={<NotFound/>} />
+            <Route path="SignIn" element={<SignIn/>} />
+            <Route path="SignUp" element={<SignUp/>} />
+            <Route path="AddShow" element={<AddShow/>} />
+            <Route path="About" element={<About/>} />
+            {/* <Route path="MyWatchlist" element={<MyWatchlist/>} /> */}
+            {/* <Route path="AddReview" element={<AddReview/>} /> */}
+            {/* <Route path="EditUsers" element={<EditUsers/>} /> */}
+            {/* <Route path="Profile" element={<Profile/>} /> */}
+
+          </Routes>
+        )}
+        
       </Router>
       </ThemeProvider>
     </>
