@@ -39,22 +39,22 @@ const App = () => {
     <>
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
         <GlobalStyles />
-        <Navigation toggle={themeToggle} icon={iconToggle}/>
-     
+
       <Router>
+        <Navigation toggle={themeToggle} icon={iconToggle}/>
         <Routes>
      {/* Route multiple compponents to the same path */}
-        <Route path='/' element={<><Hero /> <Top10 /> <Calendar /></>} />
-        <Route path="*" element={<NotFound/>} />
-        <Route path="SignIn" element={<SignIn/>} />
-        <Route path="SignUp" element={<SignUp/>} />
-        <Route path="AddShow" element={<AddShow/>} />
-        <Route path="About" element={<About/>} />
-        {/* <Route path="MyWatchlist" element={<MyWatchlist/>} /> */}
-        {/* <Route path="AddReview" element={<AddReview/>} /> */}
-        {/* <Route path="EditUsers" element={<EditUsers/>} /> */}
-        {/* <Route path="Profile" element={<Profile/>} /> */}
-        
+          <Route path='/' element={<><Hero /> <Top10 /> <Calendar /></>} />
+          <Route path="*" element={<NotFound/>} />
+          <Route path="SignIn" element={<SignIn/>} />
+          <Route path="SignUp" element={<SignUp/>} />
+          <Route path="AddShow" element={<AddShow/>} />
+          <Route path="About" element={<About/>} />
+          {/* <Route path="MyWatchlist" element={<MyWatchlist/>} /> */}
+          {/* <Route path="AddReview" element={<AddReview/>} /> */}
+          {/* <Route path="EditUsers" element={<EditUsers/>} /> */}
+          {/* <Route path="Profile" element={<Profile/>} /> */}
+
         </Routes>
       </Router>
       </ThemeProvider>
