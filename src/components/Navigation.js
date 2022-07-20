@@ -6,7 +6,6 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Navigation = ({toggle, icon, loading}) => {
 
-    const navigate = useNavigate()
 
     const themeIcon = icon
 
