@@ -16,7 +16,7 @@ import Hero from './Hero';
 // import MyWatchlist from './MyWatchlist';
 // import AddReview from './AddReview';
 // import EditUsers from './EditUsers';
-// import Footer from './Footer';
+import Footer from './Footer';
 // import Profile from './Profile';
 import Top10 from './Top10';
 import { CircularProgress } from '@mui/material';
@@ -73,7 +73,7 @@ const App = () => {
 
           </Routes>
         )}
-        
+        <Footer />
       </Router>
       </ThemeProvider>
     </>
