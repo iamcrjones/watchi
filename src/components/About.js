@@ -11,7 +11,7 @@ import abouthero from '../images/Hero-image.png'
 
 
 const About = () => {
-    return( 
+    return(
      <>
         <div className="aboutContainer">
                     <h1>About</h1>
@@ -23,34 +23,34 @@ const About = () => {
 
         <br/>
         <br/>
-<box>
-    <Card >
-        <CardContent>
-            <img className="Team" src={abouthero} alt="lots of different Anime characters merged in one"></img>
-            <h4 className="Team">Cameron Jones</h4>
-            <FacebookIcon href="https://www.facebook.com/matilda.morton"/>
-            <LinkedInIcon href="https://www.linkedin.com/in/matildamorton"/>
-            <GitHubIcon href="https://github.com/matildamort"/>
-        </CardContent>
-    </Card>
-</box>
+        <box>
+            <Card >
+                <CardContent>
+                    <img className="Team" src={abouthero} alt="lots of different Anime characters merged in one"></img>
+                    <h4 className="Team">Cameron Jones</h4>
+                    <FacebookIcon href="https://www.facebook.com/matilda.morton"/>
+                    <LinkedInIcon href="https://www.linkedin.com/in/matildamorton"/>
+                    <GitHubIcon href="https://github.com/matildamort"/>
+                </CardContent>
+            </Card>
+        </box>
 
-<br/>
-<br/>
+        <br/>
+        <br/>
 
-<box>
-    <Card >
-        <CardContent>
-            <img className="Team" src={Matilda} alt="lots of different Anime characters merged in one"></img>
-            <h4 className="Team">Matilda Morton</h4>
-            <FacebookIcon href="https://www.facebook.com/matilda.morton"/>
-            <LinkedInIcon href="https://www.linkedin.com/in/matildamorton"/>
-            <GitHubIcon href="https://github.com/matildamort"/>
-        </CardContent>
-        </Card>
-</box>
-        </>
+        <box>
+            <Card >
+                <CardContent>
+                    <img className="Team" src={Matilda} alt="lots of different Anime characters merged in one"></img>
+                    <h4 className="Team">Matilda Morton</h4>
+                    <FacebookIcon href="https://www.facebook.com/matilda.morton"/>
+                    <LinkedInIcon href="https://www.linkedin.com/in/matildamorton"/>
+                    <GitHubIcon href="https://github.com/matildamort"/>
+                </CardContent>
+                </Card>
+        </box>
+    </>
     );
 }
-                    
+
 export default About;

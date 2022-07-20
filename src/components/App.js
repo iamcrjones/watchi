@@ -20,11 +20,23 @@ import Footer from './Footer';
 // import Profile from './Profile';
 import Top10 from './Top10';
 import { CircularProgress } from '@mui/material';
+import { getShows } from './services/showServices.js'
 
 
 const App = () => {
   // Loading animation
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    let showList = []
+    getShows()
+    .then(data => {
+        showList.push(data)
+        return showList
+    })
+    .catch(e=> {console.log(e)})
+  }, [])
+
 
   useEffect(() => {
     setLoading(true);
@@ -53,7 +65,6 @@ const App = () => {
 
       <Router>
         <Navigation toggle={themeToggle} icon={iconToggle} loading={loading}/>
-
         {loading ? (
           <CircularProgress />
         )
