@@ -45,6 +45,8 @@ export const GlobalStyles = createGlobalStyle`
         justify-content: center;
         align-items: flex-end;
         width: 100%;
+        position: sticky;
+        top: 0;
     }
     .navLogo {
         width: 150px;
@@ -71,7 +73,7 @@ export const GlobalStyles = createGlobalStyle`
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
-        position: fixed;
+        position: absolute;
         width: 24px;
         height: 24px;
         margin: 0;
