@@ -13,7 +13,7 @@ import SignUp from './SignUp';
 import AddShow from './AddShow';
 import About from './About';
 import Hero from './Hero';
-// import MyWatchlist from './MyWatchlist';
+import Watchlist from './Watchlist';
 // import AddReview from './AddReview';
 // import EditUsers from './EditUsers';
 import Footer from './Footer';
@@ -77,7 +77,7 @@ const App = () => {
             <Route path="signup" element={<SignUp/>} />
             <Route path="AddShow" element={<AddShow/>} />
             <Route path="about" element={<About/>} />
-            {/* <Route path="MyWatchlist" element={<MyWatchlist/>} /> */}
+            <Route path="Watchlist" element={<Watchlist/>} />
             {/* <Route path="AddReview" element={<AddReview/>} /> */}
             {/* <Route path="EditUsers" element={<EditUsers/>} /> */}
             {/* <Route path="Profile" element={<Profile/>} /> */}
