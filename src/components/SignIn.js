@@ -18,7 +18,7 @@ const SignIn = () => {
                         <input type="text" name="Password" />
                         <input type="submit" value="Sign In" />
                     </form>
-                    <img className="SignInPic" src={charizard} alt="dancing charizard"></img>
+                    <img className="signInPic" src={charizard} alt="dancing charizard"></img>
                 </CardContent>
             </Card>
         </Box>

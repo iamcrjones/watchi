@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import NavDrawer from './Drawer.js';
 import logo from '../images/nav-logo.png'
 import { AppBar, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navigation = ({toggle, icon, loading}) => {
+
+    const navigate = useNavigate()
 
     const themeIcon = icon
 

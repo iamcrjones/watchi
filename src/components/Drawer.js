@@ -49,15 +49,18 @@ export default function NavDrawer({toggle, icon}) {
               </Button>
               <Divider />
               <Button variant="contained">
-                <a className='linky' href="/" onClick={toggleDrawer(anchor, false)}>About</a>
+                <a className='linky' href="/about" onClick={toggleDrawer(anchor, false)}>About</a>
               </Button>
               <Divider />
               <Button variant="contained">
-                <a className='linky' href="/" onClick={toggleDrawer(anchor, false)}>Projects</a>
+                <a className='linky' href="/" onClick={toggleDrawer(anchor, false)}>Watchlist</a>
               </Button>
               <Divider />
               <Button variant="contained">
-                <a className='linky' href="/" onClick={toggleDrawer(anchor, false)}>Contact</a>
+                <a className='linky' href="/signup" onClick={toggleDrawer(anchor, false)}>Sign Up</a>
+              </Button>
+              <Button variant="contained">
+                <a className='linky' href="/signin" onClick={toggleDrawer(anchor, false)}>Sign In</a>
               </Button>
             </Box>
               {/* {list} */}

@@ -103,4 +103,28 @@ export const GlobalStyles = createGlobalStyle`
         padding: 24px;
 
     }
+
+    //About Content
+
+    .aboutContainer {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .aboutPic {
+        width: 80%;
+        height: auto;
+        margin-left: 10%;
+    }
+
+    .signUpPic {
+        width: 80%;
+        height: auto;
+        margin-left: 10%;
+    }
+    .signInPic {
+        width: 80%;
+        height: auto;
+        margin-left: 10%;
+    }
 `

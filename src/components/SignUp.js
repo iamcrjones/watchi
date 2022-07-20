@@ -25,7 +25,7 @@ const SignUp = () => {
                         <input type="User Name" name="User Name" />
                         <input type="submit" value="Sign In" />
                     </form>
-                    <img className="SignUpPic" src={pikachu} alt="dancing Pikachu"></img>
+                    <img className="signUpPic" src={pikachu} alt="dancing Pikachu"></img>
                 </CardContent>
             </Card>
             

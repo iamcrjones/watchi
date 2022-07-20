@@ -10,7 +10,7 @@ const Hero = () => {
                     <p>
                         Some stuff about this page and why it's super Awesome
                     </p>
-                    <img className="AboutPic" src={starthero} alt="lots of different Anime characters merged in one"></img>
+                    <img className="aboutPic" src={starthero} alt="lots of different Anime characters merged in one"></img>
                    
                 </div>
         </>
