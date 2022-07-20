@@ -75,7 +75,7 @@ const App = () => {
             <Route path="*" element={<NotFound/>} />
             <Route path="signin" element={<SignIn/>} />
             <Route path="signup" element={<SignUp/>} />
-            <Route path="AddShow" element={<AddShow/>} />
+            <Route path="addshow" element={<AddShow/>} />
             <Route path="about" element={<About/>} />
             <Route path="Watchlist" element={<Watchlist/>} />
             {/* <Route path="AddReview" element={<AddReview/>} /> */}

@@ -34,6 +34,7 @@ const Navigation = ({toggle, icon, loading}) => {
                             <Typography variant="text" component={Link} to="Mywatchlist" onClick={loading=true}>Watchlist</Typography>
                             <Typography variant="text" component={Link} to="/signup" onClick={loading=true}>Sign Up</Typography>
                             <Typography variant="text" component={Link} to="/signin" onClick={loading=true}>Sign In</Typography>
+                            <Typography variant="text" component={Link} to="/addshow" onClick={loading=true}>Add Show</Typography>
 
 
 
