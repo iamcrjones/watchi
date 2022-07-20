@@ -2,7 +2,7 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { Box, Icon } from '@mui/material';
+import Box from '@mui/material/Box';
 import charizard from '../images/Charazard-Gif.gif'
 
 const Watchlist = () => {
