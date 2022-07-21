@@ -9,6 +9,8 @@ const Navigation = ({toggle, icon, loading}) => {
 
     const themeIcon = icon
 
+    const username = sessionStorage.getItem('username')
+
     const toggler = () => {
     toggle();}
     const [isDesktop, setDesktop] = useState(window.innerWidth > 999);
@@ -31,9 +33,11 @@ const Navigation = ({toggle, icon, loading}) => {
                         <div className="navList">
                             <Typography variant="text" component={Link} to="/" onClick={loading=true}>Home</Typography>
                             <Typography variant="text" component={Link} to="/about" onClick={loading=true}>About</Typography>
-                            <Typography variant="text" component={Link} to="Mywatchlist" onClick={loading=true}>Watchlist</Typography>
+                            <Typography variant="text" component={Link} to="/watchlist" onClick={loading=true}>Watchlist</Typography>
                             <Typography variant="text" component={Link} to="/signup" onClick={loading=true}>Sign Up</Typography>
                             <Typography variant="text" component={Link} to="/signin" onClick={loading=true}>Sign In</Typography>
+                            <Typography variant="text">{username}</Typography>
+
 
 
 
