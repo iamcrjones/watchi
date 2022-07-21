@@ -4,12 +4,10 @@ import logo from '../images/nav-logo.png'
 import { AppBar, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-const Navigation = ({toggle, icon, loading}) => {
+const Navigation = ({toggle, icon, loading, username}) => {
 
 
     const themeIcon = icon
-
-    const username = sessionStorage.getItem('username')
 
     const toggler = () => {
     toggle();}

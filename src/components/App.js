@@ -27,6 +27,8 @@ const App = () => {
   // Loading animation
   const [loading, setLoading] = useState(false);
 
+  const username = sessionStorage.getItem('username')
+
   useEffect(() => {
     let showList = []
     getShows()
@@ -69,7 +71,7 @@ const App = () => {
         )
         : (
           <>
-            <Navigation toggle={themeToggle} icon={iconToggle} loading={loading}/>
+            <Navigation toggle={themeToggle} icon={iconToggle} loading={loading} username={username}/>
             <Routes>
       {/* Route multiple compponents to the same path */}
               <Route path='/' element={<><Hero /> <Top10 /> <Calendar /></>} />
