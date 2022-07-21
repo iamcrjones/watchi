@@ -36,7 +36,9 @@ const SignIn = () => {
             }
 
         })
-        .catch(e=> {console.log(e.response.data)})
+        .catch(e=> {
+            setError(e.response.data.error)
+            console.log(e.response.data)})
 
     }
 
@@ -52,8 +54,8 @@ const SignIn = () => {
         <Box>
             <Card>
                 <CardContent>
-                    {error && <p>{error}</p>}
                     <h1>Sign In</h1>
+                    {error && <h3>{error}</h3>}
                     <form onSubmit={handleSubmit}>
                         <label>Email:</label>
                         <input type="text" name="email" id="email" onChange={handleFormData}/>
