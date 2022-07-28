@@ -5,10 +5,15 @@ import { Box } from '@mui/material';
 import charizard from '../images/Charazard-Gif.gif'
 import { useState } from "react"
 import {signIn} from './services/authServices'
+// import {useNavigate} from 'react-router-dom'
 
 
 
 const SignIn = () => {
+    // const navigate = useNavigate()
+
+
+
     const initialFormData = {
         email: "",
         password: ""
@@ -29,10 +34,9 @@ const SignIn = () => {
                 setError(user.error)
             }else{
                 setError(null)
-                sessionStorage.setItem("username",  user.username)
-                sessionStorage.setItem("token", user.jwt)
                 setFormData(initialFormData)
-                window.location.href = '/';
+                //window.location.href = '/';
+                //navigate('/')
             }
 
         })
