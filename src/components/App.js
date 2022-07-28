@@ -27,6 +27,8 @@ const App = () => {
   // Loading animation
   const [loading, setLoading] = useState(false);
 
+  const username = sessionStorage.getItem('username')
+
   useEffect(() => {
     let showList = []
     getShows()
@@ -64,27 +66,29 @@ const App = () => {
         <GlobalStyles />
 
       <Router>
-        <Navigation toggle={themeToggle} icon={iconToggle} loading={loading}/>
         {loading ? (
           <CircularProgress />
         )
         : (
-          <Routes>
-     {/* Route multiple compponents to the same path */}
-            <Route path='/' element={<><Hero /> <Top10 /> <Calendar /></>} />
-            <Route path="*" element={<NotFound/>} />
-            <Route path="signin" element={<SignIn/>} />
-            <Route path="signup" element={<SignUp/>} />
-            <Route path="addshow" element={<AddShow/>} />
-            <Route path="about" element={<About/>} />
-            <Route path="Watchlist" element={<Watchlist/>} />
-            {/* <Route path="AddReview" element={<AddReview/>} /> */}
-            {/* <Route path="EditUsers" element={<EditUsers/>} /> */}
-            {/* <Route path="Profile" element={<Profile/>} /> */}
+          <>
+            <Navigation toggle={themeToggle} icon={iconToggle} loading={loading} username={username}/>
+            <Routes>
+      {/* Route multiple compponents to the same path */}
+              <Route path='/' element={<><Hero /> <Top10 /> <Calendar /></>} />
+              <Route path="*" element={<NotFound/>} />
+              <Route path="signin" element={<SignIn/>} />
+              <Route path="signup" element={<SignUp/>} />
+              <Route path="AddShow" element={<AddShow/>} />
+              <Route path="about" element={<About/>} />
+              <Route path="Watchlist" element={<Watchlist/>} />
+              {/* <Route path="AddReview" element={<AddReview/>} /> */}
+              {/* <Route path="EditUsers" element={<EditUsers/>} /> */}
+              {/* <Route path="Profile" element={<Profile/>} /> */}
 
-          </Routes>
+            </Routes>
+            <Footer />
+          </>
         )}
-        <Footer />
       </Router>
       </ThemeProvider>
     </>

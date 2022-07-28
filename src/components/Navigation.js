@@ -4,7 +4,7 @@ import logo from '../images/nav-logo.png'
 import { AppBar, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-const Navigation = ({toggle, icon, loading}) => {
+const Navigation = ({toggle, icon, loading, username}) => {
 
 
     const themeIcon = icon
@@ -31,10 +31,11 @@ const Navigation = ({toggle, icon, loading}) => {
                         <div className="navList">
                             <Typography variant="text" component={Link} to="/" onClick={loading=true}>Home</Typography>
                             <Typography variant="text" component={Link} to="/about" onClick={loading=true}>About</Typography>
-                            <Typography variant="text" component={Link} to="Mywatchlist" onClick={loading=true}>Watchlist</Typography>
+                            <Typography variant="text" component={Link} to="/watchlist" onClick={loading=true}>Watchlist</Typography>
                             <Typography variant="text" component={Link} to="/signup" onClick={loading=true}>Sign Up</Typography>
                             <Typography variant="text" component={Link} to="/signin" onClick={loading=true}>Sign In</Typography>
-                            <Typography variant="text" component={Link} to="/addshow" onClick={loading=true}>Add Show</Typography>
+                            <Typography variant="text">{username}</Typography>
+
 
 
 
