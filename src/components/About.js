@@ -1,12 +1,12 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-// import { Box, Icon } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Matilda from '../images/Matilda-profile.jpeg'
-import abouthero from '../images/Hero-image.png'
+import aboutHero from '../images/Hero-image.png'
+import { Box } from '@mui/material';
 
 
 
@@ -18,27 +18,27 @@ const About = () => {
                     <p>
                         Some stuff about this page and why it's super Awesome
                     </p>
-                    <img className="AboutPic" src={abouthero} alt="lots of different Anime characters merged in one"></img>
+                    <img className="AboutPic" src={aboutHero} alt="lots of different Anime characters merged in one"></img>
         </div>
 
         <br/>
         <br/>
-        <box>
+        <Box>
             <Card >
                 <CardContent>
-                    <img className="Team" src={abouthero} alt="lots of different Anime characters merged in one"></img>
+                    <img className="Team" src={aboutHero} alt="lots of different Anime characters merged in one"></img>
                     <h4 className="Team">Cameron Jones</h4>
                     <FacebookIcon href="https://www.facebook.com/matilda.morton"/>
                     <LinkedInIcon href="https://www.linkedin.com/in/matildamorton"/>
                     <GitHubIcon href="https://github.com/matildamort"/>
                 </CardContent>
             </Card>
-        </box>
+        </Box>
 
         <br/>
         <br/>
 
-        <box>
+        <Box>
             <Card >
                 <CardContent>
                     <img className="Team" src={Matilda} alt="lots of different Anime characters merged in one"></img>
@@ -48,7 +48,7 @@ const About = () => {
                     <GitHubIcon href="https://github.com/matildamort"/>
                 </CardContent>
                 </Card>
-        </box>
+        </Box>
     </>
     );
 }
