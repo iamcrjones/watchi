@@ -24,7 +24,7 @@ import { getShows } from './services/showServices.js'
             </>
         )
     }
-    
+
 // {/* //     // const getRating = () => {
 // //     //     getRating(rating)
 // //     //     let total = 0;
