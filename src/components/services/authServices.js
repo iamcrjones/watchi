@@ -6,7 +6,7 @@ export async function signIn(data) {
     const response = await watchiBE.post('/auth/login', data)
     // console.log(response.data)
     sessionStorage.setItem('username', response.data.username)
-    sessionStorage.setItem('id', response.data.id)
+    sessionStorage.setItem('token', response.data.jwt)
     if(response.data.admin !== true){
         sessionStorage.setItem('admin', false)
     } else {
