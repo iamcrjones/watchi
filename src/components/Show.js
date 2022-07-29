@@ -1,7 +1,7 @@
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 // import Box from '@mui/material/Box';
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import { Typography } from '@mui/material';
 import { getShows } from './services/showServices.js'
 import {useState, useEffect} from 'react'
@@ -22,13 +22,17 @@ import {useState, useEffect} from 'react'
         return (
            <>
                 {shows.map(show =>
+
+
                     <Card key={show.id}>
                         <CardContent>
-                                <Link to="/">
+                            
+                            <img src={show.image} alt={show.name} />
+
                                     <Typography variant="h5">{show.title}</Typography>
-                                </Link>
-                                <Typography variant="body1">{show.description}</Typography>
                                 <Typography variant="body1">{show.day}</Typography>
+                                <Typography variant="body1">No of Ep: {show.episodes}</Typography>
+                                <Typography variant="body1">{show.rating}</Typography>
                         </CardContent>
                     </Card>
                 )}
@@ -45,6 +49,8 @@ import {useState, useEffect} from 'react'
 // //     //     let average = total / data.length;
 // //     //     return average;
 // //     //  */}
+
+    }
 
 
 export default Shows;
