@@ -2,8 +2,25 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { Box } from '@mui/material';
+import { useState } from "react"
+import { addShow } from './services/showServices';
+
 
 const AddShow = () => {
+    const initialFormData = {
+        title: '',
+        description: '',
+        episodes: '',
+        airdate: '',
+        enddate: '',
+        crunchyroll: '',
+        funimation: '',
+        netflix: '',
+        image: '',
+    }
+
+    const [formData, setFormData] = useState(initialFormData)
+    const [error, setError] = useState(null)
 
     const admin = sessionStorage.getItem('admin')
     function adminCheck() {
@@ -11,6 +28,35 @@ const AddShow = () => {
         alert('Unauthorized access...')
         window.location.href = '/';
     }}
+
+    const handleSubmit = (e) =>{
+        e.preventDefault()
+        console.log(formData)
+        addShow(formData)
+        .then((show) => {
+            console.log(show)
+            if(show.error){
+                setError(show.error)
+            }else{
+                setError(null)
+                setFormData(initialFormData)
+                window.location.href = '/';
+            }
+
+        })
+        .catch(e=> {
+            setError(e.response.data.error)
+            console.log(e.response.data)
+        })
+
+    }
+
+    const handleFormData = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.id]: e.target.value
+        })
+    }
     return(
         <>
             {adminCheck()}
@@ -18,27 +64,28 @@ const AddShow = () => {
                 <Card>
                     <CardContent>
                 <h1>Add Show</h1>
-                <form>
+                {error && <h3>{error}</h3>}
+                <form onSubmit={handleSubmit}>
                     <label>Title:</label>
-                    <input type="text" name="Title" />
+                    <input type="text" name="title" id="title"onChange={handleFormData}/>
                     <label>Description:</label>
-                    <input type="text" name="Description" />
+                    <input type="text" name="description" id="description" onChange={handleFormData}/>
                     <label>Number of Episodes:</label>
-                    <input type="text" name="Number of Episodes" />
-                    <label>Start Date:</label> 
-                    <input type="date" name="Start Date" />
+                    <input type="text" name="episodes" id="episodes" onChange={handleFormData}/>
+                    <label>Start Date:</label>
+                    <input type="date" name="airdate" id="airdate"onChange={handleFormData}/>
 
                     <label>End Date:</label>
-                    <input type="date" name="End Date" />
+                    <input type="date" name="enddate" id="enddate" onChange={handleFormData}/>
                     <label>Crunchyroll:</label>
-                    <input type="checkbox" name="Crunchyroll" />
+                    <input type="checkbox" name="crunchyroll" id="crunchyroll" onChange={handleFormData}/>
                     <label>Funimation:</label>
-                    <input type="checkbox" name="Funimation" />
+                    <input type="checkbox" name="funimation" id="funimation" onChange={handleFormData}/>
                     <label>Netflix:</label>
-                    <input type="checkbox" name="Netflix" />
+                    <input type="checkbox" name="netflix" id="netflix" onChange={handleFormData}/>
                     <label>Upload Image:</label>
-                    <input type="file" name="Image" />
-                    <input type="submit" value="Add Show" />
+                    <input type="file" name="image" id="image" onChange={handleFormData}/>
+                    <input type="submit" />
                     </form>
                     </CardContent>
                 </Card>
