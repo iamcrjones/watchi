@@ -5,26 +5,37 @@ import { Link } from "react-router-dom"
 import { Typography } from '@mui/material';
 import { getShows } from './services/showServices.js'
 
+import {useState, useEffect} from 'react'
+    const initialData = []
     const Shows = () => {
-        getShows()
-        .then(data => {
-            return data
-        })
-        .catch(e=> {console.log(e)})
+        const [shows, setShows] = useState(initialData)
+
+        useEffect(() => {
+            getShows()
+            .then(data => {
+                const showList = Array.from(data)
+                setShows(showList)
+                return data
+            })
+            .catch(e=> {console.log(e)})
+        },[])
         return (
            <>
-            <Card>
-                <CardContent>
-                        <Link to="/">
-                            <Typography variant="h5">{sessionStorage.getItem("shows")}</Typography>
-                            </Link>
-                            <Typography variant="body1">world</Typography>
-                </CardContent>
-            </Card>
+                {shows.map(show =>
+                    <Card key={show.id}>
+                        <CardContent>
+                                <Link to="/">
+                                    <Typography variant="h5">{show.title}</Typography>
+                                </Link>
+                                <Typography variant="body1">{show.description}</Typography>
+                                <Typography variant="body1">{show.day}</Typography>
+                        </CardContent>
+                    </Card>
+                )}
             </>
         )
     }
-    
+
 // {/* //     // const getRating = () => {
 // //     //     getRating(rating)
 // //     //     let total = 0;
