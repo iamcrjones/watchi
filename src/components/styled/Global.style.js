@@ -1,9 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
 const pallet= {
-    pallet1: "#2A99DE",
+    pallet1: "#3BC9F5",
     pallet2: "#52A3FF",
-    pallet3: "#3BC9F5"
+    pallet3: "#2A99DE "
 }
 
 export const lightTheme = {
@@ -26,7 +26,7 @@ export const GlobalStyles = createGlobalStyle`
 
 div {
     border: 1px solid red;
-}
+    
 
     body {
         background-color: ${(props) => props.theme.body};
