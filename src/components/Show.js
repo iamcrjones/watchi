@@ -34,7 +34,8 @@ import {useState, useEffect} from 'react'
                 )}
             </>
         )
-    }
+
+
 // {/* //     // const getRating = () => {
 // //     //     getRating(rating)
 // //     //     let total = 0;
