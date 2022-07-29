@@ -38,6 +38,12 @@ div {
         font-family: ${fonts.bangers};
     }
 
+    h2 {
+        color: ${pallet.pallet1};
+        font-family: ${fonts.bangers};
+        font-size: 2rem;
+    }
+
     h4 {
         font-family: ${fonts.Exo};
     }

@@ -29,8 +29,8 @@ import {useState, useEffect} from 'react'
                             
                             <img src={show.image} alt={show.name} />
 
-                                    <Typography variant="h5">{show.title}</Typography>
-                                <Typography variant="body1">{show.day}</Typography>
+                                    <Typography variant="h2">{show.title.toUpperCase()}</Typography>
+                                <Typography variant="body1">Dropping:{show.day}</Typography>
                                 <Typography variant="body1">No of Ep: {show.episodes}</Typography>
                                 <Typography variant="body1">{show.rating}</Typography>
                         </CardContent>
