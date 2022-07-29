@@ -18,7 +18,8 @@ import Watchlist from './Watchlist';
 // import EditUsers from './EditUsers';
 import Footer from './Footer';
 // import Profile from './Profile';
-import Top10 from './Top10';
+// import Top10 from './Top10';
+import Shows from './Show';
 import { CircularProgress } from '@mui/material';
 import { getShows } from './services/showServices.js'
 
@@ -77,13 +78,14 @@ const App = () => {
             <Navigation toggle={themeToggle} icon={iconToggle} loading={loading} username={sessionStorage.getItem('username')}/>
             <Routes>
       {/* Route multiple compponents to the same path */}
-              <Route path='/' element={<><Hero /> <Top10 /> <Calendar /></>} />
+              <Route path='/' element={<><Hero /> <Shows /> <Calendar /></>} />
               <Route path="*" element={<NotFound/>} />
               <Route path="signin" element={<SignIn/>} />
               <Route path="signup" element={<SignUp/>} />
               <Route path="AddShow" element={<AddShow/>} />
               <Route path="about" element={<About/>} />
               <Route path="Watchlist" element={<Watchlist/>} />
+              <Route path ="Show" element={<Shows/>} />
               {/* <Route path="AddReview" element={<AddReview/>} /> */}
               {/* <Route path="EditUsers" element={<EditUsers/>} /> */}
               {/* <Route path="Profile" element={<Profile/>} /> */}

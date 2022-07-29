@@ -4,9 +4,8 @@ import logo from '../images/nav-logo.png'
 import { AppBar, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-const Navigation = ({toggle, icon, loading, username}) => {
-    const admin = sessionStorage.getItem('admin')
-    // console.log(admin)
+const Navigation = ({toggle, icon, loading, username}) => { 
+
 
     const themeIcon = icon
 
@@ -51,10 +50,6 @@ const Navigation = ({toggle, icon, loading, username}) => {
                     </>
 
                 )}
-                { admin === 'true' ? (<Typography variant="text" component={Link} to="/AddShow" onClick={loading=true}>Add Show</Typography>)
-                            :
-                            (<></>)
-                }
             {/* </div> */}
         </AppBar>
     );
