@@ -24,6 +24,10 @@ const fonts = {
 }
 export const GlobalStyles = createGlobalStyle`
 
+div {
+    border: 1px solid red;
+}
+
     body {
         background-color: ${(props) => props.theme.body};
         color: ${(props) => props.theme.color};
@@ -111,6 +115,11 @@ export const GlobalStyles = createGlobalStyle`
     .aboutContainer {
         justify-content: center;
         align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto 0 auto;
+        
+
     }
 
     .aboutPic {

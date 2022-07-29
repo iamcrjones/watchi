@@ -47,9 +47,11 @@ const AddReview = () => {
                         <form onSubmit={handleSubmit}>
                             <label>Review:</label>
                             <input type="text" name="message" id="message" onChange={handleFormData}/>
-                            <label>Review:</label>
-                            <input type="text" name="message" id="message" onChange={handleFormData}/>
-
+                            <label>Rating:</label>
+                            <input type="text" name="rating" id="rating" onChange={handleFormData}/>
+                            <label>Username:</label>
+                            <input type="text" name="username" id="username" onChange={handleFormData}/>
+                            <input type="submit" value="Add Review" />
                             </form>
                             </CardContent>
                         </Card>

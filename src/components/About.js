@@ -10,15 +10,19 @@ import { Box } from '@mui/material';
 
 
 
+
 const About = () => {
     return(
      <>
         <div className="aboutContainer">
+        <div className="aboutText">
                     <h1>About</h1>
-                    <p>
-                        Some stuff about this page and why it's super Awesome
-                    </p>
+                    <p>Some stuff about this page and why it's super Awesome</p>
+                    </div>
+            <div className="aboutHero">
                     <img className="AboutPic" src={aboutHero} alt="lots of different Anime characters merged in one"></img>
+            </div>
+                    
         </div>
 
         <br/>

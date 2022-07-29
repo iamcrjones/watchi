@@ -5,6 +5,7 @@ import { Box } from '@mui/material';
 import charizard from '../images/Charazard-Gif.gif'
 import { useState } from "react"
 import {signIn} from './services/authServices'
+import TextField from '@mui/material/TextField';
 
 
 
@@ -51,18 +52,42 @@ const SignIn = () => {
 
 
     return (
-        <Box>
+        <Box
+        component="form"
+        sx={{
+        '& .MuiTextField-root': { m: 1, width: '25ch' },
+        }}
+        noValidate
+        autoComplete="off"
+        onSubmit={handleSubmit}
+        
+        >
             <Card>
                 <CardContent>
                     <h1>Sign In</h1>
                     {error && <h3>{error}</h3>}
-                    <form onSubmit={handleSubmit}>
-                        <label>Email:</label>
-                        <input type="text" name="email" id="email" onChange={handleFormData}/>
-                        <label>Password:</label>
-                        <input type="text" name="password" id="password" onChange={handleFormData}/>
-                        <input type="submit" value="Sign In" />
-                    </form>
+                    <TextField
+                        required
+                        id="outlined-email-input"
+                        type="Email"
+                        label="Email"
+                        onChange={handleFormData}
+                    />
+
+                        <TextField
+                        required
+                        id="outlined-password-input"
+                        type="password"
+                        autoComplete="current-password"
+                        label="Password"
+                        onChange={handleFormData}
+                    />
+
+                        {/* <label>Password:</label>
+                        <input type="text" name="password" id="password" onChange={handleFormData}/> */}
+                        <button type="submit">Sign In</button>
+
+
                     <img className="signInPic" src={charizard} alt="dancing charizard"></img>
                 </CardContent>
             </Card>
