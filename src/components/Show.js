@@ -4,8 +4,8 @@ import CardContent from '@mui/material/CardContent';
 import { Link } from "react-router-dom"
 import { Typography } from '@mui/material';
 import { getShows } from './services/showServices.js'
-
 import {useState, useEffect} from 'react'
+
     const initialData = []
     const Shows = () => {
         const [shows, setShows] = useState(initialData)
@@ -34,7 +34,7 @@ import {useState, useEffect} from 'react'
                 )}
             </>
         )
-    }
+
 
 // {/* //     // const getRating = () => {
 // //     //     getRating(rating)
