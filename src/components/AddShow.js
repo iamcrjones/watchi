@@ -32,9 +32,11 @@ const AddShow = () => {
 
 
     // const onImageChange = (e) => { 
-    //     e.preventDefault()
-    //     initialFormData.append({ image: e.target.files[0] });
-    //   };
+    //     e.preventDefault();
+    //     setImageData(e.target.files[0])
+    // }
+    //     // setImageData.append({ image: e.target.files[0] });
+    // //   };
 
 
     const handleSubmit = (e) =>{
@@ -70,6 +72,7 @@ const AddShow = () => {
             ...formData,
             [e.target.id]: e.target.value,
             [e.target.id]: e.target.files[0]
+
 
         })
     }
