@@ -64,7 +64,7 @@ const App = () => {
             <Navigation toggle={themeToggle} icon={iconToggle} username={sessionStorage.getItem('username')}/>
             <Routes>
       {/* Route multiple compponents to the same path */}
-              <Route path='/' element={<><Hero /> <Shows /> <Calendar /></>} />
+              <Route path='/' element={<><Hero /><Calendar /></>} />
               <Route path="*" element={<NotFound/>} />
               <Route path="signin" element={<SignIn/>} />
               <Route path="signup" element={<SignUp/>} />
