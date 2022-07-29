@@ -17,18 +17,25 @@ const AddShow = () => {
         crunchyroll: '',
         funimation: '',
         netflix: '',
-        image: '',
+        image: null,
     }
 
     const [formData, setFormData] = useState(initialFormData)
     const [error, setError] = useState(null)
 
-    const admin = sessionStorage.getItem('admin')
-    function adminCheck() {
-        if (admin !== 'true'){
-        alert('Unauthorized access...')
-        window.location.href = '/';
-    }}
+    // const admin = sessionStorage.getItem('admin')
+    // function adminCheck() {
+    //     if (admin !== 'true'){
+    //     alert('Unauthorized access...')
+    //     window.location.href = '/';
+    // }}
+
+
+    // const onImageChange = (e) => { 
+    //     e.preventDefault()
+    //     initialFormData.append({ image: e.target.files[0] });
+    //   };
+
 
     const handleSubmit = (e) =>{
         e.preventDefault()
@@ -41,6 +48,8 @@ const AddShow = () => {
             }else{
                 setError(null)
                 setFormData(initialFormData)
+                formData.append('image', this.state.image)
+                this.props.handleUploadImage(formData)
                 window.location.href = '/';
             }
 
@@ -52,15 +61,21 @@ const AddShow = () => {
 
     }
 
+
+
+
+
     const handleFormData = (e) => {
         setFormData({
             ...formData,
-            [e.target.id]: e.target.value
+            [e.target.id]: e.target.value,
+            [e.target.id]: e.target.files[0]
+
         })
     }
     return(
         <>
-            {adminCheck()}
+            {/* {adminCheck()} */}
             <Box>
                 <Card>
                     <CardContent>
@@ -85,7 +100,8 @@ const AddShow = () => {
                     <label>Netflix:</label>
                     <input type="checkbox" name="netflix" id="netflix" onChange={handleFormData}/>
                     <label>Upload Image:</label>
-                    <input type="file" name="image" id="image" onChange={handleFormData}/>
+                    <input type="file" name="image" id="image" accept="image/*" multiple={false} onChange={handleFormData}/>
+                    
                     <input type="submit" />
                     </form>
                     </CardContent>
