@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { ThemeProvider } from 'styled-components';
 import {lightTheme, darkTheme, GlobalStyles } from './styled/Global.style.js';
 import LightModeIcon from '@mui/icons-material/LightMode';
@@ -20,36 +20,25 @@ import Footer from './Footer';
 // import Profile from './Profile';
 // import Top10 from './Top10';
 import Shows from './Show';
-import { CircularProgress } from '@mui/material';
-import { getShows } from './services/showServices.js'
+// import { CircularProgress } from '@mui/material';
 
 
 const App = () => {
   // Loading animation
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   // useEffect(() => {
   //   console.log("user is now " + username)
   //   sessionStorage.setItem('username', username)
   // })
 
+
   // useEffect(() => {
-  //   let showList = []
-  //   getShows()
-  //   .then(data => {
-  //       showList.push(data)
-  //       return showList
-  //   })
-  //   .catch(e=> {console.log(e)})
-  // }, [])
-
-
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 800);
-  }, []);
+  //   setLoading(true);
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 800);
+  // }, []);
   // Dark mode toggle
   const [theme, setTheme] = useState('light')
 
@@ -70,12 +59,8 @@ const App = () => {
         <GlobalStyles />
 
       <Router>
-        {loading ? (
-          <CircularProgress />
-        )
-        : (
           <>
-            <Navigation toggle={themeToggle} icon={iconToggle} loading={loading} username={sessionStorage.getItem('username')}/>
+            <Navigation toggle={themeToggle} icon={iconToggle} username={sessionStorage.getItem('username')}/>
             <Routes>
       {/* Route multiple compponents to the same path */}
               <Route path='/' element={<><Hero /> <Shows /> <Calendar /></>} />
@@ -93,7 +78,6 @@ const App = () => {
             </Routes>
             <Footer />
           </>
-        )}
       </Router>
       </ThemeProvider>
     </>
