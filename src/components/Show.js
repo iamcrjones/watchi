@@ -3,23 +3,25 @@ import CardContent from '@mui/material/CardContent';
 import Box from '@mui/material/Box';
 import { Link } from "react-router-dom"
 import { Typography } from '@mui/material';
+
+
 // import { useState, useEffect } from "react";
 // import axios from 'axios';
 
 
-    // useEffect((show) => {
-    //     let showList = []
-    //     getShows()
-    //     .then(data => {
-    //         showList.push(data)
-    //         return showList
-    //     })
-    //     .catch(e=> {console.log(e)})
-    //   }, [])
+    useEffect(() => {
+        let showList = []
+        getShows()
+        .then(data => {
+            showList.push(data)
+            return showList
+        })
+        .catch(e=> {console.log(e)})
+      }, [])
 
 
-    
-    const Shows = ({show}) => {
+
+    const Shows = ({showList}) => {
         return (
            <>
             <Card>

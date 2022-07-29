@@ -33,15 +33,15 @@ const App = () => {
   //   sessionStorage.setItem('username', username)
   // })
 
-  useEffect(() => {
-    let showList = []
-    getShows()
-    .then(data => {
-        showList.push(data)
-        return showList
-    })
-    .catch(e=> {console.log(e)})
-  }, [])
+  // useEffect(() => {
+  //   let showList = []
+  //   getShows()
+  //   .then(data => {
+  //       showList.push(data)
+  //       return showList
+  //   })
+  //   .catch(e=> {console.log(e)})
+  // }, [])
 
 
   useEffect(() => {
