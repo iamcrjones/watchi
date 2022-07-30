@@ -167,16 +167,19 @@ div {
         spaceBetween: 4;
         margin: 4rem auto 4rem auto;
         spacing: 4;
-        maxColumns: 3
+        maxColumns: 3;
+        border: 4px solid yellow;
+        min-width: 200px;
 
     }
 
 
     .top10 {
+        
         display: flex;
         justify-content: space-between;
         align-content: space-around;
-        border: 1px solid red;
+        border: 4px solid green;
         padding: 2rem;
         height: 100%;
     }
