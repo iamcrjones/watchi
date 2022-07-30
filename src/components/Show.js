@@ -5,6 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import { Typography } from '@mui/material';
 import { getShows } from './services/showServices.js'
 import {useState, useEffect} from 'react'
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 
     const initialData = []
     const Shows = () => {
@@ -19,27 +21,30 @@ import {useState, useEffect} from 'react'
             })
             .catch(e=> {console.log(e)})
         },[])
+
+        
         return (
-           <>
+          
+           <Grid container className='top10'>
+                        
+
+            
                 {shows.map(show =>
-                    <Card key={show.id}>
+                <Grid item className="shows" key={show.id}>
 
-                        <Container maxWidth="l">
-
-
-                        <CardContent>
-                            
+                        
+                            <Card>
                             <img src={show.image} alt={show.name} />
-
-                                    <Typography variant="h2">{show.title.toUpperCase()}</Typography>
+                                <Typography variant="h2">{show.title.toUpperCase()}</Typography>
                                 <Typography variant="body1">Dropping:{show.day}</Typography>
                                 <Typography variant="body1">No of Ep: {show.episodes}</Typography>
                                 <Typography variant="body1">{show.rating}</Typography>
-                        </CardContent>
-                    </Card>
-                    </Container>    
+                            </Card>
+                    </Grid>
+                    
                 )}
-            </>
+            
+            </Grid>
         )
 
 

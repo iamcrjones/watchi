@@ -24,14 +24,16 @@ const fonts = {
 }
 export const GlobalStyles = createGlobalStyle`
 
-// div {
-//     border: 1px solid red;
+div {
+    border: 1px solid red;
     
 
     body {
         background-color: ${(props) => props.theme.body};
         color: ${(props) => props.theme.color};
         font-family: ${fonts.exo};
+        margin: 0;
+        padding: 0;
     }
     h1 {
         color: ${pallet.pallet1};
@@ -54,7 +56,7 @@ export const GlobalStyles = createGlobalStyle`
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        width: 100%;
+        width: full;
         position: sticky;
         top: 0;
     }
@@ -144,4 +146,29 @@ export const GlobalStyles = createGlobalStyle`
         height: auto;
         margin-left: 10%;
     }
-`
+
+
+    //Shows & Top 10 styling starts here
+
+   
+
+    .shows {
+        width: 250px;
+        height: 250px;
+        spaceBetween: 4;
+        margin: 4rem auto 4rem auto;
+        spacing: 4;
+        maxColumns: 3
+
+    }
+
+
+    .top10 {
+        justify-content: space-between;
+        align-content: space-around;
+        border: 1px solid red;
+        padding: 4rem;
+        height: 100%;
+    }
+    
+    `;
