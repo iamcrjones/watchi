@@ -11,3 +11,9 @@ export async function addShow(data){
     console.log(response.data)
     return response.data
 }
+
+export async function removeShow(data){
+    const response = await watchiBE.delete(`/shows/${data}`)
+    console.log(response.data)
+    return response.data
+}

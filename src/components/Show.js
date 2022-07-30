@@ -9,6 +9,7 @@ import {useState, useEffect} from 'react'
 import Grid from '@mui/material/Grid';
 
 import AddToWatchlist from './AddToWatchlist.js';
+import RemoveShow from './RemoveShow.js';
 
     const initialData = []
     const Shows = () => {
@@ -65,7 +66,8 @@ import AddToWatchlist from './AddToWatchlist.js';
                                 </Grid>
 
                                 {/* Seperate component so funcitonality of add to watchlist can be seperated */}
-                                <AddToWatchlist/>                
+                                <AddToWatchlist/>   
+                                <RemoveShow />             
                            
                 </Grid>
                 </Card>
