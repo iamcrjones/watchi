@@ -7,11 +7,11 @@ import { getShows } from './services/showServices.js'
 import {useState, useEffect} from 'react'
 // import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-
-import AddToWatchlist from './AddToWatchlist.js';
 import RemoveShow from './RemoveShow.js';
+import Button from '@mui/material/Button';
 
     const initialData = []
+
     const Shows = () => {
         const [shows, setShows] = useState(initialData)
 
@@ -24,8 +24,7 @@ import RemoveShow from './RemoveShow.js';
             })
             .catch(e=> {console.log(e)})
         },[])
-  
-        
+
         return (
             <>
           
@@ -34,39 +33,81 @@ import RemoveShow from './RemoveShow.js';
                 {shows.map(show =>
                 <Card className="shows" >
                 <Grid item  key={show.id}>
-                            
-                            <img src={show.image} alt={show.name} />
-                                <Typography variant="h3">{show.title}</Typography>
-                                
-                                {/* If day equals true show day */}
-                                <p>Release days</p>
-                                {show.monday ? <Typography variant="p">Monday </Typography> : null}
-                                {show.tuesday ? <Typography variant="p">Tuesday </Typography> : null}
-                                {show.wednesday ? <Typography variant="p">Wednesday </Typography> : null}
-                                {show.thursday ? <Typography variant="p">Thursday </Typography> : null}
-                                {show.friday ? <Typography variant="p">Friday </Typography> : null}
-                                {show.saturday ? <Typography variant="p">Saturday </Typography> : null}
-                                {show.sunday ? <Typography variant="p">Sunday </Typography> : null}
 
-                                <Typography variant="p">Drops: {show.day}</Typography>
-                                <Typography variant="p">enddate: {show.enddate}</Typography>
-                                <Grid container  spacing={2}
+                    <Grid item >
+                        <img src={show.image} alt={show.name} />
+                    </Grid>
+
+                    <Grid item>
+                        <Typography variant="h3">{show.title}</Typography>
+                    </Grid>
+
+
+                    <Grid item>
+                        <p>Release days: </p>
+                            {show.monday ? <Typography variant="p">Monday </Typography> : null}
+                            {show.tuesday ? <Typography variant="p">Tuesday </Typography> : null}
+                            {show.wednesday ? <Typography variant="p">Wednesday </Typography> : null}
+                            {show.thursday ? <Typography variant="p">Thursday </Typography> : null}
+                            {show.friday ? <Typography variant="p">Friday </Typography> : null}
+                            {show.saturday ? <Typography variant="p">Saturday </Typography> : null}
+                            {show.sunday ? <Typography variant="p">Sunday </Typography> : null}
+                    </Grid>
+
+                                <Grid item>
+                                <Typography variant="p">Start Date: {show.startdate}</Typography>
+                                </Grid>
+
+                                <Grid item>
+                                <Typography variant="p">End Date: {show.enddate}</Typography>
+                                </Grid>
+                                
+                                <Grid container 
                                 sx={{ 
                                     justifyContent: 'space-between',
                                     textAlign: 'left',
                                     alignItems: 'center',
+                        
                                     }}>
 
-                                <Grid item xs={5} md={5}>
+                                <Grid item xs={6} md={5}>
                                 <Typography variant="p">No of Ep: {show.episodes}</Typography>
                                 </Grid>
-                                <Grid item xs={5} md={5}>
+                                <Grid item xs={6} md={5}>
                                 <Typography variant="p">Rating: {show.rating} </Typography>
                                 </Grid>
                                 </Grid>
 
                                 {/* Seperate component so funcitonality of add to watchlist can be seperated */}
-                                <AddToWatchlist/>   
+
+
+                                <div className="add-to-watchlist" >
+
+
+                                {show.crunchyroll ? 
+                                    <Button variant="contained" className="show-button" sx={{ 
+                                        bgcolor: '#FFBA00',
+                                        }}>
+                                        Add
+                                    </Button> :null}
+
+                                    {show.funimation ? 
+
+                                    <Button variant="contained" className="show-button" sx={{ 
+                                        bgcolor: '#9F4DFF',
+                                        }}>
+                                        Add
+                                    </Button> :null}
+
+                                    {show.netflix ?
+
+                                    <Button variant="contained" className="show-button" sx={{ 
+                                        bgcolor: '#FF0000',
+                                        }}>
+                                        Add
+                                    </Button>  :null}
+                                </div>
+                                
                                 <RemoveShow />             
                            
                 </Grid>
