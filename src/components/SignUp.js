@@ -1,10 +1,13 @@
 import * as React from 'react';
-import { Button, InputLabel, TextField, Typography } from "@mui/material";
+import { Button, TextField, Typography, Box } from "@mui/material";
 import pikachu from '../images/Pikachu-dance.gif';
 import { signUp } from './services/authServices';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import Alert from 'react-popup-alert'
+import { Link } from "react-router-dom";
+import Grid from '@mui/material/Grid';
+import Container from '@mui/material/Container';
 
 const SignUp = () => {
 
@@ -20,7 +23,7 @@ const SignUp = () => {
         }
 
         const [formData, setFormData] = useState(initialFormData)
-        const [error, setError] = useState(null)
+        const  setError = useState(null)
     
     
     
@@ -70,44 +73,129 @@ const SignUp = () => {
             })
         }
 return (
-    <>
-        <Typography variant='h4'>Register user</Typography>
-        {error && <p>{error}</p>}
-        <form onSubmit={handleSubmit}>
-            <div>
-                <InputLabel>Username:</InputLabel>
-                <TextField type="text" name="username" id="username" onChange={handleFormData}/>
-            </div>
-            <div>
-                <InputLabel>Email:</InputLabel>
-                <TextField type="text" name="email" id="email" onChange={handleFormData}/>
-            </div>
-          
-            <div>
-                <InputLabel>First Name:</InputLabel>
-                <TextField type="text" name="firstName" id="firstName" onChange={handleFormData}/>
-            </div>
-            <div>
-                <InputLabel>Last Name:</InputLabel>
-                <TextField type="text" name="lastName" id="lastName" onChange={handleFormData}/>
-            </div>
 
-            <div>
-                <InputLabel htmlFor="password">Password:</InputLabel>
-                <TextField type="password" name="password" id="password" onChange={handleFormData}/>
-            </div>
 
-            <div>
-                <InputLabel htmlFor="password">Password confirmation:</InputLabel>
-                <TextField type="password" name="password_confirmation" id="password_confirmation"  onChange={handleFormData}/>
-            </div>
-           
-            <Button variant="contained" type="submit">Sign up</Button>
-        </form>
-        <img className="signUpPic" src={pikachu} alt="dancing Pikachu"></img>
-    </>
-)
+    <Container maxWidth="l">
+            
+    <Grid container spacing={2} sx={{ 
+        height: '100vh',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        }}>
 
+      <Grid item xs={6}>
+        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>  
+        <h1>Sign Up!</h1>
+
+        <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="firstname"
+                label="First Name"
+                name="firstname"
+                autoComplete="firstname"
+                autoFocus
+                onChange={handleFormData}
+              />
+
+               <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="lastname"
+                label="Last Name"
+                name="lastname"
+                autoComplete="lastname"
+                autoFocus
+                onChange={handleFormData}
+              />
+                
+                <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="username"
+                label="User Name (for others to see)"
+                name="username"
+                autoComplete="username"
+                autoFocus
+                onChange={handleFormData}
+              />
+
+              
+
+      
+        <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                autoFocus
+                onChange={handleFormData}
+              />
+
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                onChange={handleFormData}
+              />
+
+            <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="password_confirmation"
+                label="Confirm Password"
+                type="password"
+                id="password_confirmation"
+                onChange={handleFormData}
+              />
+
+
+
+
+              <Grid container  
+              sx={{ 
+                justifyContent: 'space-between',
+                textAlign: 'center',
+                alignItems: 'center',
+                }}>
+              
+
+                <Grid item >
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                    >
+                    Sign Up
+                    </Button>
+                    </Grid>
+
+                    <Grid item>
+                    <p> Already have an account?</p> <Typography variant="text" component={Link} to="/signin">SignUp?</Typography>
+                    </Grid>
+              </Grid>
+        </Box>
+        
+    </Grid>
+    <Grid item xs={6}>
+    <img className="signInPic" src={pikachu} alt="dancing Pikachu"></img>
+        
+    </Grid>
+    </Grid>
+    </Container>
+  );
 }
 
 

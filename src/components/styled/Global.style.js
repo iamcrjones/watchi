@@ -24,8 +24,8 @@ const fonts = {
 }
 export const GlobalStyles = createGlobalStyle`
 
-div {
-    border: 1px solid red;
+// div {
+//     border: 1px solid red;
     
 
     body {

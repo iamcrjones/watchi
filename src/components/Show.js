@@ -22,9 +22,11 @@ import {useState, useEffect} from 'react'
         return (
            <>
                 {shows.map(show =>
-
-
                     <Card key={show.id}>
+
+                        <Container maxWidth="l">
+
+
                         <CardContent>
                             
                             <img src={show.image} alt={show.name} />
@@ -35,6 +37,7 @@ import {useState, useEffect} from 'react'
                                 <Typography variant="body1">{show.rating}</Typography>
                         </CardContent>
                     </Card>
+                    </Container>    
                 )}
             </>
         )
