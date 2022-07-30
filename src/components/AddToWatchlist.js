@@ -3,7 +3,8 @@ import Button from '@mui/material/Button';
 
 const AddToWatchlist = () => {
     return(
-        <div>
+        <>
+        <div className="add-to-watchlist" >
             <Button variant="contained" className="show-button" sx={{ 
                 bgcolor: '#FFBA00',
                 }}>
@@ -22,6 +23,7 @@ const AddToWatchlist = () => {
                 Add
             </Button>  
         </div>
+        </>
     )
 }   
 

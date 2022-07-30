@@ -163,8 +163,7 @@ div {
    
 
     .shows {
-        width: 250px;
-        height: 250px;
+        display: flex;
         spaceBetween: 4;
         margin: 4rem auto 4rem auto;
         spacing: 4;
@@ -174,14 +173,16 @@ div {
 
 
     .top10 {
+        display: flex;
         justify-content: space-between;
         align-content: space-around;
         border: 1px solid red;
-        padding: 4rem;
+        padding: 2rem;
         height: 100%;
     }
 
     .show-button {
+        display: flex;
         border: none;
         padding: 2px 20px;
         text-align: center;
@@ -190,5 +191,20 @@ div {
         border-radius: 16px;
         font-size: 10px
     }
+
+    .delete-outline {
+        display: flex;
+        margin-top: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+    }
+
+        .add-to-watchlist {
+            display: flex;
+            justify-content: space-around;
+        }
+
+
 
     `;
