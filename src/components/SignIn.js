@@ -56,9 +56,8 @@ const SignIn = () => {
 
 
     return(
-
         <Container maxWidth="l">
-            
+        {error && <h2>{error}</h2>}
         <Grid container spacing={2} sx={{ 
             height: '100vh',
             alignItems: 'center',
