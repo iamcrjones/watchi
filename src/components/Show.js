@@ -1,12 +1,14 @@
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
+// import CardContent from '@mui/material/CardContent';
 // import Box from '@mui/material/Box';
 // import { Link } from "react-router-dom"
 import { Typography } from '@mui/material';
 import { getShows } from './services/showServices.js'
 import {useState, useEffect} from 'react'
-import Container from '@mui/material/Container';
+// import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+
+import AddToWatchlist from './AddToWatchlist.js';
 
     const initialData = []
     const Shows = () => {
@@ -21,44 +23,60 @@ import Grid from '@mui/material/Grid';
             })
             .catch(e=> {console.log(e)})
         },[])
-
+  
         
         return (
+            <>
           
-           <Grid container className='top10'>
-                        
+           <Grid container className='top10' >
 
-            
                 {shows.map(show =>
-                <Grid item className="shows" key={show.id}>
-
-                        
-                            <Card>
+                <Card className="shows" >
+                <Grid item  key={show.id}>
+                            
                             <img src={show.image} alt={show.name} />
-                                <Typography variant="h2">{show.title.toUpperCase()}</Typography>
-                                <Typography variant="body1">Dropping:{show.day}</Typography>
-                                <Typography variant="body1">No of Ep: {show.episodes}</Typography>
-                                <Typography variant="body1">{show.rating}</Typography>
-                            </Card>
-                    </Grid>
+                                <Typography variant="h3">{show.title}</Typography>
+                                
+                                {/* If day equals true show day */}
+                                <p>Release days</p>
+                                {show.monday ? <Typography variant="p">Monday </Typography> : null}
+                                {show.tuesday ? <Typography variant="p">Tuesday </Typography> : null}
+                                {show.wednesday ? <Typography variant="p">Wednesday </Typography> : null}
+                                {show.thursday ? <Typography variant="p">Thursday </Typography> : null}
+                                {show.friday ? <Typography variant="p">Friday </Typography> : null}
+                                {show.saturday ? <Typography variant="p">Saturday </Typography> : null}
+                                {show.sunday ? <Typography variant="p">Sunday </Typography> : null}
+
+                                <Typography variant="p">Drops: {show.day}</Typography>
+                                <Typography variant="p">enddate: {show.enddate}</Typography>
+                                <Grid container  spacing={2}
+                                sx={{ 
+                                    justifyContent: 'space-between',
+                                    textAlign: 'left',
+                                    alignItems: 'center',
+                                    }}>
+
+                                <Grid item xs={5} md={5}>
+                                <Typography variant="p">No of Ep: {show.episodes}</Typography>
+                                </Grid>
+                                <Grid item xs={5} md={5}>
+                                <Typography variant="p">Rating: {show.rating} </Typography>
+                                </Grid>
+                                </Grid>
+
+                                {/* Seperate component so funcitonality of add to watchlist can be seperated */}
+                                <AddToWatchlist/>                
+                           
+                </Grid>
+                </Card>
                     
                 )}
             
             </Grid>
+            </>
         )
-
-
-// {/* //     // const getRating = () => {
-// //     //     getRating(rating)
-// //     //     let total = 0;
-// //     //     for(let i = 0; i < data.length; i++){
-// //     //         total += data[i].rating;
-// //     //     }
-// //     //     let average = total / data.length;
-// //     //     return average;
-// //     //  */}
-
     }
+
 
 
 export default Shows;

@@ -46,7 +46,17 @@ div {
         font-size: 2rem;
     }
 
+    h3 {
+        color: ${pallet.pallet1};
+        font-family: ${fonts.bangers};
+        font-size: 0.5rem;
+    }
+
     h4 {
+        font-family: ${fonts.Exo};
+    }
+
+    p {
         font-family: ${fonts.Exo};
     }
 
@@ -170,5 +180,15 @@ div {
         padding: 4rem;
         height: 100%;
     }
-    
+
+    .show-button {
+        border: none;
+        padding: 2px 20px;
+        text-align: center;
+        display: inline-block;
+        margin: 4px 2px;
+        border-radius: 16px;
+        font-size: 10px
+    }
+
     `;
