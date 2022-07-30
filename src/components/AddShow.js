@@ -51,14 +51,15 @@ const AddShow = () => {
                 setError(null)
                 setFormData(initialFormData)
                 formData.append('image', this.state.image)
-                this.props.handleUploadImage(formData)
+                this.props.handleUploadImage(initialFormData)
                 window.location.href = '/';
             }
-
         })
+
         .catch(e=> {
+            console.log(e.response.data.error)
             setError(e.response.data.error)
-            console.log(e.response.data)
+            // console.log(e.response.data)
         })
 
     }
