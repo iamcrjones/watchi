@@ -35,7 +35,8 @@ import Button from '@mui/material/Button';
                 <Grid item  key={show.id}>
 
                     <Grid item >
-                        <img src={show.image} alt={show.name} />
+                        <img src={show.attributes.picture_url} alt={show.name} />
+                        
                     </Grid>
 
                     <Grid item>
