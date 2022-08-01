@@ -44,21 +44,21 @@ import Button from '@mui/material/Button';
 
                     <Grid item>
                         <p>Release days: </p>
-                            {show.monday ? <Typography variant="p">Monday </Typography> : null}
-                            {show.tuesday ? <Typography variant="p">Tuesday </Typography> : null}
-                            {show.wednesday ? <Typography variant="p">Wednesday </Typography> : null}
-                            {show.thursday ? <Typography variant="p">Thursday </Typography> : null}
-                            {show.friday ? <Typography variant="p">Friday </Typography> : null}
-                            {show.saturday ? <Typography variant="p">Saturday </Typography> : null}
-                            {show.sunday ? <Typography variant="p">Sunday </Typography> : null}
+                            {show.attributes.monday ? <Typography variant="p">Monday </Typography> : null}
+                            {show.attributes.tuesday ? <Typography variant="p">Tuesday </Typography> : null}
+                            {show.attributes.wednesday ? <Typography variant="p">Wednesday </Typography> : null}
+                            {show.attributes.thursday ? <Typography variant="p">Thursday </Typography> : null}
+                            {show.attributes.friday ? <Typography variant="p">Friday </Typography> : null}
+                            {show.attributes.saturday ? <Typography variant="p">Saturday </Typography> : null}
+                            {show.attributes.sunday ? <Typography variant="p">Sunday </Typography> : null}
                     </Grid>
 
                                 <Grid item>
-                                <Typography variant="p">Start Date: {show.startdate}</Typography>
+                                <Typography variant="p">Start Date: {show.attributes.startdate}</Typography>
                                 </Grid>
 
                                 <Grid item>
-                                <Typography variant="p">End Date: {show.enddate}</Typography>
+                                <Typography variant="p">End Date: {show.attributes.enddate}</Typography>
                                 </Grid>
                                 
                                 <Grid container 
@@ -70,10 +70,10 @@ import Button from '@mui/material/Button';
                                     }}>
 
                                 <Grid item xs={6} md={5}>
-                                <Typography variant="p">No of Ep: {show.episodes}</Typography>
+                                <Typography variant="p">No of Ep: {show.attributes.episodes}</Typography>
                                 </Grid>
                                 <Grid item xs={6} md={5}>
-                                <Typography variant="p">Rating: {show.rating} </Typography>
+                                <Typography variant="p">Rating: {show.attributes.rating} </Typography>
                                 </Grid>
                                 </Grid>
 
@@ -87,14 +87,14 @@ import Button from '@mui/material/Button';
                         
                                     }}>
 
-                                    {show.crunchyroll ? 
+                                    {show.attributes.crunchyroll ? 
                                     <Button variant="contained" className="show-button" sx={{ 
                                         bgcolor: '#FFBA00',
                                         }}>
                                         Add
                                     </Button> :null}
 
-                                    {show.funimation ? 
+                                    {show.attributes.funimation ? 
 
                                     <Button variant="contained" className="show-button" sx={{ 
                                         bgcolor: '#9F4DFF',
@@ -102,7 +102,7 @@ import Button from '@mui/material/Button';
                                         Add
                                     </Button> :null}
 
-                                    {show.netflix ?
+                                    {show.attributes.netflix ?
 
                                     <Button variant="contained" className="show-button" sx={{ 
                                         bgcolor: '#FF0000',
