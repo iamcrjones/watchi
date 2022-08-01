@@ -1,64 +1,71 @@
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import { Box } from '@mui/material';
+import { useState } from "react"
+import { addReview } from './services/reviewServices';
+
+
 const AddReview = () => {
-            const initialFormData = {
-                message: '',
-                rating: '',
-                username: '',
-                // {show.id}: '',
+
+    const userId = sessionStorage.getItem('userId')
+
+    // function userCheck() {
+    //     if (!user) {
+    //         alert('Unauthorized access...')
+    //         window.location.href = '/';
+    //     }
+
+    const [error, setError] = useState(null)
+
+    const handleSubmit = (e) =>{
+        e.preventDefault()
+        const data = new FormData()
+        data.append("rating", e.target.rating.value)
+        data.append("message", e.target.message.value)
+        data.append("user", userId)
+        // data.append("show", showId)
+   
+        addReview(data)
+        .then((review) => {
+            if(review.error){
+                setError(review.error)
+            }else{
+                setError(null)
+              
+
             }
-        
-            const [formData, setFormData] = useState(initialFormData)
-            const [error, setError] = useState(null)
-        
-            const handleSubmit = (e) =>{
-                e.preventDefault()
-                console.log(formData)
-                addShow(formData)
-                .then((show) => {
-                    console.log(show)
-                    if(show.error){
-                        setError(show.error)
-                    }else{
-                        setError(null)
-                        setFormData(initialFormData)
-                        window.location.href = '/';
-                    }
-        
-                })
-                .catch(e=> {
-                    setError(e.response.data.error)
-                    console.log(e.response.data)
-                })
-        
-            }
-        
-            const handleFormData = (e) => {
-                setFormData({
-                    ...formData,
-                    [e.target.id]: e.target.value
-                })
-            }
-            return(
-                <>
-                    <Box>
-                        <Card>
-                            <CardContent>
-                        <h1>Add Review</h1>
-                        {error && <h3>{error}</h3>}
-                        <form onSubmit={handleSubmit}>
-                            <label>Review:</label>
-                            <input type="text" name="message" id="message" onChange={handleFormData}/>
-                            <label>Rating:</label>
-                            <input type="text" name="rating" id="rating" onChange={handleFormData}/>
-                            <label>Username:</label>
-                            <input type="text" name="username" id="username" onChange={handleFormData}/>
-                            <input type="submit" value="Add Review" />
-                            </form>
-                            </CardContent>
-                        </Card>
-                    </Box>
-                </>
-        
-            )
-        }
+        })
+        .catch(e=> {
+            console.log(data)
+            console.log(e.response)
+            console.log(e)
+            setError(e.response.data.error)
+
+        })
+
+    }
+
+    return(
+        <>
+            <Box>
+                <Card>
+                    <CardContent>
+                <h1>Add Review</h1>
+                {error && <h3>{error}</h3>}
+                <form onSubmit={handleSubmit}>
+                    <label>Description:</label>
+                    <input type="text" name="message" id="message" />
+                    <label>Rating:</label>
+                    <input type="text" name="rating" id="rating" />
+                    <input type="submit" />
+                    </form>
+                    </CardContent>
+                </Card>
+            </Box>
+        </>
+
+    )
+}
 
 export default AddReview;

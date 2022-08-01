@@ -9,6 +9,9 @@ import {useState, useEffect} from 'react'
 import Grid from '@mui/material/Grid';
 import RemoveShow from './RemoveShow.js';
 import Button from '@mui/material/Button';
+import React from 'react';
+import 'reactjs-popup/dist/index.css';
+import AddReview from './AddReview.js';
 
     const initialData = []
 
@@ -30,7 +33,7 @@ import Button from '@mui/material/Button';
           
            <Grid container className='top10'>
                 {shows.map(show =>
-                <Card className="shows"key={show.id} >
+                <Card className="shows"key={show.attributes.id} >
                 <Grid item >
 
                     <Grid item >
@@ -38,7 +41,7 @@ import Button from '@mui/material/Button';
                     </Grid>
 
                     <Grid item>
-                        <Typography variant="h3">{show.attributes.title}</Typography>
+                        <Typography variant="h3">{show.title}</Typography>
                     </Grid>
 
 
@@ -54,7 +57,7 @@ import Button from '@mui/material/Button';
                     </Grid>
 
                                 <Grid item>
-                                <Typography variant="p">Start Date: {show.attributes.startdate}</Typography>
+                                <Typography variant="p">Start Date: {show.attributes.airdate}</Typography>
                                 </Grid>
 
                                 <Grid item>
@@ -111,9 +114,10 @@ import Button from '@mui/material/Button';
                                     </Button>  :null}
                                 
 
-                                </Grid>
-                                <RemoveShow />             
-                                <RemoveShow id={show.id}/>             
+                                </Grid>           
+                                <RemoveShow id={show.id}/>
+                                <AddReview  id={show.id}/>
+                                
 
                            
                 </Grid>

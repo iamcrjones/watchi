@@ -45,7 +45,7 @@ const AddShow = () => {
         data.append("description", e.target.description.value)
         data.append("episodes", e.target.episodes.value)
         data.append("picture", e.target.picture.files[0])
-        data.append("startdate", e.target.startdate.value)
+        // data.append("airdate", e.target.airdate.value)
         data.append("monday", e.target.monday.checked)
         data.append("tuesday", e.target.tuesday.checked)
         data.append("wednesday", e.target.wednesday.checked)
@@ -70,11 +70,10 @@ const AddShow = () => {
             }
         })
         .catch(e=> {
-            console.log(e)
             console.log(e.response)
             console.log(e)
             setError(e.response.data.error)
-            // console.log(e.response.data)
+
         })
 
     }
@@ -104,15 +103,10 @@ const AddShow = () => {
                     <input type="text" name="description" id="description" />
                     <label>Number of Episodes:</label>
                     <input type="text" name="episodes" id="episodes" />
-
-    
-
                     <label>Start Date:</label>
-                    <input type="date" name="startdate" id="startdate"/>
+                    <input type="date" name="airdate" id="airdate"/>
                     <label>End Date:</label>
                     <input type="date" name="enddate" id="enddate" />
-
-
                     <label>M:</label>
                     <input type="checkbox" name="monday" id="monday" />
                     <label>T:</label>
