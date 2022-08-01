@@ -28,19 +28,17 @@ import Button from '@mui/material/Button';
         return (
             <>
           
-           <Grid container className='top10' >
-
+           <Grid container className='top10'>
                 {shows.map(show =>
-                <Card className="shows" >
-                <Grid item  key={show.id}>
+                <Card className="shows"key={show.id} >
+                <Grid item >
 
                     <Grid item >
-                        <img src={show.attributes.picture_url} alt={show.name} />
-                        
+                        <img src={show.attributes.picture_url} alt={show.attributes.title} /> 
                     </Grid>
 
                     <Grid item>
-                        <Typography variant="h3">{show.title}</Typography>
+                        <Typography variant="h3">{show.attributes.title}</Typography>
                     </Grid>
 
 
@@ -79,13 +77,17 @@ import Button from '@mui/material/Button';
                                 </Grid>
                                 </Grid>
 
-                                {/* Seperate component so funcitonality of add to watchlist can be seperated */}
+                           
 
 
-                                <div className="add-to-watchlist" >
+                                <Grid item ="add-to-watchlist" 
+                                
+                                sx={{ 
+                                    border: '4px solid purple',
+                        
+                                    }}>
 
-
-                                {show.crunchyroll ? 
+                                    {show.crunchyroll ? 
                                     <Button variant="contained" className="show-button" sx={{ 
                                         bgcolor: '#FFBA00',
                                         }}>
@@ -107,8 +109,8 @@ import Button from '@mui/material/Button';
                                         }}>
                                         Add
                                     </Button>  :null}
-                                </div>
                                 
+                                </Grid>
                                 <RemoveShow />             
                            
                 </Grid>

@@ -42,9 +42,22 @@ const AddShow = () => {
         // console.log(formData)
         const data = new FormData()
         data.append("title", e.target.title.value)
-        data.append("description", e.target.title.value)
+        data.append("description", e.target.description.value)
         data.append("episodes", e.target.episodes.value)
         data.append("picture", e.target.picture.files[0])
+        data.append("startdate", e.target.startdate.value)
+        data.append("monday", e.target.monday.checked)
+        data.append("tuesday", e.target.tuesday.checked)
+        data.append("wednesday", e.target.wednesday.checked)
+        data.append("thursday", e.target.thursday.checked)
+        data.append("friday", e.target.friday.checked)
+        data.append("saturday", e.target.saturday.checked)
+        data.append("sunday", e.target.sunday.checked)
+        data.append("enddate", e.target.enddate.value)
+        data.append("crunchyroll", e.target.crunchyroll.checked)
+        data.append("funimation", e.target.funimation.checked)
+        data.append("netflix", e.target.netflix.checked)
+
         addShow(data)
         .then((show) => {
             if(show.error){
@@ -57,6 +70,7 @@ const AddShow = () => {
             }
         })
         .catch(e=> {
+            console.log(e)
             console.log(e.response)
             console.log(e)
             setError(e.response.data.error)
@@ -94,7 +108,7 @@ const AddShow = () => {
     
 
                     <label>Start Date:</label>
-                    <input type="date" name="day" id="day"/>
+                    <input type="date" name="startdate" id="startdate"/>
                     <label>End Date:</label>
                     <input type="date" name="enddate" id="enddate" />
 
