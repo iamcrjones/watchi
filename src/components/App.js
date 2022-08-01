@@ -19,7 +19,8 @@ import AddReview from './AddReview';
 import Footer from './Footer';
 // import Profile from './Profile';
 // import Top10 from './Top10';
-import Shows from './Show';
+import Shows from './Shows';
+import IndividualShow from './IndividualShow'
 // import { CircularProgress } from '@mui/material';
 
 
@@ -39,7 +40,12 @@ const App = () => {
   //     setLoading(false);
   //   }, 800);
   // }, []);
+  const [ID, setID] = useState(null);
+  const sendID = (showId) => {
+    setID(showId)
+  }
   // Dark mode toggle
+
   const [theme, setTheme] = useState('light')
 
   const themeToggle = () => {
@@ -64,16 +70,17 @@ const App = () => {
             <Routes>
       {/* Route multiple compponents to the same path */}
 
-              <Route path='/' element={<><Hero /> <Shows /><Calendar /></>} />
-              <Route path='/' element={<><Hero /><Calendar /></>} />
+              <Route path='/' element={<><Hero /> <Shows sendID={sendID}/><Calendar /></>} />
+              {/* <Route path='/' element={<><Hero /><Calendar /></>} /> */}
               <Route path="*" element={<NotFound/>} />
               <Route path="signin" element={<SignIn/>} />
               <Route path="signup" element={<SignUp/>} />
               <Route path="AddShow" element={<AddShow/>} />
               <Route path="about" element={<About/>} />
               <Route path="Watchlist" element={<Watchlist/>} />
-              <Route path ="Show" element={<Shows/>} />
-              <Route path="AddReview" element={<AddReview/>} />
+              <Route path ="shows" element={<Shows />} />
+              <Route path="/show/:showId" element={<IndividualShow id={ID} />} />
+              {/* <Route path="AddReview" element={<AddReview/>} /> */}
               {/* <Route path="EditUsers" element={<EditUsers/>} /> */}
               {/* <Route path="Profile" element={<Profile/>} /> */}
 

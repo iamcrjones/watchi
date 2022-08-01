@@ -9,13 +9,12 @@ import {useState, useEffect} from 'react'
 import Grid from '@mui/material/Grid';
 import RemoveShow from './RemoveShow.js';
 import Button from '@mui/material/Button';
-import React from 'react';
-import 'reactjs-popup/dist/index.css';
-import AddReview from './AddReview.js';
+import { Link } from 'react-router-dom';
+
 
     const initialData = []
 
-    const Shows = () => {
+    const Shows = ({sendID}) => {
         const [shows, setShows] = useState(initialData)
 
         useEffect(() => {
@@ -28,32 +27,35 @@ import AddReview from './AddReview.js';
             .catch(e=> {console.log(e)})
         },[])
 
+        console.log(shows)
+
         return (
             <>
-          
            <Grid container className='top10'>
                 {shows.map(show =>
-                <Card className="shows"key={show.attributes.id} >
+                <Card className="shows" key={show.attributes.id} >
                 <Grid item >
 
                     <Grid item >
-                        <img src={show.attributes.picture_url} alt={show.attributes.title} /> 
+                        <img src={show.attributes.picture_url} alt={show.attributes.title} />
                     </Grid>
 
                     <Grid item>
-                        <Typography variant="h3">{show.title}</Typography>
+                        <Link to={`/show/${show.attributes.id}`} onClick={() => {sessionStorage.setItem('currentShow', show.attributes.id)}}>{<Typography variant="h3">{show.attributes.title}</Typography>}</Link>
                     </Grid>
 
 
                     <Grid item>
                         <p>Release days: </p>
-                            {show.attributes.monday ? <Typography variant="p">Monday </Typography> : null}
-                            {show.attributes.tuesday ? <Typography variant="p">Tuesday </Typography> : null}
-                            {show.attributes.wednesday ? <Typography variant="p">Wednesday </Typography> : null}
-                            {show.attributes.thursday ? <Typography variant="p">Thursday </Typography> : null}
-                            {show.attributes.friday ? <Typography variant="p">Friday </Typography> : null}
-                            {show.attributes.saturday ? <Typography variant="p">Saturday </Typography> : null}
-                            {show.attributes.sunday ? <Typography variant="p">Sunday </Typography> : null}
+
+
+                            {show.attributes.picture.record.monday ? <Typography variant="p">Monday </Typography> : null}
+                            {show.attributes.picture.record.tuesday ? <Typography variant="p">Tuesday </Typography> : null}
+                            {show.attributes.picture.record.wednesday ? <Typography variant="p">Wednesday </Typography> : null}
+                            {show.attributes.picture.record.thursday ? <Typography variant="p">Thursday </Typography> : null}
+                            {show.attributes.picture.record.friday ? <Typography variant="p">Friday </Typography> : null}
+                            {show.attributes.picture.record.saturday ? <Typography variant="p">Saturday </Typography> : null}
+                            {show.attributes.picture.record.sunday ? <Typography variant="p">Sunday </Typography> : null}
                     </Grid>
 
                                 <Grid item>
@@ -114,10 +116,13 @@ import AddReview from './AddReview.js';
                                     </Button>  :null}
                                 
 
-                                </Grid>           
+                                </Grid>
                                 <RemoveShow id={show.id}/>
-                                <AddReview  id={show.id}/>
+
+
+
                                 
+                                           
 
                            
                 </Grid>

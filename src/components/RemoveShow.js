@@ -19,6 +19,9 @@ const RemoveShow = ({id}) => {
                     setError(show.error)
                 }else{
                     setError(null)
+                    alert('Show deleted successfully')
+                    window.location.href = '/'
+
                 }
         })
         .catch(e=> {
