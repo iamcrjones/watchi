@@ -117,12 +117,16 @@ import { Link } from 'react-router-dom';
                                 
 
                                 </Grid>
+<<<<<<< HEAD:src/components/Shows.js
                                 <RemoveShow id={show.id}/>
 
 
 
                                 
                                            
+=======
+                                <RemoveShow id={show.id}/>             
+>>>>>>> b87dce88f4ca5088098607287d5da7ae4a0c7416:src/components/Show.js
 
                            
                 </Grid>
