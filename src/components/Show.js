@@ -110,8 +110,11 @@ import Button from '@mui/material/Button';
                                         Add
                                     </Button>  :null}
                                 
+
                                 </Grid>
                                 <RemoveShow />             
+                                <RemoveShow id={show.id}/>             
+
                            
                 </Grid>
                 </Card>
