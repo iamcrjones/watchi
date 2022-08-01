@@ -9,10 +9,12 @@ import {useState, useEffect} from 'react'
 import Grid from '@mui/material/Grid';
 import RemoveShow from './RemoveShow.js';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
+
 
     const initialData = []
 
-    const Shows = () => {
+    const Shows = ({sendID}) => {
         const [shows, setShows] = useState(initialData)
 
         useEffect(() => {
@@ -27,18 +29,17 @@ import Button from '@mui/material/Button';
 
         return (
             <>
-          
            <Grid container className='top10'>
                 {shows.map(show =>
-                <Card className="shows"key={show.id} >
+                <Card className="shows"key={show.attributes.id} >
                 <Grid item >
 
                     <Grid item >
-                        <img src={show.attributes.picture_url} alt={show.attributes.title} /> 
+                        <img src={show.attributes.picture_url} alt={show.attributes.title} />
                     </Grid>
 
                     <Grid item>
-                        <Typography variant="h3">{show.attributes.title}</Typography>
+                        <Link to={`/show/${show.attributes.id}`} onClick={() => sendID(show.attributes.id)}>{<Typography variant="h3">{show.attributes.title}</Typography>}</Link>
                     </Grid>
 
 
