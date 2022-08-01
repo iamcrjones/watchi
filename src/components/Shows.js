@@ -47,8 +47,6 @@ import { Link } from 'react-router-dom';
 
                     <Grid item>
                         <p>Release days: </p>
-
-
                             {show.attributes.picture.record.monday ? <Typography variant="p">Monday </Typography> : null}
                             {show.attributes.picture.record.tuesday ? <Typography variant="p">Tuesday </Typography> : null}
                             {show.attributes.picture.record.wednesday ? <Typography variant="p">Wednesday </Typography> : null}
@@ -58,8 +56,10 @@ import { Link } from 'react-router-dom';
                             {show.attributes.picture.record.sunday ? <Typography variant="p">Sunday </Typography> : null}
                     </Grid>
 
+
                                 <Grid item>
-                                <Typography variant="p">Start Date: {show.attributes.airdate}</Typography>
+                                <Typography variant="p">Start Date: {show.attributes.startdate}</Typography>
+
                                 </Grid>
 
                                 <Grid item>
@@ -118,11 +118,6 @@ import { Link } from 'react-router-dom';
 
                                 </Grid>
                                 <RemoveShow id={show.id}/>
-
-
-
-                                
-                                           
 
                            
                 </Grid>
