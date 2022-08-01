@@ -172,7 +172,13 @@ div {
         min-width: 200px;
 
     }
-
+    .shows img {
+        width: 250px;
+        height: 250px;
+        border: 4px;
+        min-width: 200px;
+        object-fit: cover;
+    }
 
     .top10 {
         
