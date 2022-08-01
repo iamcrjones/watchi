@@ -109,7 +109,7 @@ import Button from '@mui/material/Button';
                                     </Button>  :null}
                                 </div>
                                 
-                                <RemoveShow />             
+                                <RemoveShow id={show.id}/>             
                            
                 </Grid>
                 </Card>
