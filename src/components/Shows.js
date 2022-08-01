@@ -27,6 +27,8 @@ import { Link } from 'react-router-dom';
             .catch(e=> {console.log(e)})
         },[])
 
+        console.log(shows)
+
         return (
             <>
            <Grid container className='top10'>
@@ -45,17 +47,19 @@ import { Link } from 'react-router-dom';
 
                     <Grid item>
                         <p>Release days: </p>
-                            {show.attributes.monday ? <Typography variant="p">Monday </Typography> : null}
-                            {show.attributes.tuesday ? <Typography variant="p">Tuesday </Typography> : null}
-                            {show.attributes.wednesday ? <Typography variant="p">Wednesday </Typography> : null}
-                            {show.attributes.thursday ? <Typography variant="p">Thursday </Typography> : null}
-                            {show.attributes.friday ? <Typography variant="p">Friday </Typography> : null}
-                            {show.attributes.saturday ? <Typography variant="p">Saturday </Typography> : null}
-                            {show.attributes.sunday ? <Typography variant="p">Sunday </Typography> : null}
+                            {show.attributes.picture.record.monday ? <Typography variant="p">Monday </Typography> : null}
+                            {show.attributes.picture.record.tuesday ? <Typography variant="p">Tuesday </Typography> : null}
+                            {show.attributes.picture.record.wednesday ? <Typography variant="p">Wednesday </Typography> : null}
+                            {show.attributes.picture.record.thursday ? <Typography variant="p">Thursday </Typography> : null}
+                            {show.attributes.picture.record.friday ? <Typography variant="p">Friday </Typography> : null}
+                            {show.attributes.picture.record.saturday ? <Typography variant="p">Saturday </Typography> : null}
+                            {show.attributes.picture.record.sunday ? <Typography variant="p">Sunday </Typography> : null}
                     </Grid>
+
 
                                 <Grid item>
                                 <Typography variant="p">Start Date: {show.attributes.startdate}</Typography>
+
                                 </Grid>
 
                                 <Grid item>
@@ -113,7 +117,7 @@ import { Link } from 'react-router-dom';
                                 
 
                                 </Grid>
-                                <RemoveShow id={show.id}/>             
+                                <RemoveShow id={show.id}/>
 
                            
                 </Grid>

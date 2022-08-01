@@ -14,7 +14,7 @@ import AddShow from './AddShow';
 import About from './About';
 import Hero from './Hero';
 import Watchlist from './Watchlist';
-// import AddReview from './AddReview';
+import AddReview from './AddReview';
 // import EditUsers from './EditUsers';
 import Footer from './Footer';
 // import Profile from './Profile';

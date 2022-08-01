@@ -1,5 +1,4 @@
 import * as React from 'react';
-//import { removeShow } from './services/showServices';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { removeShow } from './services/showServices';
 import { useState } from 'react'
@@ -20,6 +19,9 @@ const RemoveShow = ({id}) => {
                     setError(show.error)
                 }else{
                     setError(null)
+                    alert('Show deleted successfully')
+                    window.location.href = '/'
+
                 }
         })
         .catch(e=> {
