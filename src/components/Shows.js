@@ -31,7 +31,7 @@ import { Link } from 'react-router-dom';
             <>
            <Grid container className='top10'>
                 {shows.map(show =>
-                <Card className="shows"key={show.attributes.id} >
+                <Card className="shows" key={show.attributes.id} >
                 <Grid item >
 
                     <Grid item >
@@ -39,7 +39,7 @@ import { Link } from 'react-router-dom';
                     </Grid>
 
                     <Grid item>
-                        <Link to={`/show/${show.attributes.id}`} onClick={() => sendID(show.attributes.id)}>{<Typography variant="h3">{show.attributes.title}</Typography>}</Link>
+                        <Link to={`/show/${show.attributes.id}`} onClick={() => {sessionStorage.setItem('currentShow', show.attributes.id)}}>{<Typography variant="h3">{show.attributes.title}</Typography>}</Link>
                     </Grid>
 
 
@@ -113,7 +113,6 @@ import { Link } from 'react-router-dom';
                                 
 
                                 </Grid>
-                                <RemoveShow />             
                                 <RemoveShow id={show.id}/>             
 
                            
