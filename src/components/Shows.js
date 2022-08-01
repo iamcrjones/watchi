@@ -58,8 +58,8 @@ import { Link } from 'react-router-dom';
 
 
                                 <Grid item>
-                                <Typography variant="p">Start Date: {show.attributes.startdate}</Typography>
 
+                                <Typography variant="p">Start Date: {show.attributes.startdate}</Typography>
                                 </Grid>
 
                                 <Grid item>
@@ -117,7 +117,9 @@ import { Link } from 'react-router-dom';
                                 
 
                                 </Grid>
+
                                 <RemoveShow id={show.id}/>
+
 
                            
                 </Grid>
