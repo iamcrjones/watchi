@@ -12,39 +12,11 @@ import Typography from '@mui/material/Typography';
 
 
 const AddShow = () => {
-    // const initialFormData = {
-    //     title: '',
-    //     description: '',
-    //     episodes: '',
-    //     airdate: '',
-    //     monday: '',
-    //     tuesday: '',
-    //     wednesday: '',
-    //     thursday: '',
-    //     friday: '',
-    //     saturday: '',
-    //     sunday: '',
-    //     enddate: '',
-    //     crunchyroll: '',
-    //     funimation: '',
-    //     netflix: '',
-    //     picture: null
-    // }
-
-    // const [formData, setFormData] = useState(initialFormData)
 
     const [error, setError] = useState(null)
 
-    // const admin = sessionStorage.getItem('admin')
-    // function adminCheck() {
-    //     if (admin !== 'true'){
-    //     alert('Unauthorized access...')
-    //     window.location.href = '/';
-    // }}
-
     const handleSubmit = (e) =>{
         e.preventDefault()
-        // console.log(formData)
         const data = new FormData()
         data.append("title", e.target.title.value)
         data.append("description", e.target.description.value)
@@ -75,29 +47,21 @@ const AddShow = () => {
             console.log(e.response)
             console.log(e)
             setError(e.response.data.error)
+            alert(error)
+            window.location.href="/"
+
 
         })
 
     }
 
-
-
-
-    // const handleFormData = (e) => {
-    //     setFormData({
-    //         ...formData,
-    //         [e.target.id]: e.target.value,
-    //         // [e.target.id]: e.target.files[0]
-    //     })
-    // }
     return(
 
         <Container>
-        {error && <h3>{error}</h3>}
-        <Grid container spacing={2} sx={{ 
+        <Grid container spacing={2} sx={{
             justifyContent: 'center'
             }}>
-    
+
           <Grid item xs={6}>
             <Box component="form" onSubmit={handleSubmit}  sx={{ mt: 1 }}>  
             <h1>Add Show</h1>
