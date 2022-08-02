@@ -28,10 +28,6 @@ import { Link } from 'react-router-dom';
         },[])
 
 
-        // const [searchTerm, setSearchTerm] = useState('')
-
-
-
         return (
             <>
 
