@@ -69,6 +69,7 @@ div {
         width: full;
         position: sticky;
         top: 0;
+        z-index: 1;
     }
     .navLogo {
         width: 150px;
@@ -198,7 +199,7 @@ div {
         display: inline-block;
         margin: 4px 2px;
         border-radius: 16px;
-        font-size: 10px
+        font-size: 10px;
     }
 
     .delete-outline {
@@ -209,9 +210,42 @@ div {
         justify-content: right;
     }
 
-        .add-to-watchlist {
-            display: flex;
-            justify-content: space-around;
-        }
+    .add-to-watchlist {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .showContainer {
+        margin-top: 2rem;
+        // text-align: center;
+    }
+
+    .fullShowImage {
+        width: 10rem;
+        height: 14rem;
+        border: 1px solid black;
+        box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 40%), 0px 4px 5px 0px rgb(0 0 0 / 22%), 0px 1px 10px 0px rgb(0 0 0 / 25%);
+        margin-left: 1rem;
+    }
+    .fullShowHeader {
+        margin: 0;
+        padding-top: 0.5rem;
+    }
+
+    .showInfo {
+        display: flex;
+        justify-content: space-between;
+    }
+    .showTextInfo {
+        padding-right: 2.25rem;
+    }
+    .showDescription {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .showReviewContainer {
+        text-align: center;
+    }
+
 
     `;

@@ -67,9 +67,6 @@ const AddShow = () => {
                 setError(show.error)
             }else{
                 setError(null)
-                // setFormData(initialFormData)
-                // formData.append({ image: e.target.files[0] })
-                window.location.href = '/';
             }
         })
         .catch(e=> {
