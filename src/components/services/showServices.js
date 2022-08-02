@@ -28,4 +28,10 @@ export async function removeShow(data){
     return response.data
 }
 
+export async function addShowToWatchShow(data){
+    const response = await watchiBE.post('/watchshows', data)
+    console.log(response.data)
+    return response.data
+}
+
 

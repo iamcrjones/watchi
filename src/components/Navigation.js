@@ -4,6 +4,7 @@ import logo from '../images/nav-logo.png'
 import { AppBar, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 
+
 const Navigation = ({toggle, icon, loading, username}) => { 
 
 
@@ -23,7 +24,7 @@ const Navigation = ({toggle, icon, loading, username}) => {
     });
 
     return(
-        <AppBar position="static">
+        <AppBar position="static" className="nav">
             {/* <div className="navContainer"> */}
                 <img className="navLogo" src={logo} alt="logo"></img>
                 {isDesktop ? (

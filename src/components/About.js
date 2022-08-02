@@ -21,10 +21,8 @@ const About = () => {
                     </div>
             <div className="aboutHero">
                     <img className="AboutPic" src={aboutHero} alt="lots of different Anime characters merged in one"></img>
-            </div>
-                    
+            </div>       
         </div>
-
         <br/>
         <br/>
         <Box>
