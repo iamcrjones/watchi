@@ -29,9 +29,18 @@ import { Link } from 'react-router-dom';
 
         console.log(shows)
 
+        // const [searchTerm, setSearchTerm] = useState('')
+
+
+
         return (
             <>
+
+            {/* <div className="search"><input type="text" placeholder="Search..." onChange={event =>{setSearchTerm(event.target.value)}}/> </div> */}
+
            <Grid container className='top10'>
+                
+                
                 {shows.map(show =>
                 <Card className="shows" key={show.attributes.id} >
                 <Grid item >
@@ -41,7 +50,7 @@ import { Link } from 'react-router-dom';
                     </Grid>
 
                     <Grid item>
-                        <Link to={`/show/${show.attributes.id}`} onClick={() => {sessionStorage.setItem('currentShow', show.attributes.id)}}>{<Typography variant="h3">{show.attributes.title}</Typography>}</Link>
+                        <Link to={`/show/${show.attributes.id}`} onClick={() => {sessionStorage.setItem('currentShow', show.attributes.id)}}>{<Typography variant="h5">{show.attributes.title}</Typography>}</Link>
                     </Grid>
 
 

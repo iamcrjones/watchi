@@ -49,7 +49,7 @@ div {
     h3 {
         color: ${pallet.pallet1};
         font-family: ${fonts.bangers};
-        font-size: 0.5rem;
+        font-size:  10 px;
     }
 
     h4 {
@@ -168,8 +168,8 @@ div {
         margin: 4rem auto 4rem auto;
         spacing: 4;
         maxColumns: 3;
-        border: 4px solid yellow;
         min-width: 200px;
+        max-width: 250px;
 
     }
     .shows img {
@@ -213,7 +213,5 @@ div {
             display: flex;
             justify-content: space-around;
         }
-
-
 
     `;
