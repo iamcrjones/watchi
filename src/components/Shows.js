@@ -27,7 +27,6 @@ import { Link } from 'react-router-dom';
             .catch(e=> {console.log(e)})
         },[])
 
-        console.log(shows)
 
         return (
             <>
@@ -85,7 +84,7 @@ import { Link } from 'react-router-dom';
                            
 
 
-                                <Grid item ="add-to-watchlist" 
+                                <Grid item className="add-to-watchlist" 
                                 
                                 sx={{ 
                                     border: '4px solid purple',
