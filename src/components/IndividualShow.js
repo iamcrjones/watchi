@@ -3,7 +3,10 @@ import { pullSingleShow } from './services/showServices';
 import { useState , useEffect} from 'react'
 import { Card } from '@mui/material';
 import AddReview from './AddReview';
-// import RemoveShow from './RemoveShow.js';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import { deleteReview } from './services/reviewServices';
+
+
 
 const IndividualShow = () => {
     const [error, setError] = useState(null)
@@ -35,11 +38,30 @@ const IndividualShow = () => {
             }
         })
         .catch(e=> {
-            console.log(e)
             setError(e.message)
         })
     }, [loading])
 
+    const handleDelete = (review_id) => {
+        const confirmBox = window.confirm('Are you sure you want to delete this review?')
+        if(confirmBox === true){
+            deleteReview(review_id)
+            .then((review) => {
+                if(review.error){
+                    setError(review.error)
+
+                }else{
+                    setError(null)
+                    alert("Review deleted successfully")
+                    window.location.reload()
+                }
+            })
+            .catch((e) => {
+                alert(e.response.data.error)
+                window.location.reload()
+            })
+        }
+       }
 
     return (
         loading ? (
@@ -56,7 +78,6 @@ const IndividualShow = () => {
                             <h2 className="fullShowHeader">{parser.title}</h2>
                             <h4>Episodes: {parser.episodes}</h4>
                             <h4>⭐️ {rating} </h4>
-                            {console.log(parser.id)}
                             <AddReview showID={parser.id}/>
                         </div>
                     </div>
@@ -71,6 +92,7 @@ const IndividualShow = () => {
                                 <h4> ⭐️ {review.rating}</h4>
                                 <h4>{review.message}</h4>
                                 <p>{review.user_id}</p>
+                                <DeleteOutlineIcon onClick={() => {handleDelete(review.id)}}/>
                             </Card>
                         </div>
                         )}

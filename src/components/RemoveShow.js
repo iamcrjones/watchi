@@ -25,8 +25,6 @@ const RemoveShow = ({id}) => {
                 }
         })
         .catch(e=> {
-            console.log(e.response)
-            console.log(e)
             setError(e.response.data.error)
         })}}
 
