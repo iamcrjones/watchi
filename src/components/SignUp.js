@@ -22,6 +22,8 @@ const SignUp = () => {
             password_confirmation: ""
         }
 
+
+
         const [formData, setFormData] = useState(initialFormData)
         const  setError = useState(null)
     

@@ -107,6 +107,7 @@ const AddShow = () => {
                 
                     <label>End Date:</label>
                     <input 
+                    required
                     type="date" 
                     name="enddate" 
                     id="enddate"
@@ -115,6 +116,7 @@ const AddShow = () => {
 
                     <br/>
                     <br/>
+
                     <Grid item xs={12}>
                     <Typography variant="h5">Release days?</Typography>
                     </Grid>
@@ -178,6 +180,7 @@ const AddShow = () => {
                         label="Su"
                         />
                     </Grid>
+                   
                     <br/>
                     <br/>
 
@@ -215,7 +218,7 @@ const AddShow = () => {
                     <Grid item xs={12}>
 
                         <label htmlFor='picture'>Upload Image:  </label>
-                        <input type="file" name="picture" id="picture" accept="image/*" multiple={false} /> 
+                        <input type="file" required name="picture" id="picture" accept="image/*" multiple={false} /> 
                     </Grid>
 
 
@@ -240,26 +243,13 @@ const AddShow = () => {
                             Add Show
                         </Button>
                         </Grid>
-                  </Grid>
+                        </Grid>
             </Box>
             
         </Grid>
 
         </Grid>
         </Container>
-
-
-
-
-
-
-
-
-
-       
-
-
-       
 
     )
 }
