@@ -104,8 +104,7 @@ const SignIn = () => {
                             type="submit"
                             fullWidth
                             variant="contained"
-                        >
-                            Sign In
+                        > Sign In
                         </Button>
                         </Grid>
     
