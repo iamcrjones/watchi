@@ -26,7 +26,7 @@ export const GlobalStyles = createGlobalStyle`
 
 div {
     border: 1px solid red;
-    
+}
 
     body {
         background-color: ${(props) => props.theme.body};
@@ -247,5 +247,16 @@ div {
         text-align: center;
     }
 
+    .buttons{
+        display: flex;
+        border: none;
+        padding: 2px 20px;
+        text-align: center;
+        display: inline-block;
+        margin: 4px 2px;
+        border-radius: 16px;
+        font-size: 10px;
+        background-color: #3BC9F5;
+    }
 
     `;

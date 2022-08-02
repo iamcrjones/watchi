@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import Typography from '@mui/material/Typography';
 
 
 const AddShow = () => {
@@ -55,6 +56,7 @@ const AddShow = () => {
         data.append("friday", e.target.friday.checked)
         data.append("saturday", e.target.saturday.checked)
         data.append("sunday", e.target.sunday.checked)
+        data.append("airdate", e.target.airdate.value)
         data.append("enddate", e.target.enddate.value)
         data.append("crunchyroll", e.target.crunchyroll.checked)
         data.append("funimation", e.target.funimation.checked)
@@ -90,18 +92,15 @@ const AddShow = () => {
     // }
     return(
 
-        <Container maxWidth="l">
+        <Container>
         {error && <h3>{error}</h3>}
         <Grid container spacing={2} sx={{ 
-            height: '100vh',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
+            justifyContent: 'center'
             }}>
     
           <Grid item xs={6}>
             <Box component="form" onSubmit={handleSubmit}  sx={{ mt: 1 }}>  
-            <h1>Login</h1>
+            <h1>Add Show</h1>
             <TextField
                     margin="normal"
                     required
@@ -132,7 +131,8 @@ const AddShow = () => {
                     name="episodes"
                     autoFocus
                     />
-
+                    <br/>
+                    <Grid item xs={12}>
                     <label>Start Date:</label>
                     <input 
                     type="date" 
@@ -147,9 +147,15 @@ const AddShow = () => {
                     name="enddate" 
                     id="enddate"
                     />
+                    </Grid>
 
+                    <br/>
+                    <br/>
+                    <Grid item xs={12}>
+                    <Typography variant="h5">Release days?</Typography>
+                    </Grid>
                     
-
+                    <Grid item xs={12}>
                     <FormControlLabel
                         control={
                         <Checkbox 
@@ -207,8 +213,15 @@ const AddShow = () => {
                         }
                         label="Su"
                         />
+                    </Grid>
+                    <br/>
+                    <br/>
 
+                    <Grid item xs={12}>
+                    <Typography variant="h5">Releases on which platforms?</Typography>
+                    </Grid>
 
+                    <Grid item xs={12}>
                     <FormControlLabel   
                         control={   
                         <Checkbox
@@ -232,10 +245,14 @@ const AddShow = () => {
                         }
                         label="Netflix"
                         />
+                    </Grid>
 
+                    <br/>
+                    <Grid item xs={12}>
 
-                        <label htmlFor='picture'>Upload Image:</label>
+                        <label htmlFor='picture'>Upload Image:  </label>
                         <input type="file" name="picture" id="picture" accept="image/*" multiple={false} /> 
+                    </Grid>
 
 
 
@@ -244,11 +261,14 @@ const AddShow = () => {
                     justifyContent: 'space-between',
                     textAlign: 'center',
                     alignItems: 'center',
+                    marginTop: '10px',
+                    marginBottom: '20px'
                     }}>
                   
-    
+                   
                     <Grid item >
                         <Button
+                            className="buttons"
                             type="submit"
                             fullWidth
                             variant="contained"

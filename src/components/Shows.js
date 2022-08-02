@@ -63,7 +63,7 @@ import { Link } from 'react-router-dom';
 
                                 <Grid item>
 
-                                <Typography variant="p">Start Date: {show.attributes.startdate}</Typography>
+                                <Typography variant="p">Start Date: {show.attributes.airdate}</Typography>
                                 </Grid>
 
                                 <Grid item>
