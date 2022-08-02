@@ -7,6 +7,7 @@ export async function signIn(data) {
     // console.log(response.data)
     sessionStorage.setItem('username', response.data.username)
     sessionStorage.setItem('token', response.data.jwt)
+    sessionStorage.setItem('user_id', response.data.user_id)
     if(response.data.admin !== true){
         sessionStorage.setItem('admin', false)
     } else {
@@ -21,4 +22,5 @@ export async function signUp(data) {
     console.log(response.data)
     // return response.data
 }
+
 

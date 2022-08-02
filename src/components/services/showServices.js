@@ -11,6 +11,11 @@ export async function pullSingleShow(data){
     return response.data
 }
 
+export async function pullUsername(data){
+    const response = await watchiBE.get(`/users/${data}`)
+    return response.data.username
+}
+
 export async function addShow(data){
     const response = await watchiBE.post('/shows', data)
     console.log(response.data)
