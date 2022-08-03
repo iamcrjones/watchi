@@ -24,9 +24,9 @@ const fonts = {
 }
 export const GlobalStyles = createGlobalStyle`
 
-// div {
-//     border: 1px solid red;
-// }
+div {
+    border: 1px solid red;
+}
 
     body {
         background-color: ${(props) => props.theme.body};
@@ -257,6 +257,14 @@ export const GlobalStyles = createGlobalStyle`
         border-radius: 16px;
         font-size: 10px;
         background-color: #3BC9F5;
+    }
+
+    .showIcons { 
+        width: 50px;
+        height: 50px;
+        border: 4px;
+        min-width: 200px;
+        object-fit: cover;
     }
 
     //SignUp style

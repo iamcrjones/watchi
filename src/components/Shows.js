@@ -5,11 +5,15 @@ import Card from '@mui/material/Card';
 import { Typography } from '@mui/material';
 import { getShows } from './services/showServices.js'
 import {useState, useEffect} from 'react'
-// import Container from '@mui/material/Container';
+import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import RemoveShow from './RemoveShow.js';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
+import crunchyroll from '../images/crunchyroll.png';
+import netflix from '../images/netflix.svg';
+import funimation from '../images/funimation.svg';
+
 
 
     const initialData = []
@@ -30,26 +34,23 @@ import { Link } from 'react-router-dom';
 
         return (
             <>
+            <div className='top10'>
 
-            {/* <div className="search"><input type="text" placeholder="Search..." onChange={event =>{setSearchTerm(event.target.value)}}/> </div> */}
 
-           <Grid container className='top10'>
-                
-                
-                {shows.map(show =>
+            {shows.map(show =>
                 <Card className="shows" key={show.attributes.id} >
-                <Grid item >
+                    <Grid container className="card">
 
-                    <Grid item >
+                    <Grid item xs={12} md={12}>
                         <img src={show.attributes.picture_url} alt={show.attributes.title} />
                     </Grid>
 
-                    <Grid item>
+                    <Grid item xs={12} md={12}>
                         <Link to={`/show/${show.attributes.id}`} onClick={() => {sessionStorage.setItem('currentShow', show.attributes.id)}}>{<Typography variant="h5">{show.attributes.title}</Typography>}</Link>
+                    
                     </Grid>
 
-
-                    <Grid item>
+                    <Grid item xs={12} md={12}>
                         <p>Release days: </p>
                             {show.attributes.picture.record.monday ? <Typography variant="p">Monday </Typography> : null}
                             {show.attributes.picture.record.tuesday ? <Typography variant="p">Tuesday </Typography> : null}
@@ -60,77 +61,27 @@ import { Link } from 'react-router-dom';
                             {show.attributes.picture.record.sunday ? <Typography variant="p">Sunday </Typography> : null}
                     </Grid>
 
+                    <Grid item xs={12} md={12}>
+                     <Typography variant="p">Start Date: {show.attributes.airdate}</Typography>
+                    </Grid>
 
-                                <Grid item>
+                    <Grid item xs={12} md={12}>
+                        <Typography variant="p">End Date: {show.attributes.enddate}</Typography>
+                    </Grid>
 
-                                <Typography variant="p">Start Date: {show.attributes.airdate}</Typography>
-                                </Grid>
-
-                                <Grid item>
-                                <Typography variant="p">End Date: {show.attributes.enddate}</Typography>
-                                </Grid>
-                                
-                                <Grid container
-                                sx={{
-                                    justifyContent: 'space-between',
-                                    textAlign: 'left',
-                                    alignItems: 'center',
-                                    }}>
-
-                                <Grid item xs={6} md={5}>
-                                <Typography variant="p">No of Ep: {show.attributes.episodes}</Typography>
-                                </Grid>
-                                <Grid item xs={6} md={5}>
-                                <Typography variant="p">Rating: {show.attributes.rating} </Typography>
-                                </Grid>
-                                </Grid>
-
-                           
+                    <Grid item xs={12} md={12}>
+                        {show.attributes.funimation ? 
+                            <img className="showIcons" src={crunchyroll} alt="crunchyroll icon"></img>
+                        :null}
+                    </Grid>
 
 
-                                <Grid item className="add-to-watchlist" 
-                                
-                                sx={{ 
-                                    border: '4px solid purple',
-                        
-                                    }}>
-
-                                    {show.attributes.crunchyroll ? 
-                                    <Button variant="contained" className="show-button" sx={{ 
-                                        bgcolor: '#FFBA00',
-                                        }}>
-                                        Add
-                                    </Button> :null}
-
-                                    {show.attributes.funimation ? 
-
-                                    <Button variant="contained" className="show-button" sx={{ 
-                                        bgcolor: '#9F4DFF',
-                                        }}>
-                                        Add
-                                    </Button> :null}
-
-                                    {show.attributes.netflix ?
-
-                                    <Button variant="contained" className="show-button" sx={{ 
-                                        bgcolor: '#FF0000',
-                                        }}>
-                                        Add
-                                    </Button>  :null}
-                                
-
-                                </Grid>
-
-                                <RemoveShow id={show.id}/>
-
-
-                           
-                </Grid>
+                    </Grid>
                 </Card>
-                    
-                )}
-            
-            </Grid>
+            )}
+
+        
+        </div>
             </>
         )
     }
