@@ -65,7 +65,7 @@ const SignIn = () => {
             textAlign: 'center',
             }}>
     
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6} md={6} >
             <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>  
             <h1>Login</h1>
             <TextField
@@ -115,8 +115,8 @@ const SignIn = () => {
             </Box>
             
         </Grid>
-        <Grid item xs={6}>
-        <img className="signUpPic" src={charizard} alt="dancing Pikachu"></img>
+        <Grid item xs={12} sm={6} md={6} className="charizard">
+        <img className="signUpPic" src={charizard} alt="dancing charizard"></img>
             
         </Grid>
         </Grid>
