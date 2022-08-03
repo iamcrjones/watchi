@@ -18,6 +18,12 @@ export async function removeWatchShow(data){
     return response.data
 }
 
+export async function createWatchlist(data){
+    const response = await watchiBE.post('/watchlists', data)
+    console.log(response.data)
+    return response.data
+}
+
 export async function getWatchList() {
     const response = await watchiBE.get('/watchlists')
     return response.data

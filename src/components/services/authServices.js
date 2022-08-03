@@ -5,9 +5,6 @@ import watchiBE from "../../config/api.js"
 export async function signIn(data) {
     const response = await watchiBE.post('/auth/login', data)
     // console.log(response.data)
-    sessionStorage.setItem('username', response.data.username)
-    sessionStorage.setItem('token', response.data.jwt)
-    sessionStorage.setItem('user_id', response.data.user_id)
     if(response.data.admin !== true){
         sessionStorage.setItem('admin', false)
     } else {
@@ -19,8 +16,8 @@ export async function signIn(data) {
 
 export async function signUp(data) {
     const response = await watchiBE.post('/auth/signup', data)
-    console.log(response.data)
-    // return response.data
+    // console.log(response.data)
+    return response.data
 }
 
 
