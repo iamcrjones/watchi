@@ -29,3 +29,9 @@ export async function getWatchList() {
     console.log(response.data)
     return response.data
 }
+
+export async function getMyShows(data){
+    const response = await watchiBE.post('/list/myshows', data)
+    console.log(response.data)
+    return response.data
+}
