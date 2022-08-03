@@ -8,6 +8,8 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { Link } from 'react-router-dom';
 import { Typography } from '@mui/material';
+import { getWatchList } from './services/watchlistServices';
+
 
 
 
@@ -35,7 +37,16 @@ const SignIn = () => {
                 setError(null)
                 sessionStorage.setItem("username",  user.username)
                 sessionStorage.setItem("token", user.jwt)
+                sessionStorage.setItem('user_id', user.user_id)
+
                 setFormData(initialFormData)
+                getWatchList()
+                .then((watchList) => {
+                    sessionStorage.setItem('watch_list', watchList)
+                })
+                .catch((e) => {
+                    setError(e)
+                })
                 window.location.href = '/';
             }
 

@@ -35,7 +35,6 @@ const AddReview = (showID) => {
     const [error, setError] = useState(null)
 
     const handleSubmit = (e) =>{
-        // console.log(showID)
         e.preventDefault()
         const user_id = sessionStorage.getItem('user_id')
         const data = new FormData()
@@ -54,7 +53,6 @@ const AddReview = (showID) => {
             }
         })
         .catch(e=> {
-            // console.log(data)
             console.log(e.response)
             console.log(e)
             setError(e.response.data.error)
