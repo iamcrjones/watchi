@@ -56,13 +56,12 @@ const AddShow = () => {
     }
 
     return(
-
         <Container>
-        <Grid container spacing={2} sx={{
-            justifyContent: 'center'
+        <Grid container sx={{
+            justifyContent: 'center',
             }}>
 
-          <Grid item xs={6}>
+          <Grid item xs={18} sm={10} md={10} >
             <Box component="form" onSubmit={handleSubmit}  sx={{ mt: 1 }}>  
             <h1>Add Show</h1>
             <TextField
@@ -117,11 +116,14 @@ const AddShow = () => {
                     <br/>
                     <br/>
 
-                    <Grid item xs={12}>
+                    <Grid item >
                     <Typography variant="h5">Release days?</Typography>
                     </Grid>
                     
-                    <Grid item xs={12}>
+                    <Grid item  sx={{
+            justifyContent: 'center',
+            flexDirection: 'space-between'
+            }}>
                     <FormControlLabel
                         control={
                         <Checkbox 
