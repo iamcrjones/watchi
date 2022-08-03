@@ -5,6 +5,7 @@ import { Card } from '@mui/material';
 import AddReview from './AddReview';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { deleteReview } from './services/reviewServices';
+import AddToWatchlist from './AddToWatchlist';
 
 
 
@@ -78,6 +79,7 @@ const IndividualShow = () => {
                             <h2 className="fullShowHeader">{parser.title}</h2>
                             <h4>Episodes: {parser.episodes}</h4>
                             <h4>⭐️ {rating} </h4>
+                            <AddToWatchlist />
                             <AddReview showID={parser.id}/>
                         </div>
                     </div>

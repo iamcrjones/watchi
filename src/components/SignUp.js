@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { createWatchlist } from './services/watchlistServices';
+import { getWatchList } from './services/watchlistServices';
+
 
 const SignUp = () => {
 
@@ -54,6 +56,13 @@ const SignUp = () => {
                         sessionStorage.setItem('token', data.jwt)
                         sessionStorage.setItem('user_id', data.user_id)
                         console.log("sign-in successful")
+                        getWatchList()
+                        .then((watchList) => {
+                            sessionStorage.setItem('watch_list', watchList)
+                        })
+                        .catch((e) => {
+                            setError(e)
+                        })
                         window.location.href="/"
                       }
                     })
