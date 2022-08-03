@@ -1,33 +1,32 @@
 
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Box from '@mui/material/Box';
-import charizard from '../images/Charazard-Gif.gif'
+import { useState, useEffect} from 'react'
+import { getMyShows } from './services/watchlistServices';
+
 
 const Watchlist = () => {
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
+    useEffect(() => {
+        const listID = sessionStorage.getItem('watch_list')
+        const data = new FormData()
+        data.append('listID', listID)
+        getMyShows(listID)
+        .then((show) => {
+            if(show.error){
+                setError(show.error)
+
+            }else{
+                setLoading(false)
+            }
+        })
+        .catch(e=> {
+            setError(e.message)
+        })
+    }, [loading])
     return(
         <>
-            <div className="watchlistContainer">
-                <h1>Watchlist</h1>
-                <Box>
-                    <Card>
-                        <CardContent>
-                            <img className="signInPic" src={charizard} alt="dancing charizard"></img>
-                            <h4>Title</h4>
-                            <div className="watchlistButtons">
-                            <p> Episodes:{}</p>
-                            <p> Rating{}</p>
-                            </div>
-                            <div className="watchlistButtons">
-                            <button className="crunchyRollAdd">Add</button>
-                            <button className="funimationAdd">Add</button>
-                            <button className="netfilxAdd">Add</button>
-                            </div>
-                        </CardContent>
-                    </Card>
-                </Box>
-            </div>
+            
         </>
     )
 }
