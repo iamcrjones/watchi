@@ -3,10 +3,6 @@ import Button from '@mui/material/Button';
 import { useState } from "react";
 import { addWatchShow } from './services/watchShowServices';
 
-
-
-
-
 const AddToWatchlist = () => {
     const user_id = sessionStorage.getItem('user_id')
     const data = new FormData()

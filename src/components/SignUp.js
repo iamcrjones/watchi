@@ -77,16 +77,11 @@ const SignUp = () => {
 return (
 
 
-    <Container maxWidth="l">
+    <Container>
             
-    <Grid container spacing={2} sx={{ 
-        height: '100vh',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
-        }}>
+    <Grid container spacing={2} className="signUpForm">
 
-      <Grid item xs={6}>
+      <Grid item xs={12} sm={6} md={6} >
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>  
         <h1>Sign Up!</h1>
 
@@ -184,14 +179,14 @@ return (
                     </Button>
                     </Grid>
 
-                    <Grid item>
+                    <Grid item >
                     <p> Already have an account?</p> <Typography variant="text" component={Link} to="/signin">SignUp?</Typography>
                     </Grid>
               </Grid>
         </Box>
         
     </Grid>
-    <Grid item xs={6}>
+    <Grid item xs={6} className="pikachu">
     <img className="signInPic" src={pikachu} alt="dancing Pikachu"></img>
         
     </Grid>

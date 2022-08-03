@@ -24,9 +24,9 @@ const fonts = {
 }
 export const GlobalStyles = createGlobalStyle`
 
-div {
-    border: 1px solid red;
-}
+// div {
+//     border: 1px solid red;
+// }
 
     body {
         background-color: ${(props) => props.theme.body};
@@ -259,4 +259,28 @@ div {
         background-color: #3BC9F5;
     }
 
+    //SignUp style
+    .signUpForm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+// mobile breakpoints
+@media (max-width: 600px) {
+
+
+// SignUp styling starts here
+
+    .pikachu {
+        display: none;
+        
+    }
+
+
+    .charizard { 
+        display: none;
+    }
+}
     `;
