@@ -1,22 +1,23 @@
 import * as React from 'react';
 import { Button, TextField, Typography, Box } from "@mui/material";
 import pikachu from '../images/Pikachu-dance.gif';
-import { signUp } from './services/authServices';
+import { signUp, signIn } from './services/authServices';
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 // import Alert from 'react-popup-alert'
 import { Link } from "react-router-dom";
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
+import { createWatchlist } from './services/watchlistServices';
+import { getWatchList } from './services/watchlistServices';
+
 
 const SignUp = () => {
 
-    const navigate = useNavigate()
 
         const initialFormData = {
             username: "",
-            firstName: "",
-            lastName: "",
+            firstname: "",
+            lastname: "",
             email: "",
             password: "",
             password_confirmation: ""
@@ -25,7 +26,7 @@ const SignUp = () => {
 
 
         const [formData, setFormData] = useState(initialFormData)
-        const  setError = useState(null)
+        const [error, setError] = useState(null)
     
     
     
@@ -35,34 +36,58 @@ const SignUp = () => {
             .then((user) => {
                 let errorMessage = "whoops";
                 console.log(user)
-                navigate('/signin');
-                // alert.success(user.message)
-
                 if(user.error){
-                    // console.log("if statement")
                     Object.keys(user.error).forEach(key => {
-                        
                         errorMessage = errorMessage.concat("whoops", `${key} ${user.error[key]}`)
                     })
                     setError(errorMessage)
-                    
+                    alert(error)
                 }
                 else{
-                    // console.log("else statement")
-                    setError(null);
-                    window.location.href = '/';
-                    navigate('/');
-                    
-
+                    const data = new FormData()
+                    data.append('email', formData.email)
+                    data.append('password', formData.password)
+                    signIn(data)
+                    .then((data) => {
+                      if(data.error){
+                        setError(data.error)
+                      } else {
+                        sessionStorage.setItem('username', data.username)
+                        sessionStorage.setItem('token', data.jwt)
+                        sessionStorage.setItem('user_id', data.user_id)
+                        console.log("sign-in successful")
+                        getWatchList()
+                        .then((watchList) => {
+                            sessionStorage.setItem('watch_list', watchList)
+                        })
+                        .catch((e) => {
+                            setError(e)
+                        })
+                        window.location.href="/"
+                      }
+                    })
+                    .catch((e) => {
+                      setError(e)
+                    })
+                    // const userID = sessionStorage.getItem('user_id')
+                    const userData = new FormData()
+                    userData.append('user_id', user.user_id)
+                    console.log(userData)
+                    createWatchlist(userData)
+                    .then((watchList) => {
+                      if(watchList.error){
+                        setError(watchList.error)
+                      } else {
+                        setFormData(initialFormData)
+                      }
+                    })
+                    .catch((e) => {
+                      setError(e)
+                    })
                 }
-    
             })
             .catch(e=> {
-                setError(e.response.data.error)
-                console.log(e.response.data)
-                // need to set an error here
-                 
-
+                setError(e)
             })
     
         }

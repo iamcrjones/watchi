@@ -70,12 +70,11 @@ import { Link } from 'react-router-dom';
                                 <Typography variant="p">End Date: {show.attributes.enddate}</Typography>
                                 </Grid>
                                 
-                                <Grid container 
-                                sx={{ 
+                                <Grid container
+                                sx={{
                                     justifyContent: 'space-between',
                                     textAlign: 'left',
                                     alignItems: 'center',
-                        
                                     }}>
 
                                 <Grid item xs={6} md={5}>
