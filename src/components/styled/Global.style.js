@@ -258,13 +258,13 @@ div {
         font-size: 10px;
         background-color: #3BC9F5;
     }
-
+. displayIcons{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
     .showIcons { 
-        width: 50px;
-        height: 50px;
-        border: 4px;
-        min-width: 200px;
-        object-fit: cover;
+        transform: scale(0.2);
     }
 
     //SignUp style

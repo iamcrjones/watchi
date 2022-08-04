@@ -43,7 +43,7 @@ import funimation from '../images/funimation.svg';
                 {shows.map(show =>
                 <Card className="shows" key={show.attributes.id} >
 
-                    
+                    <
                     <Grid item >
                         <img src={show.attributes.picture_url} alt={show.attributes.title} />
                     </Grid>

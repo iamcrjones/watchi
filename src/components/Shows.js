@@ -10,9 +10,12 @@ import Grid from '@mui/material/Grid';
 import RemoveShow from './RemoveShow.js';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
-import crunchyroll from '../images/crunchyroll.png';
+// import crunchyroll from './crunchyroll.jsx'
 import netflix from '../images/netflix.svg';
 import funimation from '../images/funimation.svg';
+import crunchyroll from '../images/crunchyroll.svg';
+// import funimation from './funimation.jsx';
+// import crunchyroll from './crunchyroll.jsx';
 
 
 
@@ -34,8 +37,7 @@ import funimation from '../images/funimation.svg';
 
         return (
             <>
-            <div className='top10'>
-
+            <Grid container className='top10'>
 
             {shows.map(show =>
                 <Card className="shows" key={show.attributes.id} >
@@ -69,23 +71,29 @@ import funimation from '../images/funimation.svg';
                         <Typography variant="p">End Date: {show.attributes.enddate}</Typography>
                     </Grid>
 
-                    <Grid item xs={12} md={12}>
-                        {show.attributes.funimation ? 
+                    <Grid item className="displayIcons">
+                        {show.attributes.crunchyroll ? 
                             <img className="showIcons" src={crunchyroll} alt="crunchyroll icon"></img>
                         :null}
-                    </Grid>
 
+                        {show.attributes.funimation ? 
+                            <img className="showIcons" src={funimation} alt="funimation icon"></img>
+                        :null}
 
+                        {show.attributes.netflix ? 
+                            <img className="showIcons" src={netflix} alt="netflix icon"></img>
+                        :null}
+
+                        </Grid>
                     </Grid>
                 </Card>
-            )}
+            )
+            }
 
-        
-        </div>
+        </Grid>
             </>
         )
     }
-
 
 
 export default Shows;
