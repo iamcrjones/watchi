@@ -32,6 +32,10 @@ export async function getWatchList() {
 
 export async function getMyShows(data){
     const response = await watchiBE.post('/list/myshows', data)
+    // const showIdList = []
+    // response.data.map((show) => showIdList.push(show.show_id))
+    // sessionStorage.setItem('watchListShowList', showIdList)
+    // console.log()
     console.log(response.data)
     return response.data
 }
