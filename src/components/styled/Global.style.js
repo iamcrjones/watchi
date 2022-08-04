@@ -24,9 +24,9 @@ const fonts = {
 }
 export const GlobalStyles = createGlobalStyle`
 
-div {
-    border: 1px solid red;
-}
+// div {
+//     border: 1px solid red;
+// }
 
     body {
         background-color: ${(props) => props.theme.body};
@@ -109,6 +109,7 @@ div {
         justify-content: center;
         margin: 0 auto 0 auto;
         text-align: center;
+        padding: 24px;
     }
 
     .calendarTitle {
@@ -133,18 +134,14 @@ div {
 
     .aboutContainer {
         justify-content: center;
-        align-items: center;
         display: flex;
-        flex-direction: column;
-        margin: 0 auto 0 auto;
-        
-
+        text-align: center;  
+        margin: 4rem auto 0 auto;
     }
 
     .aboutPic {
         width: 80%;
-        height: auto;
-        margin-left: 10%;
+        height: auto  
     }
 
     .signUpPic {
@@ -157,7 +154,13 @@ div {
         height: auto;
         margin-left: 10%;
     }
+    .aboutText {
 
+    font-family: ${fonts.Exo};
+    align-content: center;
+    text-align: center;
+    margin: 10px 10px 10px 10px;
+}
 
     //Shows & Top 10 styling starts here
 
@@ -171,6 +174,7 @@ div {
         maxColumns: 3;
         min-width: 200px;
         max-width: 250px;
+        padding: 1rem;
 
     }
     .shows img {
@@ -186,9 +190,10 @@ div {
         display: flex;
         justify-content: space-between;
         align-content: space-around;
-        border: 4px solid green;
         padding: 2rem;
         height: 100%;
+        margin: 10px auto 0 auto;
+
     }
 
     .show-button {
@@ -217,7 +222,7 @@ div {
 
     .showContainer {
         margin-top: 2rem;
-        // text-align: center;
+
     }
 
     .fullShowImage {
@@ -226,7 +231,9 @@ div {
         border: 1px solid black;
         box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 40%), 0px 4px 5px 0px rgb(0 0 0 / 22%), 0px 1px 10px 0px rgb(0 0 0 / 25%);
         margin-left: 1rem;
+        object-fit: cover;
     }
+
     .fullShowHeader {
         margin: 0;
         padding-top: 0.5rem;
@@ -234,10 +241,15 @@ div {
 
     .showInfo {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
     }
     .showTextInfo {
-        padding-right: 2.25rem;
+        padding-left: 1.25rem;
+        justify-content: left;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
     }
     .showDescription {
         padding-left: 1rem;
@@ -259,12 +271,23 @@ div {
         background-color: #3BC9F5;
     }
 . displayIcons{
-    display: flex;
-    justify-content: space-between;
+    display: flex-grid;
+    // justify-content: space-between;
     flex-direction: row;
 }
     .showIcons { 
         transform: scale(0.2);
+    }
+
+
+
+    .releaseDays{
+        height: 125px
+    }
+
+    .dates{
+        padding-bottom: 1rem;
+        
     }
 
     //SignUp style
@@ -275,8 +298,17 @@ div {
     }
 
 
+
+ //REVIEWS PAGE STYLE
+ 
+ .showReviewHeader {
+        display: flex;
+        justify-content: left;
+ }
+
+
 // mobile breakpoints
-@media (max-width: 600px) {
+@media (max-width: 600px) and (min-width: 0px) {
 
 
 // SignUp styling starts here
@@ -290,5 +322,35 @@ div {
     .charizard { 
         display: none;
     }
+
+  
 }
+
+// tablet breakpoints
+@media (max-width: 900px) and (min-width: 601px) {
+
+}
+
+
+
+    //laptop breakpoints
+    @media (min-width: 901px) {
+
+        .aboutText {
+            text-align: left;
+            margin: 0;
+            padding: 10px 10px 10px 10px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+
+        .top10 {
+            padding: auto 6rem auto 6rem;
+        
+
+    
+        }
+
     `;

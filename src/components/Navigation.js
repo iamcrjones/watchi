@@ -31,11 +31,12 @@ const Navigation = ({toggle, icon, loading, username}) => {
                     <>
                         <div className="navList">
                             <Typography variant="text" component={Link} to="/" onClick={loading=true}>Home</Typography>
-                            <Typography variant="text" component={Link} to="/about" onClick={loading=true}>About</Typography>
-                            <Typography variant="text" component={Link} to="/watchlist" onClick={loading=true}>Watchlist</Typography>
+                            {/* <Typography variant="text" component={Link} to="/about" onClick={loading=true}>About</Typography> */}
+                            
+                            
+                            <Typography variant="text" component={Link} to="/watchlist" onClick={loading=true}>Watchlist</Typography> 
                             <Typography variant="text" component={Link} to="/signup" onClick={loading=true}>Sign Up</Typography>
                             <Typography variant="text" component={Link} to="/signin" onClick={loading=true}>Sign In</Typography>
-                            <Typography variant="text" component={Link} to="/shows" onClick={loading=true}>Shows</Typography>
                             <Typography variant="text">{username}</Typography>
 
 

@@ -1,1 +1,10 @@
-<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="50px" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="50px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="_x32_27-netflix"><g><g><polygon points="299.005,254 299.005,28 385.025,28 385.025,477 211.765,28 212.985,28    " style="fill:#860000;"/></g><g><polygon points="212.985,255.26 212.985,484 126.975,484 126.975,38.41    " style="fill:#860000;"/></g><g><polygon points="385.025,477 385.025,484 303.715,484 221.295,276.2 212.985,253.99 212.985,255.26      126.975,38.41 126.975,28 211.765,28    " style="fill:#ED0000;"/></g></g></g><g id="Layer_1"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+  <g id="_227-netflix" data-name="227-netflix">
+    <g>
+      <polygon points="5.943 4.956 5.943 0 7.829 0 7.829 9.846 4.03 0 4.057 0 5.943 4.956" style="fill: #860000;"/>
+      <polygon points="4.057 4.984 4.057 10 2.171 10 2.171 .228 4.057 4.984" style="fill: #860000;"/>
+      <polygon points="7.829 9.846 7.829 10 6.046 10 4.239 5.443 4.057 4.956 4.057 4.984 2.171 .228 2.171 0 4.03 0 7.829 9.846" style="fill: #ed0000;"/>
+    </g>
+  </g>
+</svg>
