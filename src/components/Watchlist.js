@@ -2,21 +2,27 @@
 import * as React from 'react';
 import { useState, useEffect} from 'react'
 import { getMyShows } from './services/watchlistServices';
+// import { pullSingleShow } from './services/showServices';
+
 
 
 const Watchlist = () => {
     const [loading, setLoading] = useState(true)
-    const  setError = useState(null)
+
+    const [error, setError] = useState(null)
+    const [watchList, setWatchList] = useState(null)
+
     useEffect(() => {
         const listID = sessionStorage.getItem('watch_list')
         const data = new FormData()
         data.append('listID', listID)
-        getMyShows(listID)
-        .then((show) => {
-            if(show.error){
-                setError(show.error)
+        getMyShows(data)
+        .then((shows) => {
+            if(shows.error){
+                setError(shows.error)
 
             }else{
+                setWatchList(shows)
                 setLoading(false)
             }
         })
@@ -26,7 +32,15 @@ const Watchlist = () => {
     }, [loading])
     return(
         <>
-            <p>watchlist</p>
+
+            {error && <h1>{error}</h1>}
+            {loading === false && watchList.map((shows) =>
+                <>
+                    <h1>{shows.title}</h1>
+                    <img src={shows.picture_url} alt={shows.title}></img>
+                </>
+            )}
+
         </>
     )
 }
