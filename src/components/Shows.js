@@ -36,7 +36,6 @@ import AddToWatchlist from './AddToWatchlist.js';
             .catch(e=> {console.log(e)})
         },[])
 
-
         return (
             <>
             <Grid container className='top10'>
@@ -99,7 +98,7 @@ import AddToWatchlist from './AddToWatchlist.js';
                             fullWidth
                             variant="contained"
                         >
-                            {<AddToWatchlist />}
+                        {<AddToWatchlist show={show.attributes.id}/>}
                         </Button>
                         </Grid>
                         <RemoveShow id={show.id}/>

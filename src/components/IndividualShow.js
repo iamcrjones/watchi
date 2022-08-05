@@ -80,7 +80,7 @@ const IndividualShow = () => {
                             <p>Episodes: {parser.episodes}</p>
                             <p>⭐️ {rating} </p>
 
-                            <AddToWatchlist />
+                            <AddToWatchlist show={sessionStorage.getItem('currentShow')}/>
                             <AddReview showID={parser.id}/>
                         </div>
                     </div>
