@@ -10,6 +10,7 @@ import Grid from '@mui/material/Grid';
 import RemoveShow from './RemoveShow.js';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
+import AddToWatchlist from './AddToWatchlist.js';
 // import crunchyroll from './crunchyroll.jsx'
 // import netflix from '../images/netflix.svg';
 // import funimation from '../images/funimation.svg';
@@ -98,16 +99,15 @@ import { Link } from 'react-router-dom';
                             fullWidth
                             variant="contained"
                         >
-                            Add Show
+                            {<AddToWatchlist />}
                         </Button>
                         </Grid>
-
-                                
-                        <RemoveShow id={show.id}/> 
-
+                        {sessionStorage.getItem('admin')==='false'? (
+                            <></>
+                        )
+                        :
+                        (<RemoveShow id={show.id}/>)}
                     </Grid>
-                    
-                
                 </Card>
             )
             }

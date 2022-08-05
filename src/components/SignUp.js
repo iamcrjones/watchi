@@ -207,7 +207,7 @@ return (
                     </Grid>
 
                     <Grid item >
-                    <p> Already have an account?</p> <Typography variant="text" component={Link} to="/signin">SignUp?</Typography>
+                    <p> Already have an account?</p> <Typography variant="text" component={Link} to="/signin">SignIn?</Typography>
                     </Grid>
               </Grid>
         </Box>
