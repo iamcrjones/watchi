@@ -102,11 +102,7 @@ import AddToWatchlist from './AddToWatchlist.js';
                             {<AddToWatchlist />}
                         </Button>
                         </Grid>
-                        {sessionStorage.getItem('admin')==='false'? (
-                            <></>
-                        )
-                        :
-                        (<RemoveShow id={show.id}/>)}
+                        <RemoveShow id={show.id}/>
                     </Grid>
                 </Card>
             )
