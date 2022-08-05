@@ -8,7 +8,6 @@ const createWatchlist = () => {
 
     const data = new FormData()
     data.append("user_id", user_id)
-    
 
     return(
         <>

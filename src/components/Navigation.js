@@ -5,7 +5,7 @@ import { AppBar, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 
-const Navigation = ({toggle, icon, username}) => { 
+const Navigation = ({toggle, icon, username}) => {
 
 
     const themeIcon = icon
@@ -30,19 +30,13 @@ const Navigation = ({toggle, icon, username}) => {
 
     return(
         <AppBar position="static" className="nav">
-            {/* <div className="navContainer"> */}
             <div className="logoDiv">
                 <img className="navLogo" src={logo} alt="logo"></img>
                 </div>
                 {isDesktop ? (
                     <>
                         <div className="navList">
-                            
                             <Typography variant="text" component={Link} to="/">Home</Typography>
-                            {/* <Typography variant="text" component={Link} to="/about" onClick={loading=true}>About</Typography> */}
-                            
-                            
-                            
                             <Typography variant="text" component={Link} to="/watchlist">Watchlist</Typography>
                             {!sessionStorage.getItem('username') ?
                                 (<>
@@ -51,16 +45,9 @@ const Navigation = ({toggle, icon, username}) => {
                                 </>)
                                 :
                                 (<Typography variant="text" onClick={() => {logout()}}>Logout</Typography>)
-                                
                             }
-                            
                             {sessionStorage.getItem('admin') === 'true' && <Typography variant="text" component={Link} to="/addshow" >addshow</Typography>}
-
                             <Typography variant="text">{username}</Typography>
-
-
-
-
                             <div className="themeToggle" onClick={toggler}>
                                 {themeIcon()}
                             </div>
@@ -72,7 +59,6 @@ const Navigation = ({toggle, icon, username}) => {
                     </>
 
                 )}
-            {/* </div> */}
         </AppBar>
     );
 }

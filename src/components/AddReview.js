@@ -1,13 +1,11 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { Box } from '@mui/material';
+import { Box, TextField} from '@mui/material';
 import { useState } from "react"
 import { addReview } from './services/reviewServices';
 import RateReviewIcon from '@mui/icons-material/RateReview';
 import Modal from '@mui/material/Modal';
-import { TextField } from '@mui/material';
-
 
 const AddReview = (showID) => {
     const [open, setOpen] = React.useState(false);
@@ -25,14 +23,6 @@ const AddReview = (showID) => {
         p: 4,
         textAlign: 'left',
       };
-
-    // const userId = sessionStorage.getItem('userId')
-
-    // function userCheck() {
-    //     if (!user) {
-    //         alert('Unauthorized access...')
-    //         window.location.href = '/';
-    //     }
 
     const [error, setError] = useState(null)
 
@@ -75,42 +65,33 @@ const AddReview = (showID) => {
                 <Box sx={style}>
                     <Card>
                         <CardContent>
-                    <h1>Add Review</h1>
-                    {error && <h3>{error}</h3>}
-                    <form onSubmit={handleSubmit}>
+                            <h1>Add Review</h1>
+                            {error && <h3>{error}</h3>}
+                            <form onSubmit={handleSubmit}>
 
-                    <TextField
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="message"
-                    label="description"
-                    name="message"
-                    autoComplete="message"
-                    autoFocus
-              
-                  />
+                                <TextField
+                                    margin="normal"
+                                    required
+                                    fullWidth
+                                    id="message"
+                                    label="description"
+                                    name="message"
+                                    autoComplete="message"
+                                    autoFocus
+                                />
 
-
-
-                        {/* <label>Description:</label>
-                        <input type="text" name="message" id="message" /> */}
-
-                <TextField
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="rating"
-                    label="rating"
-                    name="rating"
-                    autoComplete="rating"
-                    autoFocus
-              
-                  />
-                        {/* <label>Rating:</label>
-                        <input type="text" name="rating" id="rating" /> */}
-                        <input type="submit" />
-                        </form>
+                                <TextField
+                                    margin="normal"
+                                    required
+                                    fullWidth
+                                    id="rating"
+                                    label="rating"
+                                    name="rating"
+                                    autoComplete="rating"
+                                    autoFocus
+                                />
+                                <input type="submit" />
+                            </form>
                         </CardContent>
                     </Card>
                 </Box>

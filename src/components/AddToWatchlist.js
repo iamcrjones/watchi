@@ -47,7 +47,6 @@ const AddToWatchlist = ({show}) => {
                 alert(error)
             })
         }else{
-            // window.location.href="/signup"
         }
     }
     return(

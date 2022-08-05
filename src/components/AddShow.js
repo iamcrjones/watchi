@@ -1,14 +1,8 @@
 import * as React from 'react';
 import { useState } from "react"
 import { addShow } from './services/showServices';
-import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
-import Checkbox from '@mui/material/Checkbox';
+import {Grid, Container, TextField, Button, Box, Checkbox, Typography} from '@mui/material';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Typography from '@mui/material/Typography';
 
 
 const AddShow = () => {
@@ -58,200 +52,157 @@ const AddShow = () => {
     return(
 
         <Container>
-        <Grid container sx={{
-            justifyContent: 'center',
-            }}>
-
-          <Grid item xs={18} sm={10} md={10} >
-            <Box component="form" onSubmit={handleSubmit}  sx={{ mt: 1 }}>  
-            <h1>Add Show</h1>
-            <TextField
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="title"
-                    label="Title"
-                    name="title"
-                    autoFocus
-                  />
-
-            <TextField 
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="description"
-                    label="Description"
-                    name="description"
-                    autoFocus
-                    />
-
-            <TextField
-
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="episodes"
-                    label="Episodes (numbers only)"
-                    name="episodes"
-                    autoFocus
-                    />
-                    <br/>
-                    <Grid item xs={12}>
-                    <label>Start Date:</label>
-                    <input 
-                    type="date" 
-                    name="airdate" 
-                    id="airdate"
-                    />
-
-                
-                    <label>End Date:</label>
-                    <input 
-                    required
-                    type="date" 
-                    name="enddate" 
-                    id="enddate"
-                    />
-                    </Grid>
-
-                    <br/>
-                    <br/>
-
-                    <Grid item >
-                    <Typography variant="h5">Release days?</Typography>
-                    </Grid>
-                    
-                    <Grid item  sx={{
-            justifyContent: 'center',
-            flexDirection: 'space-between'
-            }}>
-                    <FormControlLabel
-                        control={
-                        <Checkbox 
-                        name="monday" id="monday" />
-                        }
-                        label="M"
-                    />
-                    
-                    <FormControlLabel
-                        control={
-                        <Checkbox 
-                        name="tuesday" id="tuesday" />
-                        }
-                        label="T"
-                    />
-
-                    <FormControlLabel
-
-                        control={
-                        <Checkbox
-                        name="wednesday" id="wednesday" />
-                        }
-                        label="W"
+            <Grid container sx={{justifyContent: 'center'}}>
+                <Grid item xs={18} sm={10} md={10} >
+                    <Box component="form" onSubmit={handleSubmit}  sx={{ mt: 1 }}>  
+                        <h1>Add Show</h1>
+                        <TextField
+                                margin="normal"
+                                required
+                                fullWidth
+                                id="title"
+                                label="Title"
+                                name="title"
+                                autoFocus
                         />
 
-                    <FormControlLabel
-                        control={
-                        <Checkbox
-                        name="thursday" id="thursday" />
-                        }
-                        label="Th"
-                        />
-
-                    <FormControlLabel
-                        control={
-                        <Checkbox
-                        name="friday" id="friday" />
-                        }
-                        label="F"
-                        />
-
-                    <FormControlLabel
-                        control={
-                        <Checkbox
-                        name="saturday" id="saturday" />
-                        }
-                        label="Sa"
-                        />
-                    
-                    <FormControlLabel
-
-                        control={   
-                        <Checkbox
-                        name="sunday" id="sunday" />
-                        }
-                        label="Su"
-                        />
-                    </Grid>
-                   
-                    <br/>
-                    <br/>
-
-                    <Grid item xs={12}>
-                    <Typography variant="h5">Releases on which platforms?</Typography>
-                    </Grid>
-
-                    <Grid item xs={12}>
-                    <FormControlLabel   
-                        control={   
-                        <Checkbox
-                        name="crunchyroll" id="crunchyroll" />
-                        }
-                        label="Crunchyroll"
-                        />
-
-                    <FormControlLabel
-                        control={
-                        <Checkbox
-                        name="funimation" id="funimation" />
-                        }
-                        label="Funimation"
-                        />
-
-                    <FormControlLabel
-                        control={
-                        <Checkbox
-                        name="netflix" id="netflix" />
-                        }
-                        label="Netflix"
-                        />
-                    </Grid>
-
-                    <br/>
-                    <Grid item xs={12}>
-
-                        <label htmlFor='picture'>Upload Image:  </label>
-                        <input type="file" required name="picture" id="picture" accept="image/*" multiple={false} /> 
-                    </Grid>
-
-
-
-                  <Grid container  
-                  sx={{ 
-                    justifyContent: 'space-between',
-                    textAlign: 'center',
-                    alignItems: 'center',
-                    marginTop: '10px',
-                    marginBottom: '20px'
-                    }}>
-                  
-                   
-                    <Grid item >
-                        <Button
-                            className="buttons"
-                            type="submit"
+                        <TextField
+                            margin="normal"
+                            required
                             fullWidth
-                            variant="contained"
-                        >
-                            Add Show
-                        </Button>
-                        </Grid>
-                        </Grid>
-            </Box>
-            
-        </Grid>
+                            id="description"
+                            label="Description"
+                            name="description"
+                            autoFocus
+                        />
 
-        </Grid>
+                        <TextField
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="episodes"
+                            label="Episodes (numbers only)"
+                            name="episodes"
+                            autoFocus
+                        />
+                        <br/>
+                        <Grid item xs={12}>
+                            <label>Start Date:</label>
+                            <input
+                                type="date"
+                                name="airdate"
+                                id="airdate"
+                            />
+
+                            <label>End Date:</label>
+                            <input
+                                required
+                                type="date"
+                                name="enddate"
+                                id="enddate"
+                            />
+                        </Grid>
+
+                        <br/>
+                        <br/>
+
+                        <Grid item >
+                            <Typography variant="h5">Release days?</Typography>
+                        </Grid>
+
+                        <Grid item  sx={{justifyContent: 'center', flexDirection: 'space-between'}}>
+                            <FormControlLabel
+                                control={<Checkbox name="monday" id="monday" />}
+                                label="M"
+                            />
+
+                            <FormControlLabel
+                                control={<Checkbox name="tuesday" id="tuesday" />}
+                                label="T"
+                            />
+
+                            <FormControlLabel
+                                control={<Checkbox
+                                name="wednesday" id="wednesday" />}
+                                label="W"
+                            />
+
+                            <FormControlLabel
+                                control={<Checkbox name="thursday" id="thursday" />}
+                                label="Th"
+                            />
+
+                            <FormControlLabel
+                                control={<Checkbox name="friday" id="friday" />}
+                                label="F"
+                            />
+
+                            <FormControlLabel
+                                control={<Checkbox name="saturday" id="saturday" />}
+                                label="Sa"
+                            />
+
+                            <FormControlLabel
+                                control={<Checkbox name="sunday" id="sunday" />}
+                                label="Su"
+                            />
+                        </Grid>
+
+                        <br/>
+                        <br/>
+
+                        <Grid item xs={12}>
+                            <Typography variant="h5">Releases on which platforms?</Typography>
+                        </Grid>
+
+                        <Grid item xs={12}>
+                            <FormControlLabel
+                                control={<Checkbox name="crunchyroll" id="crunchyroll" />}
+                                label="Crunchyroll"
+                            />
+
+                            <FormControlLabel
+                                control={<Checkbox name="funimation" id="funimation" />}
+                                label="Funimation"
+                            />
+
+                            <FormControlLabel
+                                control={<Checkbox name="netflix" id="netflix" />}
+                                label="Netflix"
+                            />
+                        </Grid>
+
+                        <br/>
+                        <Grid item xs={12}>
+                            <label htmlFor='picture'>Upload Image:  </label>
+                            <input type="file" required name="picture" id="picture" accept="image/*" multiple={false} /> 
+                        </Grid>
+
+                            <Grid container
+                            sx={{
+                                justifyContent: 'space-between',
+                                textAlign: 'center',
+                                alignItems: 'center',
+                                marginTop: '10px',
+                                marginBottom: '20px'
+                                }}>
+
+                                <Grid item >
+                                    <Button
+                                        className="buttons"
+                                        type="submit"
+                                        fullWidth
+                                        variant="contained"
+                                    >
+                                        Add Show
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                    </Box>
+
+                </Grid>
+
+            </Grid>
         </Container>
 
     )

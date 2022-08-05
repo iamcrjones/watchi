@@ -1,13 +1,9 @@
-
 import * as React from 'react';
 import { useState, useEffect} from 'react'
 import { getMyShows } from './services/watchlistServices';
 import Modal from '@mui/material/Modal';
 import { Box, Card, CardContent } from '@mui/material';
 import { Button } from '@mui/material';
-
-
-
 
 const Watchlist = () => {
     const [open, setOpen] = React.useState(false);
