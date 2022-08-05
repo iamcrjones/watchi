@@ -14,7 +14,6 @@ export async function signIn(data) {
 
 export async function signUp(data) {
     const response = await watchiBE.post('/auth/signup', data)
-    // console.log(response.data)
     return response.data
 }
 

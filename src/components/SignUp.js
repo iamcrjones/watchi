@@ -12,7 +12,6 @@ import { getWatchList } from './services/watchlistServices';
 
 const SignUp = () => {
 
-
         const initialFormData = {
             username: "",
             firstname: "",
@@ -22,8 +21,6 @@ const SignUp = () => {
             password_confirmation: ""
         }
 
-
-
         const [formData, setFormData] = useState(initialFormData)
         const [error, setError] = useState(null)
 
@@ -32,7 +29,6 @@ const SignUp = () => {
             signUp(formData)
             .then((user) => {
                 let errorMessage = "whoops";
-                console.log(user)
                 if(user.error){
                     Object.keys(user.error).forEach(key => {
                         errorMessage = errorMessage.concat("whoops", `${key} ${user.error[key]}`)
@@ -43,7 +39,6 @@ const SignUp = () => {
                 else{
                     const userData = new FormData()
                     userData.append('user_id', user.user_id)
-                    console.log(userData)
                     createWatchlist(userData)
                     .then((watchList) => {
                       if(watchList.error){
@@ -60,7 +55,6 @@ const SignUp = () => {
                         sessionStorage.setItem('username', data.username)
                         sessionStorage.setItem('token', data.jwt)
                         sessionStorage.setItem('user_id', data.user_id)
-                        console.log("sign-in successful")
                         getWatchList()
                         .then((watchList) => {
                             sessionStorage.setItem('watch_list', watchList)

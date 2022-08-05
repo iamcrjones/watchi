@@ -45,9 +45,7 @@ const AddReview = (showID) => {
             }
         })
         .catch(e=> {
-            console.log(e.response)
-            console.log(e)
-            setError(e.response.data.error)
+            setError(e)
 
         })
 

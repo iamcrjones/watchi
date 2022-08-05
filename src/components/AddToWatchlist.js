@@ -33,20 +33,17 @@ const AddToWatchlist = ({show}) => {
         data.append("show_id", show)
         data.append("watchlist_id", watchlist)
         handleOpen()
-            if(sessionStorage.getItem('user_id')){
+        if(sessionStorage.getItem('user_id')){
             addWatchShow(data)
             .then((result) => {
                 if (result.error){
                     setError(result.error)
-                } else {
-                    console.log("successfully added show")
                 }
             })
             .catch((e)=> {
                 setError(e)
                 alert(error)
             })
-        }else{
         }
     }
     return(

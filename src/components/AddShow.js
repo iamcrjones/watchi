@@ -38,8 +38,6 @@ const AddShow = () => {
             }
         })
         .catch(e=> {
-            console.log(e.response)
-            console.log(e)
             setError(e.response.data.error)
             alert(error)
             window.location.href="/"

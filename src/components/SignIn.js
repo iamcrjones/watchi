@@ -8,10 +8,6 @@ import Container from '@mui/material/Container';
 import { Link } from 'react-router-dom';
 import { getWatchList } from './services/watchlistServices';
 
-
-
-
-
 const SignIn = () => {
     const initialFormData = {
         email: "",
@@ -28,7 +24,6 @@ const SignIn = () => {
 
         signIn(formData)
         .then((user) => {
-            console.log(user)
             if(user.error){
                 setError(user.error)
             }else{
@@ -49,8 +44,7 @@ const SignIn = () => {
 
         })
         .catch(e=> {
-            setError(e.response.data.error)
-            console.log(e.response.data)})
+            setError(e.response.data.error)})
 
     }
 

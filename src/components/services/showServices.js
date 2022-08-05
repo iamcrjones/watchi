@@ -18,19 +18,16 @@ export async function pullUsername(data){
 
 export async function addShow(data){
     const response = await watchiBE.post('/shows', data)
-    console.log(response.data)
     return response.data
 }
 
 export async function removeShow(data){
     const response = await watchiBE.delete(`/shows/${data}`)
-    // console.log(response.data)
     return response.data
 }
 
 export async function addShowToWatchShow(data){
     const response = await watchiBE.post('/watchshows', data)
-    console.log(response.data)
     return response.data
 }
 
