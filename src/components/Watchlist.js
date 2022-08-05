@@ -6,6 +6,7 @@ import { getMyShows } from './services/watchlistServices';
 
 
 
+
 const Watchlist = () => {
     const [loading, setLoading] = useState(true)
 
@@ -32,7 +33,6 @@ const Watchlist = () => {
     }, [loading])
     return(
         <>
-
             {error && <h1>{error}</h1>}
             {loading === false && watchList.map((shows) =>
                 <>
@@ -40,7 +40,6 @@ const Watchlist = () => {
                     <img src={shows.picture_url} alt={shows.title}></img>
                 </>
             )}
-
         </>
     )
 }
