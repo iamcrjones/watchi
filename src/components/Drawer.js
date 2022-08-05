@@ -52,7 +52,7 @@ export default function NavDrawer({toggle, icon}) {
                 {themeIcon()}
               </div>
               <Divider />
-              <div className="mobileNavDiv">
+              <div className="mobileNavDiv" >
               <Typography variant="text" className="mobileMenu" component={Link} to="/">Home</Typography>
                             {/* <Typography variant="text" component={Link} to="/about" onClick={loading=true}>About</Typography> */}
                             <Divider />
@@ -73,9 +73,7 @@ export default function NavDrawer({toggle, icon}) {
                             }
                             <Divider />
                             {sessionStorage.getItem('admin') === 'true' && <Typography variant="text"  className="mobileMenu" component={Link} to="/addshow" >Add Show</Typography>}
-                            </div>
-
-                            
+              </div>                  
             </Box>
               {/* {list} */}
             </Drawer>
