@@ -3,7 +3,7 @@
 import axios from 'axios'
 
 const watchiBE = axios.create({
-    baseURL: 'http://localhost:4000'
+    baseURL: 'https://watchi-animev2.herokuapp.com/'
 })
 
 watchiBE.interceptors.request.use(req => {
