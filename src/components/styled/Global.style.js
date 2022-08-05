@@ -60,6 +60,10 @@ export const GlobalStyles = createGlobalStyle`
         font-family: ${fonts.Exo};
     }
 
+    a {
+        text-decoration: none;
+    }
+
     // Navigation Styling Starts here
 
     .MuiAppBar-root {
@@ -87,6 +91,9 @@ export const GlobalStyles = createGlobalStyle`
     }
     .navList a {
         padding: 2px;
+        color: white;
+        text-decoration: none;
+    
     }
     // Set this up once better colours of app sorted :)
     // .MuiSvgIcon-root {
