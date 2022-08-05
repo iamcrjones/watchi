@@ -42,7 +42,6 @@ const SignIn = () => {
                 setFormData(initialFormData)
                 getWatchList()
                 .then((watchList) => {
-                    sessionStorage.setItem('watch_list', watchList)
                 })
                 .catch((e) => {
                     setError(e)

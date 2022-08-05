@@ -44,7 +44,15 @@ const SignUp = () => {
                     alert(error)
                 }
                 else{
-                    const data = new FormData()
+                    const userData = new FormData()
+                    userData.append('user_id', user.user_id)
+                    console.log(userData)
+                    createWatchlist(userData)
+                    .then((watchList) => {
+                      if(watchList.error){
+                        setError(watchList.error)
+                      } else {
+                        const data = new FormData()
                     data.append('email', formData.email)
                     data.append('password', formData.password)
                     signIn(data)
@@ -69,21 +77,15 @@ const SignUp = () => {
                     .catch((e) => {
                       setError(e)
                     })
-                    // const userID = sessionStorage.getItem('user_id')
-                    const userData = new FormData()
-                    userData.append('user_id', user.user_id)
-                    console.log(userData)
-                    createWatchlist(userData)
-                    .then((watchList) => {
-                      if(watchList.error){
-                        setError(watchList.error)
-                      } else {
                         setFormData(initialFormData)
                       }
                     })
                     .catch((e) => {
                       setError(e)
                     })
+                    
+                    // const userID = sessionStorage.getItem('user_id')
+                    
                 }
             })
             .catch(e=> {
