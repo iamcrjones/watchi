@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useState, useEffect} from 'react'
 import { getMyShows } from './services/watchlistServices';
-// import { pullSingleShow } from './services/showServices';
+import { pullSingleShow } from './services/showServices';
 
 
 

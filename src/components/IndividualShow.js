@@ -92,8 +92,8 @@ const IndividualShow = () => {
                         {parser.reviews.map((review) =>
                         <div key={review.user_id}>
                             <Card variant="contained" className="allReviews" key={review.id}>
-                                <h4> ⭐️ {review.rating}</h4>
-                                <h4>{review.message}</h4>
+                                <p> ⭐️ {review.rating}</p>
+                                <p>{review.message}</p>
                                 {/* <p>{review.user_id}</p> */}
                                 <DeleteOutlineIcon onClick={() => {handleDelete(review.id)}}/>
                             </Card>

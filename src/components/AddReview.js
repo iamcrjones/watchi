@@ -6,6 +6,7 @@ import { useState } from "react"
 import { addReview } from './services/reviewServices';
 import RateReviewIcon from '@mui/icons-material/RateReview';
 import Modal from '@mui/material/Modal';
+import { TextField } from '@mui/material';
 
 
 const AddReview = (showID) => {
@@ -22,6 +23,7 @@ const AddReview = (showID) => {
         border: '2px solid #000',
         boxShadow: 24,
         p: 4,
+        textAlign: 'left',
       };
 
     // const userId = sessionStorage.getItem('userId')
@@ -76,10 +78,37 @@ const AddReview = (showID) => {
                     <h1>Add Review</h1>
                     {error && <h3>{error}</h3>}
                     <form onSubmit={handleSubmit}>
-                        <label>Description:</label>
-                        <input type="text" name="message" id="message" />
-                        <label>Rating:</label>
-                        <input type="text" name="rating" id="rating" />
+
+                    <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="message"
+                    label="description"
+                    name="message"
+                    autoComplete="message"
+                    autoFocus
+              
+                  />
+
+
+
+                        {/* <label>Description:</label>
+                        <input type="text" name="message" id="message" /> */}
+
+                <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="rating"
+                    label="rating"
+                    name="rating"
+                    autoComplete="rating"
+                    autoFocus
+              
+                  />
+                        {/* <label>Rating:</label>
+                        <input type="text" name="rating" id="rating" /> */}
                         <input type="submit" />
                         </form>
                         </CardContent>

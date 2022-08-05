@@ -259,12 +259,24 @@ export const GlobalStyles = createGlobalStyle`
         flex-direction: column;
     }
     .showDescription {
-        padding-left: 1rem;
-        padding-right: 1rem;
+
+        justify-content: left;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding-left: 3rem;
+        padding-right: 3rem;
     }
     .showReviewContainer {
-        text-align: center;
+        justify-content: left;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding-left: 3rem;
+        padding-right: 3rem;
     }
+
+  
 
     .buttons{
         display: flex;
