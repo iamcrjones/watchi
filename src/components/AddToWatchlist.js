@@ -31,22 +31,26 @@ const AddToWatchlist = () => {
         data.append("show_id", show)
         data.append("watchlist_id", watchlist)
         handleOpen()
-        addWatchShow(data)
-        .then((result) => {
-            if (result.error){
-                setError(result.error)
-            } else {
-                console.log("successfully added show")
-            }
-        })
-        .catch((e)=> {
-            setError(e)
-            alert(error)
-        })
+            if(sessionStorage.getItem('user_id')){
+            addWatchShow(data)
+            .then((result) => {
+                if (result.error){
+                    setError(result.error)
+                } else {
+                    console.log("successfully added show")
+                }
+            })
+            .catch((e)=> {
+                setError(e)
+                alert(error)
+            })
+        }else{
+            // window.location.href="/signup"
+        }
     }
     return(
         <>
-            <AddToQueueIcon  onClick={addToList}/>
+            <div onClick={addToList} className="addShowButton"><AddToQueueIcon/> <p className="addShowText">Add Show</p></div>
             <Modal
                 open={open}
                 onClose={handleClose}
@@ -56,8 +60,18 @@ const AddToWatchlist = () => {
                 <Box sx={style}>
                     <Card>
                         <CardContent>
-                            <h1>Added to your list</h1>
-                            <Button onClick={handleClose}>OK</Button>
+                            {sessionStorage.getItem("user_id")? (
+                                <>
+                                    <h1>Added to your list</h1>
+                                    <Button onClick={handleClose}>OK</Button>
+                                </>
+                            )
+                            : (
+                                <>
+                                    <h1>You need to be signed in to add a show</h1>
+                                    <Button onClick={() => {window.location.href="/signin"}}>OK</Button>
+                                </>
+                            )}
                         </CardContent>
                     </Card>
                 </Box>

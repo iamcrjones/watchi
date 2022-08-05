@@ -226,6 +226,15 @@ export const GlobalStyles = createGlobalStyle`
         display: flex;
         justify-content: space-around;
     }
+    .addShowText {
+        margin: 0;
+        padding-left: 5px;
+    }
+    .addShowButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     .showContainer {
         margin-top: 2rem;

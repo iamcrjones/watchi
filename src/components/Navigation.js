@@ -5,7 +5,7 @@ import { AppBar, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 
-const Navigation = ({toggle, icon, loading, username}) => { 
+const Navigation = ({toggle, icon, username}) => { 
 
 
     const themeIcon = icon
@@ -23,6 +23,11 @@ const Navigation = ({toggle, icon, loading, username}) => {
         return() => window.removeEventListener('resize', updateMedia);
     });
 
+    function logout(){
+        sessionStorage.clear()
+        window.location.href="/"
+    }
+
     return(
         <AppBar position="static" className="nav">
             {/* <div className="navContainer"> */}
@@ -30,14 +35,21 @@ const Navigation = ({toggle, icon, loading, username}) => {
                 {isDesktop ? (
                     <>
                         <div className="navList">
-                            <Typography variant="text" component={Link} to="/" onClick={loading=true}>Home</Typography>
+                            <Typography variant="text" component={Link} to="/">Home</Typography>
                             {/* <Typography variant="text" component={Link} to="/about" onClick={loading=true}>About</Typography> */}
                             
                             
-                            <Typography variant="text" component={Link} to="/watchlist" onClick={loading=true}>Watchlist</Typography> 
-                            <Typography variant="text" component={Link} to="/signup" onClick={loading=true}>Sign Up</Typography>
-                            <Typography variant="text" component={Link} to="/signin" onClick={loading=true}>Sign In</Typography>
-                            <Typography variant="text" component={Link} to="/addshow" onClick={loading=true}>addshow</Typography>
+                            <Typography variant="text" component={Link} to="/watchlist">Watchlist</Typography>
+                            {!sessionStorage.getItem('username') ?
+                                (<>
+                                    <Typography variant="text" component={Link} to="/signup">Sign Up</Typography>
+                                    <Typography variant="text" component={Link} to="/signin">Sign In</Typography>
+                                </>)
+                                :
+                                (<Typography variant="text" onClick={() => {logout()}}>Logout</Typography>)
+                                
+                            }
+                            {sessionStorage.getItem('admin') === 'true' && <Typography variant="text" component={Link} to="/addshow" >addshow</Typography>}
 
                             <Typography variant="text">{username}</Typography>
 
