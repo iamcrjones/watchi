@@ -29,12 +29,26 @@ const RemoveShow = ({id}) => {
         })}}
 
     return(
-        <div className="delete-outline">
-            {error && alert(error)}
-            <DeleteOutlineIcon  onClick={handleDelete}>
-            Remove
-            </DeleteOutlineIcon>
-        </div>
+            // sessionStorage.getItem('admin') !== 'true' ? (
+            //     <></>
+            // ):(<div className="delete-outline">
+            //         {error && alert(error)}
+            //         <DeleteOutlineIcon  onClick={handleDelete}>
+            //         Remove
+            //         </DeleteOutlineIcon>
+            //     /div>)
+        <>
+            {sessionStorage.getItem('admin') !== 'true' ? (
+                <></>
+            ): (
+                <div className="delete-outline">
+                    {error && alert(error)}
+                    <DeleteOutlineIcon  onClick={handleDelete}>
+                    Remove
+                    </DeleteOutlineIcon>
+                </div>
+            )}
+        </>
     )
 }
 export default RemoveShow;
