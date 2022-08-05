@@ -6,7 +6,7 @@ import { getMyShows } from './services/watchlistServices';
 
 const Watchlist = () => {
     const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(null)
+    const  setError = useState(null)
     useEffect(() => {
         const listID = sessionStorage.getItem('watch_list')
         const data = new FormData()
@@ -26,7 +26,7 @@ const Watchlist = () => {
     }, [loading])
     return(
         <>
-            
+            <p>watchlist</p>
         </>
     )
 }
