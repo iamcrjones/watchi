@@ -80,6 +80,15 @@ div {
         height: 75px;
         align-self: center;
     }
+
+
+
+    .logoDiv{
+        display: flex;
+        align-self: flex-start;
+        margin-left: 20px;
+
+    }
     .navList {
         font-family: ${fonts.bangers};
         font-size: 20px;
@@ -87,9 +96,19 @@ div {
         padding-right: 20px;
         position: absolute;
         align-items: center;
-        height: 83px;
+        width: 550px;
         flex-direction: row;
+        justify-content: space-between;
     }
+
+    .mobileNavDiv{
+        height: 150px;
+        display:flex;
+        justify-content: space-between;
+        
+    }
+
+
     .navList a {
         padding: 2px;
         color: white;

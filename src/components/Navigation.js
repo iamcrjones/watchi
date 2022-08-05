@@ -31,7 +31,9 @@ const Navigation = ({toggle, icon, username}) => {
     return(
         <AppBar position="static" className="nav">
             {/* <div className="navContainer"> */}
+            <div className="logoDiv">
                 <img className="navLogo" src={logo} alt="logo"></img>
+                </div>
                 {isDesktop ? (
                     <>
                         <div className="navList">
