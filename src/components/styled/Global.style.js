@@ -24,9 +24,9 @@ const fonts = {
 }
 export const GlobalStyles = createGlobalStyle`
 
-// div {
-//     border: 1px solid red;
-// }
+div {
+    border: 1px solid red;
+}
 
     body {
         background-color: ${(props) => props.theme.body};
@@ -88,6 +88,7 @@ export const GlobalStyles = createGlobalStyle`
         position: absolute;
         align-items: center;
         height: 83px;
+        flex-direction: row;
     }
     .navList a {
         padding: 2px;
@@ -108,6 +109,11 @@ export const GlobalStyles = createGlobalStyle`
         height: 24px;
         margin: 0;
         padding-right: 20px;
+    }
+
+    .mobileMenu{
+        padding-top: 20px;
+
     }
 
     // Calendar styling starts here

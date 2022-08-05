@@ -35,8 +35,10 @@ const Navigation = ({toggle, icon, username}) => {
                 {isDesktop ? (
                     <>
                         <div className="navList">
+                            
                             <Typography variant="text" component={Link} to="/">Home</Typography>
                             {/* <Typography variant="text" component={Link} to="/about" onClick={loading=true}>About</Typography> */}
+                            
                             
                             
                             <Typography variant="text" component={Link} to="/watchlist">Watchlist</Typography>
@@ -49,6 +51,7 @@ const Navigation = ({toggle, icon, username}) => {
                                 (<Typography variant="text" onClick={() => {logout()}}>Logout</Typography>)
                                 
                             }
+                            
                             {sessionStorage.getItem('admin') === 'true' && <Typography variant="text" component={Link} to="/addshow" >addshow</Typography>}
 
                             <Typography variant="text">{username}</Typography>

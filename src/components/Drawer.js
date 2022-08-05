@@ -1,9 +1,12 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import Divider from '@mui/material/Divider';
+import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
+
 
 export default function NavDrawer({toggle, icon}) {
   const [state, setState] = React.useState({
@@ -22,6 +25,11 @@ export default function NavDrawer({toggle, icon}) {
 
     setState({ ...state, [anchor]: open });
   };
+
+  function logout(){
+    sessionStorage.clear()
+    window.location.href="/"
+}
 
   return (
     <>
@@ -44,24 +52,28 @@ export default function NavDrawer({toggle, icon}) {
                 {themeIcon()}
               </div>
               <Divider />
-              <Button variant="contained">
-                  <a className='linky' href="/" onClick={toggleDrawer(anchor, false)}>Home</a>
-              </Button>
-              <Divider />
-              <Button variant="contained">
-                <a className='linky' href="/about" onClick={toggleDrawer(anchor, false)}>About</a>
-              </Button>
-              <Divider />
-              <Button variant="contained">
-                <a className='linky' href="/" onClick={toggleDrawer(anchor, false)}>Watchlist</a>
-              </Button>
-              <Divider />
-              <Button variant="contained">
-                <a className='linky' href="/signup" onClick={toggleDrawer(anchor, false)}>Sign Up</a>
-              </Button>
-              <Button variant="contained">
-                <a className='linky' href="/signin" onClick={toggleDrawer(anchor, false)}>Sign In</a>
-              </Button>
+              <Typography variant="text" className="mobileMenu" component={Link} to="/">Home</Typography>
+                            {/* <Typography variant="text" component={Link} to="/about" onClick={loading=true}>About</Typography> */}
+                            <Divider />
+                            
+                            
+                            <Typography variant="text" className="mobileMenu" component={Link} to="/watchlist">Watchlist</Typography>
+                            <Divider />
+
+                            {!sessionStorage.getItem('username') ?
+                                (<>
+                                    <Typography variant="text" className="mobileMenu" component={Link} to="/signup">Sign Up</Typography>
+                                    <Divider />
+                                    <Typography variant="text" className="mobileMenu" component={Link} to="/signin">Sign In</Typography>
+                                </>)
+                                :
+                                (<Typography variant="text" className="mobileMenu" onClick={() => {logout()}}>Logout</Typography>)
+                                
+                            }
+                            <Divider />
+                            {sessionStorage.getItem('admin') === 'true' && <Typography variant="text"  className="mobileMenu" component={Link} to="/addshow" >addshow</Typography>}
+
+                            
             </Box>
               {/* {list} */}
             </Drawer>
