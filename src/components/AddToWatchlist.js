@@ -7,7 +7,8 @@ import { Box, Card, CardContent } from '@mui/material';
 import { addWatchShow } from './services/watchlistServices';
 
 
-const AddToWatchlist = () => {
+const AddToWatchlist = ({show}) => {
+    const setter = show
     const [open, setOpen] = React.useState(false);
     const [error, setError] = useState(null)
     const handleOpen = () => setOpen(true);
@@ -25,6 +26,7 @@ const AddToWatchlist = () => {
       };
 
     const addToList = () => {
+        sessionStorage.setItem('currentShow', setter)
         const data = new FormData()
         const watchlist = sessionStorage.getItem('watch_list')
         const show = sessionStorage.getItem('currentShow')
