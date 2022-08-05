@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174 174">
-  <circle cx="87" cy="87" r="87" style="fill: #411c9a;"/>
-  <path d="M52,115.5l70,1c-.782,2.865-3.521,11.45-12,18-9.726,7.514-20.299,7.169-23,7-2.555,.179-13.238,.638-23-7-8.939-6.994-11.391-16.304-12-19Z" style="fill: #fff;"/>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+  <circle cx="5" cy="5" r="5" style="fill: #411c9a;"/>
+  <path d="M2.989,6.638l4.023,.057c-.045,.165-.202,.658-.69,1.034-.559,.432-1.167,.412-1.322,.402-.147,.01-.761,.037-1.322-.402-.514-.402-.655-.937-.69-1.092Z" style="fill: #fff;"/>
 </svg>

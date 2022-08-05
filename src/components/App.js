@@ -11,7 +11,7 @@ import NotFound from './NotFound';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import AddShow from './AddShow';
-import About from './About';
+// import About from './About';
 import Hero from './Hero';
 import Watchlist from './Watchlist';
 // import AddReview from './AddReview';
@@ -77,9 +77,9 @@ const App = () => {
               <Route path="signin" element={<SignIn/>} />
               <Route path="signup" element={<SignUp/>} />
               <Route path="AddShow" element={<AddShow/>} />
-              <Route path="about" element={<About/>} />
+              {/* <Route path="about" element={<About/>} /> */}
               <Route path="Watchlist" element={<Watchlist/>} />
-              <Route path ="shows" element={<Shows />} />
+              {/* <Route path ="shows" element={<Shows />} /> */}
               <Route path="/show/:showId" element={<IndividualShow id={ID} />} />
               {/* <Route path="AddReview" element={<AddReview/>} /> */}
               {/* <Route path="EditUsers" element={<EditUsers/>} /> */}

@@ -77,8 +77,9 @@ const IndividualShow = () => {
                         <img src={parser.picture_url} alt={parser.title} className="fullShowImage"/>
                         <div className="showTextInfo">
                             <h2 className="fullShowHeader">{parser.title}</h2>
-                            <h4>Episodes: {parser.episodes}</h4>
-                            <h4>⭐️ {rating} </h4>
+                            <p>Episodes: {parser.episodes}</p>
+                            <p>⭐️ {rating} </p>
+
                             <AddToWatchlist />
                             <AddReview showID={parser.id}/>
                         </div>
@@ -90,10 +91,10 @@ const IndividualShow = () => {
                         <h2 className="showReviewHeader">What do others think?</h2>
                         {parser.reviews.map((review) =>
                         <div key={review.user_id}>
-                            <Card variant="contained" key={review.id}>
+                            <Card variant="contained" className="allReviews" key={review.id}>
                                 <h4> ⭐️ {review.rating}</h4>
                                 <h4>{review.message}</h4>
-                                <p>{review.user_id}</p>
+                                {/* <p>{review.user_id}</p> */}
                                 <DeleteOutlineIcon onClick={() => {handleDelete(review.id)}}/>
                             </Card>
                         </div>
