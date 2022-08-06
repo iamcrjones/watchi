@@ -56,6 +56,10 @@ div {
         font-family: ${fonts.Exo};
     }
 
+    h5 {
+        font-family: ${fonts.Exo};
+    }
+
     p {
         font-family: ${fonts.Exo};
     }

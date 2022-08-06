@@ -50,7 +50,6 @@ import AddToWatchlist from './AddToWatchlist.js';
 
                     <Grid item xs={12} md={12}>
                         <Link to={`/show/${show.attributes.id}`} onClick={() => {sessionStorage.setItem('currentShow', show.attributes.id)}}>{<Typography variant="h5">{show.attributes.title}</Typography>}</Link>
-                    
                     </Grid>
 
                     <Grid item className="releaseDays" xs={12} md={12}>
