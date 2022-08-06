@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { Box, TextField} from '@mui/material';
+import { Box, Button, TextField} from '@mui/material';
 import { useState } from "react"
 import { addReview } from './services/reviewServices';
 import RateReviewIcon from '@mui/icons-material/RateReview';
@@ -62,6 +62,7 @@ const AddReview = (showID) => {
             >
                 <Box sx={style}>
                     <Card>
+                    {sessionStorage.getItem('user_id') ? (
                         <CardContent>
                             <h1>Add Review</h1>
                             {error && <h3>{error}</h3>}
@@ -91,11 +92,16 @@ const AddReview = (showID) => {
                                 <input type="submit" />
                             </form>
                         </CardContent>
+                    ): (
+                        <CardContent>
+                            <h1>You need to be signed in to write a review.</h1>
+                            <Button onClick={window.location.href="/signin"}>OK</Button>
+                        </CardContent>
+                    )}
                     </Card>
                 </Box>
             </Modal>
         </>
-
     )
 }
 
