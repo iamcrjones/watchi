@@ -1,7 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-// import Button from '@mui/material/Button';
 import MenuIcon from "@mui/icons-material/Menu";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
@@ -14,9 +13,12 @@ export default function NavDrawer({ toggle, icon }) {
 
   const themeIcon = icon;
 
+  //Function to toggle theme colors and icon when theme icon is clicked.
   const toggler = () => {
     toggle();
   };
+
+  // Allows the drawer to open and close
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -28,6 +30,7 @@ export default function NavDrawer({ toggle, icon }) {
     setState({ ...state, [anchor]: open });
   };
 
+  //Clears all session storage items which logs a user out as there is no longer a jwt stored for requests
   function logout() {
     sessionStorage.clear();
     window.location.href = "/";

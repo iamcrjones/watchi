@@ -19,11 +19,14 @@ const SignUp = () => {
     password_confirmation: "",
   };
 
+  // Initial state values set.
   const [formData, setFormData] = useState(initialFormData);
   const [error, setError] = useState(null);
 
+  // Handles the submission of a user attempting to create an account
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Sends a post request with the data present in the form state to create user account
     signUp(formData)
       .then((user) => {
         let errorMessage = "whoops";
@@ -37,6 +40,8 @@ const SignUp = () => {
           setError(errorMessage);
           alert(error);
         } else {
+          // If no errors with the creating of the user in the database, a request is made to create the watchlist
+          // that is associated with the freshly created account using the ID returned from the account creation.
           const userData = new FormData();
           userData.append("user_id", user.user_id);
           createWatchlist(userData)
@@ -44,6 +49,7 @@ const SignUp = () => {
               if (watchList.error) {
                 setError(watchList.error);
               } else {
+                // If there is no errors with the creation of the watchlist, the user's data is then passed through to another post request to sign them in and return their jwt token to enable them to use the app as an authenticated user
                 const data = new FormData();
                 data.append("email", formData.email);
                 data.append("password", formData.password);
@@ -55,6 +61,7 @@ const SignUp = () => {
                       sessionStorage.setItem("username", data.username);
                       sessionStorage.setItem("token", data.jwt);
                       sessionStorage.setItem("user_id", data.user_id);
+                      // Upon a successful login, the app then retrieves the watchlist of the signed in user and is then redirected to the homepage
                       getWatchList()
                         .then((watchList) => {
                           sessionStorage.setItem("watch_list", watchList);
@@ -68,6 +75,7 @@ const SignUp = () => {
                   .catch((e) => {
                     setError(e);
                   });
+                  // Form data is reset
                 setFormData(initialFormData);
               }
             })
@@ -80,6 +88,7 @@ const SignUp = () => {
         setError(e);
       });
   };
+  // Updates the state of the form whenever changes are made
   const handleFormData = (e) => {
     setFormData({
       ...formData,
