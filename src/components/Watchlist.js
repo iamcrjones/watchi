@@ -4,6 +4,8 @@ import { getMyShows } from './services/watchlistServices';
 import Modal from '@mui/material/Modal';
 import { Box, Card, CardContent } from '@mui/material';
 import { Button } from '@mui/material';
+import Grid from '@mui/material/Grid';
+import { Typography } from '@mui/material';
 
 
 const Watchlist = () => {
@@ -55,10 +57,51 @@ const Watchlist = () => {
                     {loading === false && watchList.map((shows) =>
                         <>
                          <Card className="shows">
-                            <CardContent>
-                                <img src={shows.picture_url} alt={shows.title}/>
-                                <h1>{shows.title}</h1>
-                                </CardContent>
+                         <Grid container className="card">
+
+                        <Grid item xs={12} md={12}>
+                            <img src={shows.picture_url} alt={shows.title} />
+                        </Grid>
+
+                        <Grid item xs={12} md={12}>
+                        <Typography variant="h5" className="showCardTitle" onClick={() => {
+                            sessionStorage.setItem('currentShow', shows.id)
+                            window.location.href=`/show/${shows.id}`
+                            }}>
+                                {shows.title}
+                        </Typography>
+                        </Grid>
+
+                        <Grid item className="releaseDays" xs={12} md={12}>
+                        <p>Release days: </p>
+                            {shows.monday ? <Typography variant="p">Monday </Typography> : null}
+                            {shows.tuesday ? <Typography variant="p">Tuesday </Typography> : null}
+                            {shows.wednesday ? <Typography variant="p">Wednesday </Typography> : null}
+                            {shows.thursday ? <Typography variant="p">Thursday </Typography> : null}
+                            {shows.friday ? <Typography variant="p">Friday </Typography> : null}
+                            {shows.saturday ? <Typography variant="p">Saturday </Typography> : null}
+                            {shows.sunday ? <Typography variant="p">Sunday </Typography> : null}
+                    </Grid>
+
+                    <Grid item className="dates" xs={12} md={12} >
+                     <Typography variant="p">Start Date: {shows.airdate}</Typography>
+                    </Grid>
+                    
+
+                    <Grid item className="dates" xs={12} md={12}>
+                        <Typography variant="p">End Date: {shows.enddate}</Typography>
+                    </Grid>
+
+                    <Grid item className="releaseDays" xs={12} md={12}>
+                        <p>Release days: </p>
+                        {shows.crunchyroll ? <Typography variant="p">Crunchyroll </Typography> : null}
+                        {shows.funimation ? <Typography variant="p">Hulu </Typography> : null}
+                        {shows.netflix ? <Typography variant="p">Netflix </Typography> : null}
+                        </Grid>
+
+
+
+                            </Grid>
                         </Card>
                         </>
                     )}
