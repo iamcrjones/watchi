@@ -54,10 +54,7 @@ export default function NavDrawer({toggle, icon}) {
               <Divider />
               <div className="mobileNavDiv" >
               <Typography variant="text" className="mobileMenu" component={Link} to="/">Home</Typography>
-                            {/* <Typography variant="text" component={Link} to="/about" onClick={loading=true}>About</Typography> */}
                             <Divider />
-                            
-                            
                             <Typography variant="text" className="mobileMenu" component={Link} to="/watchlist">Watchlist</Typography>
                             <Divider />
 
@@ -69,13 +66,11 @@ export default function NavDrawer({toggle, icon}) {
                                 </>)
                                 :
                                 (<Typography variant="text" className="mobileMenu" onClick={() => {logout()}}>Logout</Typography>)
-                                
                             }
                             <Divider />
                             {sessionStorage.getItem('admin') === 'true' && <Typography variant="text"  className="mobileMenu" component={Link} to="/addshow" >Add Show</Typography>}
-              </div>                  
+              </div>
             </Box>
-              {/* {list} */}
             </Drawer>
           </React.Fragment>
         ))}

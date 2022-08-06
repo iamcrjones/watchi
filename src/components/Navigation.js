@@ -10,8 +10,11 @@ const Navigation = ({toggle, icon, username}) => {
 
     const themeIcon = icon
 
+    // Function to toggle theme colors
     const toggler = () => {
     toggle();}
+
+    // State values to determine if the device is desktop width
     const [isDesktop, setDesktop] = useState(window.innerWidth > 999);
 
     const updateMedia = () => {

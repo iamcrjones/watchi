@@ -8,6 +8,8 @@ import RateReviewIcon from '@mui/icons-material/RateReview';
 import Modal from '@mui/material/Modal';
 
 const AddReview = (showID) => {
+
+    // State values for the modal component required by Material UI
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -24,17 +26,21 @@ const AddReview = (showID) => {
         textAlign: 'left',
       };
 
+    // State values for if errors are raised
     const [error, setError] = useState(null)
 
+    // The function that is called when a user wishes to submit a review
     const handleSubmit = (e) =>{
         e.preventDefault()
         const user_id = sessionStorage.getItem('user_id')
+        // Creates a new FormData and adds the data from what was filled out on the form
         const data = new FormData()
         data.append("rating", e.target.rating.value)
         data.append("message", e.target.message.value)
         data.append("user_id", user_id)
         data.append("show_id", showID.showID)
-
+        // The actual function that handles the post request to the API.
+        // Refreshes page upon success to get the newly created review from the database
         addReview(data)
         .then((review) => {
             if(review.error){
@@ -62,6 +68,7 @@ const AddReview = (showID) => {
             >
                 <Box sx={style}>
                     <Card>
+                    {/* Logic to see if a user is signed in. If not signed in they will be redirected to the sign in page */}
                     {sessionStorage.getItem('user_id') ? (
                         <CardContent>
                             <h1>Add Review</h1>

@@ -34,10 +34,4 @@ export async function removeShow(data){
     return response.data
 }
 
-// Takes a show ID and the user's watchlist ID to add a show to the user's watchlist
-export async function addShowToWatchShow(data){
-    const response = await watchiBE.post('/watchshows', data)
-    return response.data
-}
-
 

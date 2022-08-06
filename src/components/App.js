@@ -19,6 +19,7 @@ import IndividualShow from './IndividualShow'
 
 
 const App = () => {
+  // Function in order to pass a show ID from child to parent in order to add the selected show ID to session storage.
   const [ID, setID] = useState(null);
   const sendID = (showId) => {
     setID(showId)
@@ -31,7 +32,7 @@ const App = () => {
   const themeToggle = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light')
   }
-
+  // Icon for theme toggle changes according to the theme
   const iconToggle = () => {
     if(theme === 'light'){
       return <NightlightIcon fontSize="large"/>
