@@ -103,8 +103,9 @@ export const GlobalStyles = createGlobalStyle`
 
     .mobileNavDiv{
         height: 150px;
-        display:flex;
+        display:absolute;
         justify-content: space-between;
+        
         
     }
 
