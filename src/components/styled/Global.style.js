@@ -1,27 +1,26 @@
 import { createGlobalStyle } from "styled-components";
 
-const pallet= {
-    pallet1: "#3BC9F5",
-    pallet2: "#52A3FF",
-    pallet3: "#2A99DE "
-}
+const pallet = {
+  pallet1: "#3BC9F5",
+  pallet2: "#52A3FF",
+  pallet3: "#2A99DE ",
+};
 
 export const lightTheme = {
-    body: "#fff",
-    color: "#000"
-}
+  body: "#fff",
+  color: "#000",
+};
 
 export const darkTheme = {
-    body: "#000",
-    color: "#fff"
-}
+  body: "#000",
+  color: "#fff",
+};
 
 const fonts = {
-    exo: "'Exo', sans-serif;",
-    bangers: "'Bangers', cursive;",
-    test: "'Cormorant SC', serif;"
-
-}
+  exo: "'Exo', sans-serif;",
+  bangers: "'Bangers', cursive;",
+  test: "'Cormorant SC', serif;",
+};
 export const GlobalStyles = createGlobalStyle`
 
 // div {
