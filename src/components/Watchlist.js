@@ -53,6 +53,7 @@ const Watchlist = () => {
         <>
             {sessionStorage.getItem('user_id') ? (
                 <>
+                <Grid container className='top10'>
                     {error && <h1>{error}</h1>}
                     {loading === false && watchList.map((shows) =>
                         <>
@@ -101,9 +102,11 @@ const Watchlist = () => {
                         </Grid>
                         </Grid>
                         </Card>
-                        </>
+                        </>  
                     )}
+                    </Grid>
                 </>
+               
             ) : (
                 <>
                     <Modal
