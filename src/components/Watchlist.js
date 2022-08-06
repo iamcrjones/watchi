@@ -73,7 +73,8 @@ const Watchlist = () => {
                         </Grid>
 
                         <Grid item className="releaseDays" xs={12} md={12}>
-                        <p>Release days: </p>
+                        <p>Release days: </p> 
+                        <p>If empty shows has already finished airing </p>                           
                             {shows.monday ? <Typography variant="p">Monday </Typography> : null}
                             {shows.tuesday ? <Typography variant="p">Tuesday </Typography> : null}
                             {shows.wednesday ? <Typography variant="p">Wednesday </Typography> : null}
@@ -93,15 +94,12 @@ const Watchlist = () => {
                     </Grid>
 
                     <Grid item className="releaseDays" xs={12} md={12}>
-                        <p>Release days: </p>
+                        <p>Platforms: </p>
                         {shows.crunchyroll ? <Typography variant="p">Crunchyroll </Typography> : null}
-                        {shows.funimation ? <Typography variant="p">Hulu </Typography> : null}
+                        {shows.funimation ? <Typography variant="p">funimation </Typography> : null}
                         {shows.netflix ? <Typography variant="p">Netflix </Typography> : null}
                         </Grid>
-
-
-
-                            </Grid>
+                        </Grid>
                         </Card>
                         </>
                     )}
