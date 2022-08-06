@@ -9,6 +9,7 @@ import { addWatchShow } from './services/watchlistServices';
 
 const AddToWatchlist = ({show}) => {
     const setter = show
+    // State management and styling for Material UI Modal component
     const [open, setOpen] = React.useState(false);
     const [error, setError] = useState(null)
     const handleOpen = () => setOpen(true);
@@ -24,15 +25,20 @@ const AddToWatchlist = ({show}) => {
         boxShadow: 24,
         p: 4,
       };
-
+    //Main function that adds a show to the user's watchlist
     const addToList = () => {
+        //Current show is set with the showID passed through as props above
         sessionStorage.setItem('currentShow', setter)
         const data = new FormData()
         const watchlist = sessionStorage.getItem('watch_list')
         const show = sessionStorage.getItem('currentShow')
+        //Form Data is appended with the session storage items gathered above
         data.append("show_id", show)
         data.append("watchlist_id", watchlist)
+        //Opens Modal
         handleOpen()
+        //Only adds show to the watchlist if a user is signed in.
+        // If not the modal will render differently prompting and redirecting the user to the sign in page.
         if(sessionStorage.getItem('user_id')){
             addWatchShow(data)
             .then((result) => {

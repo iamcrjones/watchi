@@ -10,13 +10,16 @@ import AddToWatchlist from './AddToWatchlist';
 
 
 const IndividualShow = () => {
+    // State management values assigned
     const [error, setError] = useState(null)
     const [currentShow, setCurrentShow] = useState(null)
     const [loading, setLoading] = useState(true)
     const [rating, setRating] = useState(0)
+    // Parses the session storage item to JSON in order to be able to use the data correctly in the return below.
     const parser = JSON.parse(currentShow)
 
     useEffect(() => {
+        // Pulls the data using the session storage item that contains the ID of the show being viewed.
         pullSingleShow(sessionStorage.getItem('currentShow'))
         .then((show) => {
             if(show.error){
@@ -25,7 +28,9 @@ const IndividualShow = () => {
             }else{
                 setError(null)
                 setCurrentShow(sessionStorage.getItem('show'))
+                //Loading is set to false when the request is successful and allows the component to render the information.
                 setLoading(false)
+                // For loop in order to calculate the average rating for the current show based off all reviews contained in the show's data.
                 if (loading === false){
                     const reviews = show.attributes.reviews
                     let showRating = 0
@@ -34,6 +39,7 @@ const IndividualShow = () => {
                         showRating += thisRating
                     }
                     showRating = showRating/reviews.length
+                    // Displays No reviews yet if the show has no reviews attached to it.
                     setRating((reviews.length < 1 ? "No reviews yet" : showRating))
                 }
             }
@@ -43,6 +49,7 @@ const IndividualShow = () => {
         })
     }, [loading])
 
+    // Handles the deletion of a review. Will only be successful if the request is made by the creator of the review, or an admin.
     const handleDelete = (review_id) => {
         const confirmBox = window.confirm('Are you sure you want to delete this review?')
         if(confirmBox === true){
@@ -89,6 +96,7 @@ const IndividualShow = () => {
 
                     <div className="showReviewContainer">
                         <h2 className="showReviewHeader">What do others think?</h2>
+                        {/* Displays all the reviews that belongs to the current show.*/}
                         {parser.reviews.map((review) =>
                         <div key={review.user_id}>
                             <Card variant="contained" className="allReviews" key={review.id}>

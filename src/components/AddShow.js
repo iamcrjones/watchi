@@ -8,7 +8,9 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 const AddShow = () => {
 
     const [error, setError] = useState(null)
-
+    // Submits all the data to the API to create a show
+    // Admin only operation.
+    // Function needed to use FormData in order to be able to pass image data to the backend to redirect the upload to AWS
     const handleSubmit = (e) =>{
         e.preventDefault()
         const data = new FormData()

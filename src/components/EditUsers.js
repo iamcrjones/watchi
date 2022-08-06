@@ -5,6 +5,8 @@ import { Box } from '@mui/material';
 
 
 const EditUsers = () => {
+    // NOT MVP!
+    // Component for a user to edit their data in the database.
     return(
         <Box>
             <Card>
