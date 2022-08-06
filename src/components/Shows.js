@@ -9,7 +9,7 @@ import {useState, useEffect} from 'react'
 import Grid from '@mui/material/Grid';
 import RemoveShow from './RemoveShow.js';
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import AddToWatchlist from './AddToWatchlist.js';
 // import crunchyroll from './crunchyroll.jsx'
 // import netflix from '../images/netflix.svg';
