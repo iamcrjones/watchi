@@ -4,7 +4,7 @@ import { getMyShows } from './services/watchlistServices';
 import Modal from '@mui/material/Modal';
 import { Box, Card, CardContent } from '@mui/material';
 import { Button } from '@mui/material';
-import Grid from '@mui/material/Grid';
+
 
 const Watchlist = () => {
     const [open, setOpen] = React.useState(false);
@@ -55,10 +55,10 @@ const Watchlist = () => {
                     {loading === false && watchList.map((shows) =>
                         <>
                          <Card className="shows">
-                            <Grid container className="card">
+                            <CardContent>
                                 <img src={shows.picture_url} alt={shows.title}/>
                                 <h1>{shows.title}</h1>
-                            <Grid>
+                                </CardContent>
                         </Card>
                         </>
                     )}
