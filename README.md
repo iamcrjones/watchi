@@ -1,6 +1,12 @@
 ## When you miss your favourite show and everyone spoilers it!
 ![Trello-1](https://github.com/matildamort/T3A2---Part-A/blob/main/docs/Sad-Pika.gif)
 
+## Live Site 
+
+https://watchi-au.netlify.app/ 
+
+https://watchi-animev2.herokuapp.com/ 
+
 This app is designed for the Hardcore Anime lovers, the ones who have 'seen it all' and are 'not so patiently' waiting for the next eps to come out. This platform helps with tracking when their favourite shows are being released so they never miss an ep and have upcoming shows scheduled on their 'my weekly watchlist' 
 
 This will allow users to look through multiple platforms of shows and filter through each to see what they would like to watch depending on the platform they have a a subscription to. 
