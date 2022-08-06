@@ -19,11 +19,13 @@ const Navigation = ({ toggle, icon, username }) => {
     setDesktop(window.innerWidth > 999);
   };
 
+  // Updates state and rerenders navbar when the device width changes
   useEffect(() => {
     window.addEventListener("resize", updateMedia);
     return () => window.removeEventListener("resize", updateMedia);
   });
 
+  //Clears all session storage items which logs a user out as there is no longer a jwt stored for requests
   function logout() {
     sessionStorage.clear();
     window.location.href = "/";
@@ -34,6 +36,7 @@ const Navigation = ({ toggle, icon, username }) => {
       <div className="logoDiv">
         <img className="navLogo" src={logo} alt="logo"></img>
       </div>
+      {/* Determines which navbar to display depending on device width. If mobile is will display drawer instead of traditional navbar */}
       {isDesktop ? (
         <>
           <div className="navList">
@@ -43,6 +46,7 @@ const Navigation = ({ toggle, icon, username }) => {
             <Typography variant="text" component={Link} to="/watchlist">
               Watchlist
             </Typography>
+            {/* Conditional rendering for if a user is logged in. */}
             {!sessionStorage.getItem("username") ? (
               <>
                 <Typography variant="text" component={Link} to="/signup">
@@ -62,6 +66,7 @@ const Navigation = ({ toggle, icon, username }) => {
                 Logout
               </Typography>
             )}
+            {/* Only displays the link to add a show if the user is an admmin */}
             {sessionStorage.getItem("admin") === "true" && (
               <Typography variant="text" component={Link} to="/addshow">
                 addshow

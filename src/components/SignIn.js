@@ -20,6 +20,8 @@ const SignIn = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Submits the post request with the user's information to authenticate their login and pass back the necessary
+    // data that is then stored in the session which is then used by other functions.
     signIn(formData)
       .then((user) => {
         if (user.error) {
@@ -30,12 +32,15 @@ const SignIn = () => {
           sessionStorage.setItem("token", user.jwt);
           sessionStorage.setItem("user_id", user.user_id);
 
+          // Resets the form data so that way information does not stay in the form
           setFormData(initialFormData);
+          // If no errors with the sign in request, another request is made to fetch the watchlist ID that is associated with the user
           getWatchList()
             .then((watchList) => {})
             .catch((e) => {
               setError(e);
             });
+            // redirects to homepage upon successful login
           window.location.href = "/";
         }
       })
@@ -44,6 +49,7 @@ const SignIn = () => {
       });
   };
 
+  // Handles the state of the form whenever a field is updated
   const handleFormData = (e) => {
     setFormData({
       ...formData,

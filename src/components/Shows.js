@@ -13,9 +13,11 @@ const Shows = ({ sendID }) => {
   const [shows, setShows] = useState(initialData);
 
   useEffect(() => {
+    // Pulls all shows to display as cards on the homepage
     getShows()
       .then((data) => {
         const showList = Array.from(data);
+        // Sets the array to the state for shows
         setShows(showList);
         return data;
       })
@@ -27,6 +29,7 @@ const Shows = ({ sendID }) => {
   return (
     <>
       <Grid container className="top10">
+        {/* Creates a card displaying different attributes for each show present in the state */}
         {shows.map((show) => (
           <Card className="shows" key={show.attributes.id}>
             <Grid container className="card">
@@ -41,6 +44,8 @@ const Shows = ({ sendID }) => {
                 <Typography
                   variant="h5"
                   className="showCardTitle"
+                    // Sets the id of the clicked show title in session storage in order to pull data for the individual show page
+                    // and then redirects to said individual show page
                   onClick={() => {
                     sessionStorage.setItem("currentShow", show.attributes.id);
                     window.location.href = `/show/${show.attributes.id}`;
@@ -87,23 +92,6 @@ const Shows = ({ sendID }) => {
                 </Typography>
               </Grid>
 
-              {/* <Grid item className="displayIcons">
-                    {show.attributes.crunchyroll ? 
-                    // <TaskAltIcon className="icons" />
-                            // <img className="showIcons" src={crunchyroll} alt="crunchyroll icon"></img>
-                        :null}
-
-                        {show.attributes.funimation ? 
-                        // <TaskAltIcon className="icons" />
-                        // <img className="showIcons" src={funimation} alt="funimation icon"></img>
-                        :null}
-
-                        {show.attributes.netflix ? 
-                        // <TaskAltIcon className="icons" />
-                        // <img className="showIcons" src={netflix} alt="netflix icon"></img>
-                        :null}
-                    </Grid> */}
-
               <Grid item xs={12}>
                 <Button
                   className="buttons"
@@ -111,9 +99,11 @@ const Shows = ({ sendID }) => {
                   fullWidth
                   variant="contained"
                 >
+                    {/* Allows a signed in user to add a show to their watchlist from the card by passing the id of that mapped show */}
                   {<AddToWatchlist show={show.attributes.id} />}
                 </Button>
               </Grid>
+              {/* Only displays if the user is a signed in admin. */}
               <RemoveShow id={show.id} />
             </Grid>
           </Card>

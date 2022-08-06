@@ -1,4 +1,5 @@
 const NotFound = () => {
+  // Displays if the app cannot find the page based on the route in url
   return (
     <div>
       <h1>404</h1>
