@@ -95,7 +95,7 @@ const AddReview = (showID) => {
                     ): (
                         <CardContent>
                             <h1>You need to be signed in to write a review.</h1>
-                            <Button onClick={window.location.href="/signin"}>OK</Button>
+                            <Button onClick={() => {window.location.href="/signin"}}>OK</Button>
                         </CardContent>
                     )}
                     </Card>
