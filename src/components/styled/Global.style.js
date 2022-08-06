@@ -56,7 +56,7 @@ export const GlobalStyles = createGlobalStyle`
         font-family: ${fonts.Exo};
     }
 
-    h5 {
+    .showCardTitle {
         font-family: ${fonts.Exo};
     }
 

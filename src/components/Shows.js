@@ -49,7 +49,7 @@ import AddToWatchlist from './AddToWatchlist.js';
                     </Grid>
 
                     <Grid item xs={12} md={12}>
-                        <Typography variant="h5" onClick={() => {
+                        <Typography variant="h5" className="showCardTitle" onClick={() => {
                             sessionStorage.setItem('currentShow', show.attributes.id)
                             window.location.href=`/show/${show.attributes.id}`
                             }}>
