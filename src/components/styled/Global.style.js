@@ -136,7 +136,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .mobileMenu{
-        padding-top: 20px;
+        //padding-top: 20px;
 
     }
 
